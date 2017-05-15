@@ -10,6 +10,7 @@ from random import randint
 from bs4 import BeautifulSoup
 import pprint
 import pickle
+import string
 #from sortedcontainers import SortedDict
 urllib3.disable_warnings()
 http = urllib3.PoolManager()
@@ -127,12 +128,57 @@ def getUrlToFile(url):
         charset = r.headers['content-type'].split('charset=')[-1]
         try:
             save(url, r.data.decode(charset))
+            saveHostVisited(url)
         except:
             print("ERROR: Invalid encoding: " + r.headers['content-type'])
     except:
         print("ERROR: can not fetch " + url)
 
+def getHostOfUrl(url):
+    parts = urllib3.util.parse_url(url)
+    if parts.host:
+        # gibt z.B. www.etit.tu-darmstadt.de zurück
+        #return parts.host
+        hostparts = parts.host.split(".")
+        tld = hostparts[-2] + "." + hostparts[-1]
+        return tld
 
+    else:
+        print("NO HOST ERROR")
+        exit()
+
+def saveHostVisited(url):
+    host = getHostOfUrl(url)
+
+    data = {}
+    try:
+        pkl_file = open('hosts.pkl', 'rb')
+        data = pickle.load(pkl_file)
+        pkl_file.close()
+    except Exception as e:
+        print("saveHostVisited(): No file found")
+
+    #print("Vorher:")
+    ##pprint.pprint(data)
+    alias = host
+    if alias in data:
+        data[alias] = int(data[alias]) + 1
+    else:
+        data[alias] = 1
+
+    #print("Nachher:")
+    #pprint.pprint(data)
+
+    output = open('hosts.pkl', 'wb')
+    pickle.dump(data, output)
+    output.close()
+
+    lines = "host;visits\n"
+    for host,count in data.items():
+        lines += host + ";" + str(count) + "\n"
+    f = open("hosts.csv", "w")
+    f.write(lines)
+    f.close()
 
 def canonizeHref(url, href):
     parts = urllib3.util.parse_url(url)
