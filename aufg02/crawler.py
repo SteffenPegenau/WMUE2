@@ -269,7 +269,7 @@ def getNextLink():
 
 #print(canonizeHref("http://", "/irgendwas"))
 
-max = 100
+max = 5000
 for i in range(0,max):
     url = getNextLink()
     print(str(i) + "/" + str(max), end="\t")
