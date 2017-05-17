@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Browsen nach Personen-ID - TUbiblio</title>
+    <link rel="Top" href="http://tubiblio.ulb.tu-darmstadt.de/" />
+    <link rel="Sword" href="http://tubiblio.ulb.tu-darmstadt.de/sword-app/servicedocument" />
+    <link rel="SwordDeposit" href="http://tubiblio.ulb.tu-darmstadt.de/id/contents" />
+    <link rel="Search" type="text/html" href="http://tubiblio.ulb.tu-darmstadt.de/cgi/search" />
+    <link rel="Search" type="application/opensearchdescription+xml" href="http://tubiblio.ulb.tu-darmstadt.de/cgi/opensearchdescription" />
+    
+    <script type="text/javascript" src="/javascript/auto.js"><!-- padder --></script>
+    <link rel="stylesheet" type="text/css" href="/style/auto.css" />
+    <style type="text/css" media="print">.ep_noprint { display: none }</style>
+
+        <style type="text/css" media="screen,projection">
+          div#headerbild_container {background-color: #009D81;}
+          h1,h2,h3, h1 a, h2 a, h3 a, .farbig, div#rechte_marginalienspalte h2, div#rechte_marginalienspalte h3{color: #009D81 !important;}
+          div#rechte_marginalienspalte {border-top-color: #009D81;}
+        </style>
+        <style type="text/css" media="all">
+          h1 a, h2 a, h3 a, a:focus, a:hover, a:active, span.gehe_zu, div#suche input.abschicken{color: #009D81}
+          tr.gerade{background-color: #E5F5F2;}
+          div#topnavigation {border-bottom-color: #009D81;}
+          div#hauptnavigation a:focus, div#hauptnavigation a:hover, div#hauptnavigation a:active {color: #009D81;}
+          div#hauptnavigation ul.klappbox a:link, div#hauptnavigation ul.klappbox a:visited {background-color: #E5F5F2;}
+          div#hauptnavigation ul.klappbox a:hover, div#hauptnavigation ul.klappbox a:focus, div#hauptnavigation ul.klappbox a:active {background-color: #FFFFFF;}
+          div#brotkrumen a:focus, div#brotkrumen a:hover, div#brotkrumen a:active {color: #009D81;}
+          div#navigationsspalte {border-top-color: #009D81;}
+          div#navigationsspalte li a:link, div#navigationsspalte li a:visited {background-color: #E5F5F2;}
+          div.aktiv, span.aktiv, a.aktiv, a.weiter, a.zurueck, div#navigationsspalte span.navi_pfeil, div#navigationsspalte h1 a, div#navigationsspalte li a:focus, div#navigationsspalte li a:hover, div#navigationsspalte li a:active {color: #009D81 !important;}
+          div#navigationsspalte li a.aktiv {background-color: #FFFFFF;}
+          div.seitenbrowser a:focus, div.seitenbrowser a:hover, div.seitenbrowser a:active {color: #009D81;}
+          div.nach_oben img, span.weiter img, span.zurueck img {background-color: #009D81;}
+          tr.zwischenueberschrift_2 td, tr.zwischenueberschrift_3 td{color: #009D81;}
+          form#suchformular fieldset, div#tu_biblio .ep_toolbox, div#news div.sticky, div.news div.sticky, div.hervorgehoben{background-color: #E5F5F2;}
+          div#sitemap li a.ebene0, div#sitemap li a.ebene1{color: #009D81;}
+          .highlighted{background-color: #E5F5F2}
+
+          .krumen { color:#333333;padding-left:10px;padding-bottom:7px; font-weight:600; font-size:90%; }
+          .nav    { padding-left:10px;line-height:118%;font-size:90%;font-weight:600;padding-top:4px;border-top:1px solid #333333; }
+        </style>
+        <style type="text/css" media="print">
+          div#seiten_container {border-top-color: #009D81;}
+        </style>
+
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="Top" href="http://tubiblio.ulb.tu-darmstadt.de/" />
+    <link rel="Sword" href="http://tubiblio.ulb.tu-darmstadt.de/sword-app/servicedocument" />
+    <link rel="SwordDeposit" href="http://tubiblio.ulb.tu-darmstadt.de/id/contents" />
+    <link rel="Search" type="text/html" href="http://tubiblio.ulb.tu-darmstadt.de/cgi/search" />
+    <link rel="Search" type="application/opensearchdescription+xml" href="http://tubiblio.ulb.tu-darmstadt.de/cgi/opensearchdescription" />
+    <script type="text/javascript">
+// <![CDATA[
+var eprints_http_root = "http:\/\/tubiblio.ulb.tu-darmstadt.de";
+var eprints_http_cgiroot = "http:\/\/tubiblio.ulb.tu-darmstadt.de\/cgi";
+var eprints_oai_archive_id = "tubiblio.ulb.tu-darmstadt.de";
+var eprints_logged_in = false;
+// ]]></script>
+    <style type="text/css">.ep_logged_in { display: none }</style>
+    <link rel="stylesheet" type="text/css" href="/style/auto-3.3.14.css" />
+    <script type="text/javascript" src="/javascript/auto-3.3.14.js"><!--padder--></script>
+    <!--[if lte IE 6]>
+        <link rel="stylesheet" type="text/css" href="/style/ie6.css" />
+   <![endif]-->
+    <meta name="Generator" content="EPrints 3.3.14" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Language" content="de" />
+    
+    <!--
+    <link rel="stylesheet" type="text/css" href="{$config{rel_path}}/style/nojs.css"/>
+    <script type="text/javascript" src="{$config{rel_path}}/javascript/jscss.js"></script>
+    -->
+    <!--[if lte IE 6]>
+        <link rel="stylesheet" type="text/css" href="/style/ie6.css" />
+    <![endif]-->
+  </head>
+  <body style="width:97%; padding:10px;">
+    
+    <div class="ep_tm_header ep_noprint">
+
+    <div style="width:100%;background-color:#009D81;border:5px;height:15px;"></div>
+    <div style="width:100%;background-color:#FFFFFF;border:5px;height:5px;"></div>
+
+    <!-- begin: main navigation #nav -->
+    <div class="nav">
+                  <a href="http://www.tu-darmstadt.de" style="text-decoration:none;"> TU </a>
+                | <a href="http://www.ulb.tu-darmstadt.de"> ULB </a>
+                | <a href="http://www.ulb.tu-darmstadt.de/aktuelles/index.de.jsp"> Aktuell </a>
+                | <a href="http://www.ulb.tu-darmstadt.de/service/index.de.jsp"> Service </a>
+                | <a href="http://www.ulb.tu-darmstadt.de/recherche/index.de.jsp"> Recherche </a>
+                | <a href="http://www.ulb.tu-darmstadt.de/fachinformationen/index.de.jsp"> Fachinformation </a>
+                | <a href="http://www.ulb.tu-darmstadt.de/spezialabteilungen/handschriften1.de.jsp"> Sammlungen </a>
+                | <a href="http://www.ulb.tu-darmstadt.de/abisz/index.de.jsp"> Infos A-Z </a>
+                | <a href="http://www.ulb.tu-darmstadt.de/kontakt/lage/orientierung_1.de.jsp"> Kontakt </a> |
+    </div>
+    <!-- end: main navigation -->
+
+    <div class="ep_tm_site_logo">
+        <a href="http://tubiblio.ulb.tu-darmstadt.de/" title="TUbiblio">
+          <img alt="TUbiblio" src="/images/tub-with-tu-headlogo.png" />
+        </a>
+    </div>
+
+    <div class="krumen"> <!-- brotkrumen -->
+        <a href="http://www.tu-darmstadt.de/" style="text-decoration:none;">TU Darmstadt</a> <img src="/style/images/doppelpfeil.png" alt="/" />
+        <a href="http://www.ulb.tu-darmstadt.de/ulb/startseite/index.de.jsp" style="text-decoration:none;">ULB</a> <img src="/style/images/doppelpfeil.png" alt="/" />
+        TUbiblio
+    </div> <!-- end brotkrumen -->
+
+      <ul class="ep_tm_menu">
+        <li>
+          <a href="http://tubiblio.ulb.tu-darmstadt.de">
+            TUbiblio Home
+          </a>
+        </li>
+        <li>
+          <a href="http://tubiblio.ulb.tu-darmstadt.de/information.html">
+            About
+          </a>
+        </li>
+        <li>
+        <a href="http://tubiblio.ulb.tu-darmstadt.de/cgi/search/advanced" menu="ep_tm_menu_suche">
+          Suche
+        </a>
+        </li>
+        <li>
+          <a href="http://tubiblio.ulb.tu-darmstadt.de/view/" menu="ep_tm_menu_browse">
+            Browsen
+          </a>
+          <ul id="ep_tm_menu_browse" style="display:none;">
+            <li>
+              <a href="http://tubiblio.ulb.tu-darmstadt.de/view/year/">
+                Browsen nach 
+                Jahr
+              </a>
+            </li>
+            <li>
+              <a href="http://tubiblio.ulb.tu-darmstadt.de/view/divisions/">
+                Browsen nach 
+                Organisationseinheit (Fachbereiche, Fachgebiete)
+              </a>
+            </li>
+            <li>
+              <a href="http://tubiblio.ulb.tu-darmstadt.de/view/person/">
+                Browsen nach 
+                Person
+              </a>
+            </li>
+            <li>
+              <a href="http://tubiblio.ulb.tu-darmstadt.de/view/personid/">
+                Browsen nach 
+                Personen-ID
+              </a>
+            </li>
+            <li>
+              <a href="http://tubiblio.ulb.tu-darmstadt.de/view/type/">
+                Browsen nach 
+                Typ der Publikation
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://tubiblio.ulb.tu-darmstadt.de/contact.html">
+            Kontakt/Redaktion
+          </a>
+        </li>
+      </ul>
+      <table class="ep_tm_searchbar">
+        <tr>
+          <td align="left">
+             <ul class="ep_tm_key_tools" id="ep_tm_menu_tools"><li><a href="http://tubiblio.ulb.tu-darmstadt.de/cgi/users/home">Anmelden</a></li></ul>
+          </td>
+          <td align="right" style="white-space: nowrap">
+            <div id="ep_tm_languages"><a href="/cgi/set_lang?lang=en&amp;referrer=http%3A%2F%2Ftubiblio.ulb.tu-darmstadt.de%2Fview%2Fpersonid%2F" title="English"><img src="/images/flags/en.png" align="top" border="0" alt="English" /></a><a href="/cgi/set_lang?referrer=http%3A%2F%2Ftubiblio.ulb.tu-darmstadt.de%2Fview%2Fpersonid%2F" title="Cookie löschen - die Sprache durch die Browsereinstellungen bestimmen"><img src="/images/flags/aero.png" align="top" border="0" alt="Cookie löschen - die Sprache durch die Browsereinstellungen bestimmen" /></a></div>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div>
+      <div class="ep_tm_page_content">
+        <h1 class="ep_tm_pagetitle">
+          Browsen nach Personen-ID
+        </h1>
+        <div class="ep_view_menu"><div class="ep_toolbox"><div class="ep_toolbox_content"><b>?-1</b> | <a href="index.2-7.html">2-7</a> | <a href="index.A.html">A</a> | <a href="index.B.html">B</a> | <a href="index.C.html">C</a> | <a href="index.D.html">D</a> | <a href="index.E.html">E</a> | <a href="index.F.html">F</a> | <a href="index.G.html">G</a> | <a href="index.H.html">H</a> | <a href="index.I.html">I</a> | <a href="index.J.html">J</a> | <a href="index.K.html">K</a> | <a href="index.L.html">L</a> | <a href="index.M.html">M</a> | <a href="index.N.html">N</a> | <a href="index.O.html">O</a> | <a href="index.P.html">P</a> | <a href="index.Q.html">Q</a> | <a href="index.R.html">R</a> | <a href="index.S.html">S</a> | <a href="index.T.html">T</a> | <a href="index.U.html">U</a> | <a href="index.V.html">V</a> | <a href="index.W.html">W</a> | <a href="index.X.html">X</a> | <a href="index.Y.html">Y</a> | <a href="index.Z.html">Z</a></div></div><h2>?...</h2><table cellpadding="0" cellspacing="0" border="0" class="ep_view_cols ep_view_cols_3"><tr><td valign="top" class="ep_view_col ep_view_col_1"><ul><li><a href="NULL.html"></a> (1534)</li></ul></td><td valign="top" class="ep_view_col ep_view_col_2"><ul><li><a href="=2E.html">.</a> (1)</li></ul></td><td valign="top" class="ep_view_col ep_view_col_3"></td></tr></table><h2>0...</h2><table cellpadding="0" cellspacing="0" border="0" class="ep_view_cols ep_view_cols_3"><tr><td valign="top" class="ep_view_col ep_view_col_1"><ul><li><a href="0000-0001-5058-388X.html">0000-0001-5058-388X</a> (1)</li><li><a href="0000-0001-7027-9121.html">0000-0001-7027-9121</a> (1)</li><li><a href="0000-0001-8154-1180.html">0000-0001-8154-1180</a> (1)</li><li><a href="0000-0001-8249-1752.html">0000-0001-8249-1752</a> (1)</li><li><a href="0000-0001-9486-3189.html">0000-0001-9486-3189</a> (1)</li><li><a href="0000-0001-9964-1112.html">0000-0001-9964-1112</a> (11)</li><li><a href="0000-0002-1502-3745.html">0000-0002-1502-3745</a> (1)</li><li><a href="0000-0002-2245-2644.html">0000-0002-2245-2644</a> (1)</li></ul></td><td valign="top" class="ep_view_col ep_view_col_2"><ul><li><a href="0000-0002-2461-8839.html">0000-0002-2461-8839</a> (1)</li><li><a href="0000-0002-2746-5743.html">0000-0002-2746-5743</a> (1)</li><li><a href="0000-0002-2874-4832.html">0000-0002-2874-4832</a> (1)</li><li><a href="0000-0002-3680-8648.html">0000-0002-3680-8648</a> (1)</li><li><a href="0000-0002-4324-5732.html">0000-0002-4324-5732</a> (1)</li><li><a href="0000-0002-5031-0934.html">0000-0002-5031-0934</a> (45)</li><li><a href="0000-0002-6527-7778.html">0000-0002-6527-7778</a> (1)</li><li><a href="0000-0002-6656-9625.html">0000-0002-6656-9625</a> (1)</li></ul></td><td valign="top" class="ep_view_col ep_view_col_3"><ul><li><a href="0000-0002-7383-0123.html">0000-0002-7383-0123</a> (2)</li><li><a href="0000-0002-9984-0805.html">0000-0002-9984-0805</a> (1)</li><li><a href="0000-0003-0232-7085.html">0000-0003-0232-7085</a> (1)</li><li><a href="0000-0003-0673-9722.html">0000-0003-0673-9722</a> (1)</li><li><a href="0000-0003-3375-4362.html">0000-0003-3375-4362</a> (1)</li><li><a href="0000-0003-4468-4208.html">0000-0003-4468-4208</a> (10)</li><li><a href="0000-0003-4652-0362.html">0000-0003-4652-0362</a> (1)</li><li><a href="01.html">01</a> (2)</li></ul></td></tr></table><h2>1...</h2><table cellpadding="0" cellspacing="0" border="0" class="ep_view_cols ep_view_cols_3"><tr><td valign="top" class="ep_view_col ep_view_col_1"><ul><li><a href="1.html">1</a> (7)</li></ul></td><td valign="top" class="ep_view_col ep_view_col_2"><ul><li><a href="1zimmermann=40gmx=2Ede.html">1zimmermann@gmx.de</a> (1)</li></ul></td><td valign="top" class="ep_view_col ep_view_col_3"></td></tr></table></div>
+      </div>
+    </div>
+
+    <div class="ep_tm_footer ep_noprint"> <!-- start footer -->
+      <hr noshade="noshade" class="ep_ruler" />
+      <hr class="ep_tm_last" />
+      <div style="font-size: 80%">
+        <span style="float: left; margin-left: 1em">
+          <a href="http://www.openarchives.org"><abbr title="Open Archives Protocol for Metadata Harvesting v2.0">OAI 2.0</abbr></a>-Basis-URL: http://tubiblio.ulb.tu-darmstadt.de/cgi/oai2
+        </span>
+        <span style="float: right; margin-right: 1em">
+          TUbiblio verwendet <a href="http://eprints.org/software/">EPrints 3</a>.
+        </span>
+      </div>
+    </div>  <!-- end footer -->
+
+    <div class="ep_tm_footer ep_noprint">
+      <hr noshade="noshade" class="ep_ruler" />
+      <hr class="ep_tm_last" />
+	<span style="float:left;">
+	  <a href="javascript:this.print()"><img src="/style/images/drucken1.png" alt="" /> Drucken</a>
+	  | <a href="http://www.ulb.tu-darmstadt.de/impressum/index.de.jsp"><img src="/style/images/impressum.png" alt="" /> Impressum</a>
+	</span>
+    </div>
+
+  </body>
+</html>

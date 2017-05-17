@@ -1,0 +1,209 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="description" content="Finde aktuelle Stellenangebote direkt von Unternehmen. Bei goodmonday gibt es keine Zeitarbeitsfirmen und keine Personalvermittlungen." />
+<meta name="keywords" content="stellenangebote, gesucht, jobs, arbeit, jobangebote, jobb&ouml;rse, stellenmarkt, minijobs, stellenanzeigen, arbeitsstellen, nebenjobs, jobsuche, ausbildung, aushilfe, arbeiten, praktikum, stellensuche, stellen, aushilfsjobs, vollzeit, ausbildungspl&auml;tze, ausbildungsstellen, praktikumsstellen, euro, ferienjobs, lehrstellen, hilfskraft, teilzeit, karriere, berufe, bewerben" />
+<meta name="language" content="de" />
+<meta name="copyright" content="(c) 2017 platron" />
+<meta name="author" content="platron" />
+<meta name="robots" content="index, follow" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="content-language" content="de" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" type="text/css" media="all" href="css/styleplatron-1.0.7.css" />
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=PT+Sans:400,700" />
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<script type="text/javascript" src="jquery/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="jquery/jquery.tinyscrollbar-2.2.4.min.js"></script>
+<script type="text/javascript" src="autocomplete-1.0.3.js" async="async"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#scrollbar1').tinyscrollbar({ thumbSize: 30 });
+  });
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-19171717-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+    <title>Die Jobsuche f&uuml;r Deine Stadt</title>
+  </head>
+    <body>
+    <div id="content">
+      <div id="left">
+        <div id="logo"><a href="index.jsp"><img src="css/img/goodmonday.png" alt="" /></a></div>
+<div id="headline">Die Jobsuche f&uuml;r Deine Stadt</div>
+<div class="spacer0c">&nbsp;</div>
+<form action="jobs.jsp" id="inputform" name="inputform" method="post" accept-charset="UTF-8">
+  <div class="boxFindJobs">
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td id="symbol1">1</td>
+        <td class="nameOfItem">BERUF</td>
+      </tr>
+    </table>
+    <div class="spacer23">&nbsp;</div>
+    <div id="termField"><input type="text" id="term" name="term" value="" maxlength="200" autocomplete="off" onkeyup="showJobs(this.value)" tabindex="1" /></div>
+    <div class="spacer3c">&nbsp;</div>
+    <div id="autoCompleteList"></div>
+  </div>
+  <div class="boxFindJobs">
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td id="symbol2">2</td>
+        <td class="nameOfItem">STADT</td>
+      </tr>
+    </table>
+    <div class="spacer23">&nbsp;</div>
+    <div id="townField"><input type="text" id="town" name="town" value="alle Städte &#x25bc;" autocomplete="off" readonly="readonly" onclick="showTowns()" onfocus="blur();" tabindex="2" /></div>
+    <div id="searchField"><input id="search" type="submit" value="GO" tabindex="3" /></div>
+    <div class="spacer3c">&nbsp;</div>
+    <div id="scrollbar1">
+      <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+      <div class="viewport">
+        <div class="overview">
+          <a class="townLink" href="javascript:chooseTown(1)" id="town1">alle&nbsp;St&auml;dte</a>
+          <a class="townLink" href="javascript:chooseTown(2)" id="town2">Aachen</a>
+          <a class="townLink" href="javascript:chooseTown(3)" id="town3">Augsburg</a>
+          <a class="townLink" href="javascript:chooseTown(4)" id="town4">Berlin</a>
+          <a class="townLink" href="javascript:chooseTown(5)" id="town5">Bielefeld</a>
+          <a class="townLink" href="javascript:chooseTown(6)" id="town6">Bochum</a>
+          <a class="townLink" href="javascript:chooseTown(7)" id="town7">Bonn</a>
+          <a class="townLink" href="javascript:chooseTown(27)" id="town27">Braunschweig</a>
+          <a class="townLink" href="javascript:chooseTown(8)" id="town8">Bremen</a>
+          <a class="townLink" href="javascript:chooseTown(28)" id="town28">Chemnitz</a>
+          <a class="townLink" href="javascript:chooseTown(9)" id="town9">Dortmund</a>
+          <a class="townLink" href="javascript:chooseTown(10)" id="town10">Dresden</a>
+          <a class="townLink" href="javascript:chooseTown(11)" id="town11">D&uuml;sseldorf</a>
+          <a class="townLink" href="javascript:chooseTown(12)" id="town12">Duisburg</a>
+          <a class="townLink" href="javascript:chooseTown(13)" id="town13">Essen</a>
+          <a class="townLink" href="javascript:chooseTown(14)" id="town14">Frankfurt/Main</a>
+          <a class="townLink" href="javascript:chooseTown(29)" id="town29">Gelsenkirchen</a>
+          <a class="townLink" href="javascript:chooseTown(30)" id="town30">Halle/Saale</a>
+          <a class="townLink" href="javascript:chooseTown(15)" id="town15">Hamburg</a>
+          <a class="townLink" href="javascript:chooseTown(16)" id="town16">Hannover</a>
+          <a class="townLink" href="javascript:chooseTown(17)" id="town17">Karlsruhe</a>
+          <a class="townLink" href="javascript:chooseTown(31)" id="town31">Kiel</a>
+          <a class="townLink" href="javascript:chooseTown(18)" id="town18">K&ouml;ln</a>
+          <a class="townLink" href="javascript:chooseTown(19)" id="town19">Leipzig</a>
+          <a class="townLink" href="javascript:chooseTown(32)" id="town32">Magdeburg</a>
+          <a class="townLink" href="javascript:chooseTown(20)" id="town20">Mannheim</a>
+          <a class="townLink" href="javascript:chooseTown(33)" id="town33">M&ouml;nchengladbach</a>
+          <a class="townLink" href="javascript:chooseTown(21)" id="town21">M&uuml;nchen</a>
+          <a class="townLink" href="javascript:chooseTown(22)" id="town22">M&uuml;nster</a>
+          <a class="townLink" href="javascript:chooseTown(23)" id="town23">N&uuml;rnberg</a>
+          <a class="townLink" href="javascript:chooseTown(24)" id="town24">Stuttgart</a>
+          <a class="townLink" href="javascript:chooseTown(25)" id="town25">Wiesbaden</a>
+          <a class="townLink" href="javascript:chooseTown(26)" id="town26">Wuppertal</a></div>
+      </div>
+    </div>
+  </div>
+  <div class="field0"><input type="text" name="jobs" class="field0" value="none" /></div>
+</form>
+<div id="boxSupport">
+  <table border="0" cellspacing="0" cellpadding="0" id="infoHeader3">
+    <tr id="infoHeader4">
+      <td id="symbolS1">S</td>
+      <td class="nameOfItem2">SUPPORT</td>
+    </tr>
+  </table>
+  <div class="spacer24d">&nbsp;</div>
+  <div id="supportList">
+    <a class="supportLink" href="frequently.jsp">Beliebte Berufe</a>
+    <a class="supportLink" href="help.jsp">Praktische Tipps</a>
+    <a class="supportLink" href="faq.jsp">FAQ</a>
+    <a class="supportLink" href="syntax.jsp">Besser Finden</a>
+    <a class="supportLink" href="add.jsp">Ihr Unternehmen</a>
+    <a class="supportLink" href="about.jsp">&Uuml;ber Uns</a>
+  </div>
+</div>
+        <div class="spacer28c">&nbsp;</div>
+        <div id="textPart">
+          <p>
+            <table border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td class="spacer4w">&nbsp;</td>
+                  <td id="partSymbol1">1</td>
+                  <td>&nbsp;&nbsp;<span class="subpart">Beruf eingeben</span></td>
+                </tr>
+              </table>
+            </p>
+            <div class="spacer4">&nbsp;</div>
+            <p>
+              Suchen Sie nach Berufsbezeichnungen ebenso wie nach Branchen, F&auml;higkeiten, Interessensgebieten oder sonstigen Stichworten.
+              Verfeinern Sie Ihre Ergebnisse, indem Sie mehrere Begriffe verwenden.
+            </p>
+            <div class="spacer34">&nbsp;</div>
+            <p>
+            <table border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td class="spacer4w">&nbsp;</td>
+                <td id="partSymbol2">2</td>
+                <td>&nbsp;&nbsp;<span class="subpart">Stadt w&auml;hlen</span></td>
+              </tr>
+            </table>
+          </p>
+          <div class="spacer4">&nbsp;</div>
+          <p>
+            Zur Zeit k&ouml;nnen Sie mit <i>goodmonday</i> Webseiten von Unternehmen in den 32 gr&ouml;&szlig;ten St&auml;dten Deutschlands durchsuchen, bald auch in ganz Deutschland.
+          </p>
+          <div class="spacer34">&nbsp;</div>
+          <p>
+            <table border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td class="spacer4w">&nbsp;</td>
+                <td id="partSymbol3">3</td>
+                <td>&nbsp;&nbsp;<span class="subpart">Stelle finden</span></td>
+              </tr>
+            </table>
+          </p>
+          <div class="spacer4">&nbsp;</div>
+          <p>
+            Die nun angezeigten Jobs stammen direkt von Unternehmensseiten und werden t&auml;glich aktualisiert.
+            Bei <i>goodmonday</i> gibt es KEINE Zeitarbeitsfirmen oder Personalvermittlungen.
+          </p>
+          <div class="spacer34">&nbsp;</div>
+          <p>
+            <table border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td class="spacer4w">&nbsp;</td>
+                <td id="partSymbolS">S</td>
+                <td>&nbsp;&nbsp;<span class="subpart">goodmonday f&uuml;r Unternehmen</span></td>
+              </tr>
+            </table>
+          </p>
+          <div class="spacer4">&nbsp;</div>
+          <p>
+            Wir versuchen, m&ouml;glichst alle Firmen zu ber&uuml;cksichtigen.
+            Fehlt jedoch ein Unternehmen auf unserer Seite, so k&ouml;nnen Sie es <a id="addLink" href="add.jsp">hier</a> kostenlos nachtragen.
+          </p>
+          <div class="spacer34">&nbsp;</div>
+        </div>
+        <div id="copyrightLeft"><a class="copyrightLink" href="imprint.jsp">Copyright&nbsp;2017&nbsp;platron</a></div>
+        <div id="copyrightRight"><a class="copyrightLink" href="imprint.jsp">Impressum</a></div>
+        <div class="spacer0c">&nbsp;</div>
+      </div>
+
+      <div id="right">
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle adslot_1"
+     style="display:inline-block;width:160px;height:600px"
+     data-ad-client="ca-pub-9723454077837138"
+     data-ad-slot="4496685522"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</div>
+    </div>
+  </body>
+</html>

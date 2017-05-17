@@ -1,0 +1,812 @@
+
+
+<!DOCTYPE html>
+<!-- TEMPLATE FILE: opac-main.tt -->
+
+
+
+
+<html lang="de-DE" class="no-js">
+<head>
+
+<title>Bibliothek der Hochschule für Philosophie - Katalog</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Koha 3.2218000" /> <!-- leave this for stats -->
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="shortcut icon" href="https://hfph.bsz-bw.de/opac-tmpl/bootstrap/images/bsz/itemtypeimg/hfph.png" type="image/x-icon" />
+
+ <link rel="stylesheet" type="text/css" href="/opac-tmpl/bootstrap/lib/bootstrap/css/bootstrap.min.css" />
+
+
+
+ <link rel="stylesheet" type="text/css" href="/opac-tmpl/bootstrap/lib/jquery/jquery-ui.css" />
+
+
+
+
+ <link rel="stylesheet" type="text/css" href="/opac-tmpl/bootstrap/css/opac.css" />
+
+
+
+<link rel="stylesheet" type="text/css" media="print" href="/opac-tmpl/bootstrap/css/print.css" />
+
+
+<style type="text/css">#itype_id { display:none; }
+
+
+
+/* Multilinguale Textbausteine ggf. ergänzen */
+span.de-DE {display:none;} /* Fallback Englisch) */
+body:lang(de-DE) span.en {display:none;}
+body:lang(de-DE) span.de-DE {display:inline;}
+
+/* Anzeige Detailansicht */
+span.serial_volumes,
+span.ddc_classification,
+span.msc_classification,
+span.rvk_classification,
+span.local_classification,
+span.publication_dates,
+span.publication_frequency,
+span.call_number,
+span.mono_analytics,
+span.ppn
+{display:none;}
+
+/* Normdaten */
+p.auth667, 
+p.auth670, 
+p.auth675, 
+p.auth680 {
+  display:none;
+}
+
+/* LAYOUT */
+
+/* Hintergrundfarbe Bereich opacheader/Logo */
+body, #opacheader {
+    background-color: #FFFFF;
+}
+
+/* Hintergrundfarbe der Navigation oben */
+.navbar-inverse .navbar-inner {
+    background-image: linear-gradient(to bottom, #fc3, #fc3);
+    border-color: #fc3;
+    background-color: #fc3;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fc3', endColorstr='#fc3', GradientType=0);
+}
+
+/* Schwarze Trennstriche in der Navigation entfernen */
+.navbar-inverse .divider-vertical {
+    border-left: none;
+    border-right: none;
+}
+
+#members a.logout {
+    color: #182F7A ;
+    padding: 0 0.3em;
+}
+
+.mastheadsearch label {
+    color: #182F7A ;
+}
+
+/* Farbe der Schrift in der Navigation */
+.navbar-inverse .brand, .navbar-inverse .nav > li > a, #members a {
+    color: #182F7A ;
+}
+
+/* Linkformatierung */
+a:link, a:visited,
+#search-facets a:link, #search-facets a:visited,
+#menu a:link, #menu a:visited, 
+.nav_results .l_Results a:link, .nav_results .l_Results a:visited,
+a.listmenulink:link, a.listmenulink:visited,
+.actions a:link, .actions a:visited,
+.actions a:link, .actions a:visited,
+#placehold input.hold {
+    color: #182F7A;
+}
+
+/* Ausnahmen... */
+a:link, a:visited,
+#search-facets a:link, #search-facets a:visited,
+#menu a:link, #menu a:visited,
+#CheckAll, 
+#clearall, 
+#CheckNone  {
+    text-decoration: none;
+}
+
+/* Link - Hovereffekt */
+a:hover, a:active,
+#search-facets a:hover, #search-facets a:active,
+#menu a:hover, #menu a:active,
+.nav_results .l_Results a:hover, .nav_results .l_Results a:active,
+a.listmenulink:hover, a.listmenulink:active,
+.actions a:hover, .actions a:active,
+#placehold input.hold:hover,
+.actions a.addtocart:hover, .actions a.addtocart:active,
+.actions a.addtoshelf:hover, .actions a.addtoshelf:active,
+#CheckAll:hover, #CheckAll:active,
+#clearall:hover, #clearall:active,
+#CheckNone:hover, #CheckNone:active {
+	color: #182F7A;
+   }
+
+/* Ausnahmen */
+#cartmenulink:hover,
+#listsmenu:hover {
+	text-decoration: underline;
+}
+
+/* Tabs */
+.ui-tabs .ui-state-default a:link, .ui-tabs .ui-state-default a:visited {
+	color: #182F7A;
+}
+
+.ui-tabs .ui-state-default a:hover, .ui-tabs .ui-state-default a:active {
+	background-color: white;
+}
+
+/* Liste und Warenkorb */
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, .dropdown-submenu:hover > a, .dropdown-submenu:focus > a {
+    background-color: #182F7A ;
+    background-image: linear-gradient(to bottom, #EED343, #EED343);
+    color: #182F7A ;
+}
+
+/* Go-Button */
+.btn-primary, .btn-primary:hover {
+    background-color: #182F7A;
+    background-image: linear-gradient(to bottom, #182F7A, #182F7A);
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    color: #FFFFFF;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .btn-primary.disabled, .btn-primary[disabled] {
+    background-color: #182F7A;
+    color: #FFFFF ;
+	font-weight: bold;
+}
+
+.btn-success, .btn-success:hover {
+    background-color: #182F7A;
+    background-image: linear-gradient(to bottom, #182F7A, #182F7A);
+    background-repeat: repeat-x;
+    border-color: #182F7A;
+    color: #ffffff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+/* BIBLIOTHEKSSPEZIFISCH */
+
+.btn-success:hover {
+    color: #e6e6e6;
+}
+
+#members p { color: #182f7a; }
+.navbar-inverse .nav > li > a:hover,
+.navbar-inverse .nav > li > a:visited {
+    color: #182F7A !important;
+    text-decoration: none !important;
+}
+
+.navbar-inverse .nav li.dropdown.open > .dropdown-toggle, .navbar-inverse .nav li.dropdown.active > .dropdown-toggle, .navbar-inverse .nav li.dropdown.open.active > .dropdown-toggle {
+    background-color: #FFDC1F;
+    color: white;
+}
+
+.dropdown-menu li a:link,
+.dropdown-menu li a:visited {
+    color: black !important;
+}
+
+.dropdown-menu li a:hover,
+.dropdown-menu li a:focus {
+    background-color: #182F7A !important;
+    color: #ffffff !important;
+}
+
+#opacheader, body {
+    background-color: #FFFFFF;
+}
+
+a.authlink { display:none; }
+
+</style>
+
+<link rel="unapi-server" type="application/xml" title="unAPI" href="http://hfph.bsz-bw.de/cgi-bin/koha/unapi" />
+
+<!-- Respond.js brings responsive layout behavior to IE < v.9 -->
+<!--[if lt IE 9]>
+ <script src="/opac-tmpl/bootstrap/lib/respond.min.js"></script>
+<![endif]-->
+<script type="text/javascript">
+    function _(s) { return s } // dummy function for gettext
+</script>
+<script type="text/javascript" src="/opac-tmpl/bootstrap/lib/modernizr.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/opac-tmpl/bootstrap/lib/font-awesome/css/font-awesome.min.css" />
+
+
+</head>
+
+
+ 
+
+
+
+
+
+ 
+
+<body ID="opac-main" class="branch-default" >
+
+
+
+
+<div id="wrap">
+ <div id="header-region" class="noprint">
+ <div class="navbar navbar-inverse navbar-static-top">
+ <div class="navbar-inner">
+ <div class="container-fluid">
+ <h1 id="logo">
+ <a class="brand" href="/cgi-bin/koha/opac-main.pl">
+  Bibliothek der Hochschule für Philosophie  </a>
+ </h1>
+ 
+ <div id="cartDetails" class="cart-message">Ihr Korb ist leer.</div>
+ 
+ <ul class="nav">
+ 
+ <li class="dropdown">
+ <a role="button" title="Stellen Sie Titel zusammen, an denen Sie interessiert sind" data-toggle="dropdown" href="#" class="dropdown-toggle" id="cartmenulink">
+ <i id="carticon" class="icon-shopping-cart icon-white"></i> <span class="cartlabel">Korb</span> <span id="basketcount"></span> <b class="caret"></b>
+ </a>
+ <ul aria-labelledby="cartmenulink" role="menu" class="dropdown-menu">
+ <li role="presentation">
+ <a href="#" id="cartmenuitem" class="cart-message" tabindex="-1" role="menuitem">Ihr Korb ist leer.</a>
+ </li>
+ </ul>
+ </li>
+ 
+ 
+ <li class="divider-vertical"></li>
+ 
+ 
+ <li class="dropdown">
+ <a data-toggle="dropdown" role="button" title="Zeige Listen" id="listsmenu" href="#" class="dropdown-toggle"><i class="icon-list icon-white"></i> <span class="listslabel">Listen</span> <b class="caret"></b></a>
+ <ul aria-labelledby="listsmenu" role="menu" class="dropdown-menu">
+ 
+ <li role="presentation"><a href="#" tabindex="-1" class="menu-inactive" role="menuitem">Keine öffentlichen Listen</a></li>
+ 
+ <li class="divider" role="presentation"></li>
+ 
+ <li role="presentation"><a href="/cgi-bin/koha/opac-shelves.pl?op=list&amp;category=1" tabindex="-1" role="menuitem"><strong>Ihre Listen</strong></a></li>
+ 
+ <li role="presentation"><a href="/cgi-bin/koha/opac-user.pl" tabindex="-1" class="menu-inactive loginModal-trigger" role="menuitem">Melden Sie sich an, um eigene Listen zu erstellen</a></li>
+ 
+ 
+ </ul> <!-- / .dropdown-menu -->
+ </li> <!-- / .dropdown -->
+ 
+ </ul> <!-- / .nav -->
+ <div id="listsDetails"></div>
+ 
+ <a id="user-menu-trigger" class="pull-right" href="#"><i class="icon-user"></i> <span class="caret"></span></a>
+ <div id="members">
+ <ul class="nav pull-right">
+
+ 
+ <li class="dropdown">
+ <a title="Sprache wechseln" role="button" data-toggle="dropdown" class="dropdown-toggle" href="#" id="langmenu"><i class="icon-flag icon-white"></i> <span class="langlabel">Sprachen</span> <b class="caret"></b></a>
+ <ul aria-labelledby="langmenu" role="menu" class="dropdown-menu">
+ 
+ 
+ 
+ 
+ 
+ <li role="presentation"><a href="#" tabindex="-1" class="menu-inactive" role="menuitem">Deutsch&nbsp;<i class="icon-ok"></i></a></li>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <li role="presentation"><a href="/cgi-bin/koha/opac-changelanguage.pl?language=en"  tabindex="-1" role="menuitem" class="listmenulink">English</a></li>
+ 
+ 
+ 
+ 
+ 
+ </ul> <!-- /# .dropdown-menu -->
+</li> <!-- / .dropdown -->
+
+
+
+ 
+ 
+ 
+ <li><a href="/cgi-bin/koha/opac-user.pl" class="loginModal-trigger" role="button" data-toggle="modal">Benutzerkonto</a></li>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ </ul>
+ </div> <!-- /members -->
+ 
+ </div> <!-- /container-fluid -->
+ </div> <!-- /navbar-inner -->
+ </div> <!-- /navbar -->
+
+ 
+ <div class="container-fluid">
+ <div class="row-fluid">
+ <div id="opacheader">
+ <div style="margin-top:18px; margin-bottom:15px"> <a href="https://www.hfph.de" target="_blank">
+<img alt="Bibliotheksname" style="height: 85px" src="/opac-tmpl/bootstrap/images/bsz/logo_hfph.png" /></a>
+</div>
+
+
+<!--
+<div id="oh"></div>
+-->
+ </div>
+ </div>
+ </div>
+ 
+ </div> <!-- / header-region -->
+
+ <div class="container-fluid">
+ <div class="row-fluid">
+ <div id="opac-main-search">
+ <!-- <div class="span2">
+ 
+ <h1 id="libraryname">
+ 
+ <a href="/cgi-bin/koha/opac-main.pl">Bibliothek der Hochschule für Philosophie</a></h1>
+ </div> /.span2 -->
+ <div class="span12">
+ 
+ 
+ 
+ <div class="mastheadsearch">
+ 
+ 
+ <form name="searchform" method="get" action="/cgi-bin/koha/opac-search.pl" id="searchform" class="form-inline">
+ <label for="masthead_search"> Suche    </label>
+
+ <select name="idx" id="masthead_search">
+ 
+ <option value="">Freitext</option>
+ 
+ 
+ <option value="ti">Titel</option>
+ 
+ 
+ <option value="au">Verfasser</option>
+ 
+ 
+ <option value="su">Schlagwort</option>
+ 
+ 
+ <option value="nb">ISBN</option>
+ 
+ 
+ <option value="se">Reihen</option>
+ 
+ 
+ 
+ <option value="callnum,phr">Signatur</option>
+ 
+ 
+ </select>
+
+ 
+ <div class="input-append nolibrarypulldown">
+ 
+ 
+ <input type="text" class="transl1" id="translControl1" name="q" title="Suchbegriffe eingeben" /><span id="translControl"></span>
+ 
+
+ 
+ <button type="submit" id="searchsubmit" class="btn btn-primary">OK</button>
+ </div>
+ 
+
+ 
+ 
+ 
+ 
+ 
+
+ </form>
+ 
+ </div> <!-- / .mastheadsearch -->
+ 
+
+ <div class="row-fluid">
+ <div id="moresearches">
+ <ul>
+ <li><a href="/cgi-bin/koha/opac-search.pl">Erweiterte Suche</a></li>
+ <li><a href="/cgi-bin/koha/opac-course-reserves.pl">Semesterapparate</a></li>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ </ul>
+ </div> <!-- /#moresearches -->
+ </div> <!-- /.row-fluid -->
+
+ 
+ </div> <!-- /.span10 -->
+ </div> <!-- /.opac-main-search -->
+ </div> <!-- / .row-fluid -->
+ </div> <!-- /.container-fluid -->
+
+ <!-- Login form hidden by default, used for modal window -->
+ <div id="loginModal" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="modalLoginLabel" aria-hidden="true">
+ <div class="modal-header">
+ <button type="button" class="closebtn" data-dismiss="modal" aria-hidden="true">×</button>
+ <h3 id="modalLoginLabel">Benutzerkonto</h3>
+ </div>
+ <form action="/cgi-bin/koha/opac-user.pl" method="post" name="auth" id="modalAuth">
+ <div class="modal-body">
+ 
+ <input type="hidden" name="koha_login_context" value="opac" />
+ <fieldset class="brief">
+ <label for="muserid">Login:</label><input type="text" id="muserid" name="userid" />
+ <label for="mpassword">Passwort:</label><input type="password" id="mpassword" name="password" />
+ 
+ <div id="nologininstructions-modal">
+ Bitte beachten Sie, dass Sie zum Einloggen in den OPAC ein eigenes Nutzerkonto der Bibliothek brauchen. Dies hat nichts mit Ihrem Moodle-Konto oder dem Login für die Webseite zu tun.
+ </div>
+ 
+ <div id="mpatronregistration"><p>Haben Sie noch kein Konto? <a href="/cgi-bin/koha/opac-memberentry.pl">Hier anmelden.</a></p></div>
+ </fieldset>
+ </div>
+ <div class="modal-footer">
+ <input value="Anmelden" class="btn btn-primary" type="submit" />
+ <a href="#" data-dismiss="modal" aria-hidden="true" class="cancel">Abbrechen</a>
+ </div>
+ </form> <!-- /#auth -->
+ </div> <!-- /#modalAuth -->
+
+
+<div class="main">
+ <ul class="breadcrumb">
+ <li><a href="#">Start</a></li>
+ </ul>
+
+ 
+ 
+ <div id="notloggedin" class="container-fluid">
+ 
+ 
+
+ <div class="row-fluid">
+ 
+ <div class="span2">
+ <div id="navigation">
+ <div id="opacnav"><ul>
+<li><a target="_blank" href="https://www.hfph.de/studium/bibliotheken">Webseite zur Bibliothek</a></li>
+<li><a target="_blank" href="https://www.hfph.de/studium/bibliotheken/hochschulbibliothek/fachinformation/langfassung_opac.pdf">OPAC-Dokumentation lang</a></li>
+<li><a target="_blank" href="https://www.hfph.de/studium/bibliotheken/hochschulbibliothek/service/semesterapparate-archiv">Alte Semesterapparate</a></li>
+<li><a target="_blank" href="https://opacplus.bsb-muenchen.de/metaopac/start.do?SearchType=2">Staatsbibliothek München</a></li>
+<li><a target="_blank" href="http://www.gateway-bayern.de">Gateway Bayern</a></li>
+<li><a target="_blank" href="http://kvk.bibliothek.kit.edu/?lang=en&digitalOnly=0&embedFulltitle=0&newTab=0">Karlsruher Virtueller Katalog</a></li>
+				
+</ul>	
+</ul> 
+</div>
+
+<div id="opacnavbottom"></div>
+
+ </div>
+ </div>
+ 
+
+ 
+ <div class="span7">
+ 
+
+ 
+ <div id="news" class="newscontainer">
+ 
+ 
+ <div class="newsitem">
+ <a name="newsitem10"></a><h4 class="newsheader">IGP-Bücher kurzfristig aus dem Bestand genommen</h4>
+ <div class="newsbody"><p>Wie Sie vielleicht schon wissen, wird aktuell die IGP-Bibliothek in den Bestand der Hochschulbibliothek &uuml;berf&uuml;hrt. Um interen Arbeiten daran vornehmen zu k&ouml;nnen, mussten wir f&uuml;r eine kurze Dauer alle Exemplare der IGP-Bibliothek aus dem OPAC nehmen. Diejenigen, die aktuell IGP-B&uuml;cher ausgeliehen haben, werden gebeten, diese zur Erfassung zur&uuml;ck zu geben. Wir gehen davon aus, dass nach Beendigung der &Uuml;berf&uuml;hrung die IGP-B&uuml;cher ab April wieder ganz normal im OPAC zu finden sein werden.</p>
+<p>Vielen Dank f&uuml;r Ihre Kooperation und Verst&auml;ndnis!</p>
+<p>Ihr Bibliotheksteam.</p></div>
+ <div class="newsfooter">(veröffentlicht am 25.01.2017)</div>
+ </div>
+ 
+ </div>
+ <div id="rssnews-container">
+ 
+ <a href="http://hfph.bsz-bw.de/cgi-bin/koha/opac-news-rss.pl?branchcode="><img src="/opac-tmpl/bootstrap/images/feed-icon-16x16.png"></a>
+ RSS-Feed für  systemweite Bibliotheksnachrichten. </div>
+ 
+
+ 
+ <div id="daily-quote">
+ <h3>Zitat des Tages</h3>
+ <div>
+ <span id="daily-quote-text">Das Beginnen wird nicht belohnt, einzig und allein das Durchhalten.</span><span id="daily-quote-sep"> ~ </span><span id="daily-quote-source">Katharina von Siena (1347-1380)</span>
+ </div>
+ </div>
+ 
+
+ <div id="opacmainuserblock"><h2>Willkommen in der Bibliothek der Hochschule für Philosophie!</h2>
+
+<h2>Neuerwerbungen</h2>
+
+<div id="hrecent">
+
+    <div id="just_arrived">
+        <form name="searchform" method="get" action="/cgi-bin/koha/opac-search.pl">
+            <input type="hidden" name="sort_by" value="title_az">
+            <input type="hidden" name="do" value="OK">
+            <input type="hidden" name="idx" value="yr" />
+            <select name="q" id="format_new" onChange="this.form.submit()">
+                <option value="">-- Bitte auswählen --</option>
+                <option value="2016">2016</option>
+                <option value="2015">2015</option>
+                <option value="2014">2014</option>
+                <option value="2013">2013</option>
+            </select>
+        </form>
+    <p>Wählen Sie eine Gruppe, um Titel zu finden, die gerade neu in der Bibliothek eingetroffen sind.</p>
+    </div> </div>
+
+</div>
+ </div> <!-- / .span 7/9 -->
+
+ 
+ <div class="span3">
+ 
+ 
+ 
+ <div id="login">
+ <form action="/cgi-bin/koha/opac-user.pl" method="post" name="auth" id="auth">
+ <input type="hidden" name="koha_login_context" value="opac" />
+ <fieldset class="brief">
+ <legend>Benutzerkonto:</legend>
+ <label for="userid">Login:</label><input type="text" id="userid" name="userid" />
+ <label for="password">Passwort:</label><input type="password" id="password" name="password" />
+ <fieldset class="action">
+ <input value="Anmelden" class="btn" type="submit" />
+ </fieldset>
+ <div id="patronregistration"><p>Haben Sie noch kein Konto? <a href="/cgi-bin/koha/opac-memberentry.pl">Hier anmelden.</a></p></div>
+ </fieldset>
+ 
+ <div id="nologininstructions-main">
+ Bitte beachten Sie, dass Sie zum Einloggen in den OPAC ein eigenes Nutzerkonto der Bibliothek brauchen. Dies hat nichts mit Ihrem Moodle-Konto oder dem Login für die Webseite zu tun.
+ </div>
+ 
+ </form>
+ </div> <!-- /#login -->
+ 
+ 
+ 
+ 
+ 
+ </div> <!-- / .span3 -->
+ 
+
+ </div> <!-- /.container-fluid -->
+ </div> <!-- /.row-fluid -->
+</div> <!-- /.main -->
+
+
+ 
+ 
+
+ 
+ <div class="container-fluid">
+ <div class="row-fluid">
+ <div class="span12">
+ <div id="koha_url" class="clearfix noprint">
+ <p>Powered by  <a class="koha_url" href="http://koha-community.org">Koha</a>
+ </p>
+ </div>
+ </div> <!-- /.span12 -->
+ </div> <!-- /.row-fluid -->
+ </div> <!-- /.container-fluid -->
+ 
+
+</div> <!-- / #wrap in masthead.inc -->
+
+ 
+ 
+ 
+ <div id="changelanguage" class="navbar navbar-fixed-bottom navbar-static-bottom noprint">
+ <div class="navbar-inner">
+ <ul id="i18nMenu" class="nav">
+ <li><p class="lang navbar-text"><strong>Sprachen:&nbsp;</strong></p></li>
+ 
+ 
+ 
+ 
+ 
+ <li class="active"><p class="navbar-text">Deutsch</p></li>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <li><a href="/cgi-bin/koha/opac-changelanguage.pl?language=en">English</a></li>
+ 
+ 
+ 
+ 
+ 
+ </ul> <!-- / #i18menu -->
+ </div> <!-- / .navbar-inner -->
+ </div> <!-- / #changelanguage -->
+ 
+ 
+ 
+
+
+
+
+<!-- JavaScript includes -->
+<script type="text/javascript" src="/opac-tmpl/bootstrap/lib/jquery/jquery.js"></script>
+<script type="text/javascript" src="/opac-tmpl/bootstrap/lib/jquery/jquery-ui.js"></script>
+<script type="text/javascript">
+// Resolve name collision between jQuery UI and Twitter Bootstrap
+$.widget.bridge('uitooltip', $.ui.tooltip);
+</script>
+<script type="text/javascript" src="/opac-tmpl/bootstrap/lib/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/opac-tmpl/bootstrap/js/global.js"></script>
+<script type="text/javascript">
+    Modernizr.load([
+        // Test need for polyfill
+        {
+            test: window.matchMedia,
+            nope: "/opac-tmpl/bootstrap/lib/media.match.min.js"
+        },
+        // and then load enquire
+        "/opac-tmpl/bootstrap/lib/enquire.min.js",
+        "/opac-tmpl/bootstrap/js/script.js"
+    ]);
+
+    // Fix for datepicker in a modal
+    $.fn.modal.Constructor.prototype.enforceFocus = function () {};
+</script>
+
+
+<script type="text/javascript">
+    //<![CDATA[
+    var MSG_CONFIRM_AGAIN = _("Vorsicht: Dies kann nicht rückgängig gemacht werden. Bitte bestätigen Sie nochmals")
+    var MSG_DELETE_SEARCH_HISTORY = _("Sind Sie sicher, dass Sie Ihre Suchhistorie löschen möchten?");
+    var MSG_NO_SUGGESTION_SELECTED = _("Kein Anschaffungsvorschlag ausgewählt");
+    
+        var MSG_BASKET_EMPTY = _("Ihr Korb ist zur Zeit leer");
+        var MSG_RECORD_IN_BASKET = _("Dieser Titel ist bereits in Ihrem Korb");
+        var MSG_RECORD_ADDED = _("Dieser Titel wurde Ihrem Korb hinzugefügt");
+        var MSG_RECORD_REMOVED = _("Dieser Titel wurde aus Ihrem Korb gelöscht");
+        var MSG_NRECORDS_ADDED = _(" Titel zum Korb hinzugefügt");
+        var MSG_NRECORDS_IN_BASKET = _("bereits in Ihrem Korb");
+        var MSG_NO_RECORD_SELECTED = _("Kein Exemplar ausgewählt");
+        var MSG_NO_RECORD_ADDED = _("Es wurde kein Exemplar in den Korb gelegt.");
+        var MSG_CONFIRM_DEL_BASKET = _("Sind Sie sicher, dass Sie Ihren Korb leeren möchten?");
+        var MSG_CONFIRM_DEL_RECORDS = _("Sind Sie sicher, dass Sie die markierten Exemplare löschen möchten?");
+        var MSG_ITEM_IN_CART = _("In Ihrem Korb");
+        var MSG_IN_YOUR_CART = _("Titel in Ihrem Korb: ");
+        var MSG_ITEM_NOT_IN_CART = _("Meinem Korb hinzufügen");
+    
+    
+    
+    //]]>
+</script>
+
+
+ <script type="text/javascript" src="/opac-tmpl/bootstrap/js/basket.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="/opac-tmpl/bootstrap/lib/jquery/plugins/jquery.cookie.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    if($('#searchsubmit').length) {
+        $(document).on("click", '#searchsubmit', function(e) {
+            jQuery.removeCookie("form_serialized", { path: '/'});
+            jQuery.removeCookie("form_serialized_itype", { path: '/'});
+            jQuery.removeCookie("form_serialized_limits", { path: '/'});
+            jQuery.removeCookie("num_paragraph", { path: '/'});
+            jQuery.removeCookie("search_path_code", { path: '/'});
+        });
+    }
+});
+</script>
+
+
+ <script type="text/javascript">
+        //<![CDATA[
+        $(document).ready(function(){
+
+
+$("#reviewf p").append("Bitte beachten Sie, dass Ihr Kommentar/Ihre Rezension nach der Freischaltung durch die Bibliothek weltweit über den Katalog im Internet sichtbar ist und dass momentan nur Eintragungen von Lehrenden berücksichtigt werden");
+
+if ($('html').attr('lang')=='de-DE') {
+$("#advsearch #location").parent().after('<div class="span3"><div id="pubtype"><fieldset><legend>Publikationstyp:</legend><label for="language-limit">Publikationstyp: </label> <select name="limit" id="bib-level" class="subtype"><option value="" class="menuheader">Alle Publikationstypen</option><option value="bib-level:s">Zeitschrift/Sammelwerk</option><option value="bib-level:m">Monographie</option><option value="bib-level:a">Aufsatz</option></select></fieldset></div></div>');
+} else {
+$("#advsearch #location").parent().after('<div class="span3"><div id="pubtype"><fieldset><legend>Publication type:</legend><p><label for="language-limit">Publication type: </label> <select name="limit" id="bib-level" class="subtype"><option value="" class="menuheader">All publication types</option><option value="bib-level:m">Monographs</option><option value="bib-level:s">Serials</option><option value="bib-level:a">Analytics</option></select></fieldset></div></div>');
+}
+
+/* Deutsche Anpassungen */
+if ($('html').attr('lang')=='de-DE') {
+$("#opac-user-holds td.modify form button").html("<i class=\"icon-remove icon-white\"></i> Stornieren"); /* 17735 */
+}
+
+
+
+$("span.ppn span").html("BVB-ID: ");
+
+if (!($("#noitems").length)) {
+$("#opac-detail #holdings").append('<span><b>Bitte beachten Sie:</b> Bitte beachten Sie, dass externe Nutzer die Bücher nur in den Lesesaal ausleihen können. Bücher, die älter als 1851, können Sie mit Begründung Ihres Forschungsvorhabens unter altbestand@hfph.de bestellen. Danke!</span>');
+}
+$("#opac-user-views").prepend('<span><b>Bitte beachten Sie:</b> Magazinbestellungen finden Sie im Reiter "Vormerkungen". Bitte beachten Sie, dass externe Nutzer die Bücher nur in den Lesesaal ausleihen können. </span>');
+
+$(".placehold").after("<p>Bitte beachten Sie, dass externe Benutzer die Bücher nur in den Lesesaal ausleihen können.</p");
+if ($('html').attr('lang')=='de-DE') {
+$("#advsearch select[name='idx'] option[value='callnum,phr']").after("<option value=\"callnum,ext\">     Signatur, exakt</option>");
+} else {
+$("#advsearch select[name='idx'] option[value='callnum,phr']").after("<option value=\"callnum,ext\">      Callnumber, exact</option>");
+}
+
+/* Erweiterte Suche - Bibliothek */
+$("#advsearch #location label[for='branchloop']").hide();
+$("#advsearch #branchloop").hide();
+$("#advsearch #location legend:contains('Standort')").text('Verfügbarkeit');
+$("#advsearch #location legend:contains('Location')").text('Availability');
+
+$("#patronregistration p").html("<br>Sie haben noch keinen neuen Ausweis (Plastikkarte)? Dann können Sie sich hier vorläufig anmelden. <a href='/cgi-bin/koha/opac-memberentry.pl'> <b>Hier anmelden. </b></a>");
+
+$('#opac-main span.item-status:contains("Verfügbar")').html('Nicht ausleihbar');
+$('#opac-main span.item-status:contains("Available")').html('Not for loan');
+
+$("#opac-serials-issues p:contains('expired')").remove();
+$("#opac-serials-issues p:contains('abgelaufen')").remove();
+
+});
+
+ 
+        //]]>
+    </script>
+
+
+</body>
+</html>
+
+

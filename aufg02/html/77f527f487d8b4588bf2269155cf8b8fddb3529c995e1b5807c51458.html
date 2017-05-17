@@ -1,0 +1,20 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>NetStorage</TITLE>
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+</HEAD>
+<script type="text/javascript" LANGUAGE="javascript">
+	document.writeln('<frameset rows="80,*" border="0" framespacing="0" frameborder="no">')
+	document.writeln('<frame id="headerFrame" src="/NetStorage/headerframe.html" scrolling="no"/>')
+	if(location.search!=null||location.search.length<1)
+		p=location.search
+	else
+		p="?p=/oneNet/NetStorage/"
+	if(document.getElementById){
+		document.writeln('<frame src="/NetStorage/contentframe.html'+p+'"/>')
+	}else
+		document.writeln('<frame src="/oneNet/NetStorage"/>')
+	document.writeln('</frameset>')
+</script>
+</HTML>

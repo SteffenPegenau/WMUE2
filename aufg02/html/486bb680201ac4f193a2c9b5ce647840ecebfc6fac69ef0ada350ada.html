@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+  <!--[if IEMobile 7]><html class="no-js ie iem7" lang="de" dir="ltr"><![endif]-->
+  <!--[if lte IE 6]><html class="no-js ie lt-ie9 lt-ie8 lt-ie7" lang="de" dir="ltr"><![endif]-->
+  <!--[if (IE 7)&(!IEMobile)]><html class="no-js ie lt-ie9 lt-ie8" lang="de" dir="ltr"><![endif]-->
+  <!--[if IE 8]><html class="no-js ie lt-ie9" lang="de" dir="ltr"><![endif]-->
+  <!--[if (gte IE 9)|(gt IEMobile 7)]><html class="no-js ie" lang="de" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ og: http://ogp.me/ns# rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema#"><![endif]-->
+  <!--[if !IE]><!--><html class="no-js" lang="de" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ og: http://ogp.me/ns# rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema#"><!--<![endif]-->
+<head>
+  <meta charset="utf-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1026.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<link rel="profile" href="http://www.w3.org/1999/xhtml/vocab" />
+<meta http-equiv="cleartype" content="on" />
+<link rel="apple-touch-icon" href="https://www.stellenwerk-darmstadt.de/sites/all/themes/stellenwerk/apple-touch-icon-72x72.png" sizes="72x72" />
+<link rel="apple-touch-icon" href="https://www.stellenwerk-darmstadt.de/sites/all/themes/stellenwerk/apple-touch-icon-144x144.png" sizes="144x144" />
+<link rel="apple-touch-icon" href="https://www.stellenwerk-darmstadt.de/sites/all/themes/stellenwerk/apple-touch-icon-114x114.png" sizes="114x114" />
+<link rel="apple-touch-icon" href="https://www.stellenwerk-darmstadt.de/sites/all/themes/stellenwerk/apple-touch-icon.png" />
+<link href="/sites/all/themes/stellenwerk/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144" />
+<link href="/sites/all/themes/stellenwerk/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" />
+<link href="/sites/all/themes/stellenwerk/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" />
+<link rel="shortcut icon" href="https://www.stellenwerk-darmstadt.de/sites/all/themes/stellenwerk/favicon.ico" type="image/vnd.microsoft.icon" />
+<link href="/sites/all/themes/stellenwerk/apple-touch-icon.png" rel="apple-touch-icon" />
+<meta name="generator" content="Drupal 7 (http://drupal.org)" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="canonical" href="https://www.stellenwerk-darmstadt.de/jobboerse/studentenjobs-aushilfen-mw-fuer-das-ferienprogramm-luftikusse-lufthansa-group-moerfelden-walldorf-da-2017-05-05-116464" />
+<link rel="shortlink" href="https://www.stellenwerk-darmstadt.de/node/116464" />
+  <title>Aushilfen (m/w) für das Ferienprogramm Luftikusse - Lufthansa Group | Stellenwerk Darmstadt</title>
+  <link type="text/css" rel="stylesheet" href="https://www.stellenwerk-darmstadt.de/sites/default/files/css/css_ZEkN218Tu2-AYiwbyubPRxmb7sEE-3KJkfWLOukXNOI.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.stellenwerk-darmstadt.de/sites/default/files/css/css_Pmoy7agftzDN9nfPWReDvXkNejICi1sDPmeG8kj12RI.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.stellenwerk-darmstadt.de/sites/default/files/css/css_7p7646uvVUOpEE1YTi4R5qq4pKu06_5kTy-pcINN9B0.css" media="all" />
+
+<!--[if lte IE 8]>
+<link type="text/css" rel="stylesheet" href="https://www.stellenwerk-darmstadt.de/sites/default/files/css/css_sXRz22dEDWhFf7hPnJ3dZpGy1eOGFt8HCNf-rsN6mwg.css" media="all" />
+<![endif]-->
+  <script src="https://www.stellenwerk-darmstadt.de/sites/default/files/js/js_jUGMAWXyVvwzUHrnLYAOC20Z5Zo2RFUW2xbLBM2kqrc.js"></script>
+<script src="https://www.stellenwerk-darmstadt.de/sites/default/files/js/js_Xk8TsyNfILciPNmQPp9sl88cjH71DQWyeHE0MB62KO4.js"></script>
+<script src="https://www.stellenwerk-darmstadt.de/sites/default/files/js/js_C69OrUD_m1kwWBar84H2GARLnQNV5bwRCnEeMNBrzdw.js"></script>
+<script src="https://www.stellenwerk-darmstadt.de/sites/default/files/js/js_1ml697PAIICkca2GG-aZRO-AfXWvSm_50Bm_6m-r8zg.js"></script>
+<script src="https://www.stellenwerk-darmstadt.de/sites/default/files/js/js_i_yDiwy5rn0VW5gLmtfyN44mCyfxuh741l_GoU-XuNE.js"></script>
+<script src="https://www.stellenwerk-darmstadt.de/sites/default/files/js/js_SqpL1-MJqgXQtcrq1ZdUCmJN4Xna3RMXHdCgjLRFzCs.js"></script>
+<script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"stellenwerk","theme_token":"hy_yULq0Xtg_pUXC1_2_P3hlbnwOzdX42gE5dqKYu-s","jquery_version":"1.10","js":{"sites\/all\/modules\/contrib\/jquery_update\/replace\/jquery\/1.10\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/themes\/omega\/omega\/omega\/js\/no-js.js":1,"misc\/ajax.js":1,"sites\/all\/modules\/contrib\/jquery_update\/js\/jquery_update.js":1,"sites\/all\/modules\/custom\/sw_varifast\/varifast.js":1,"public:\/\/languages\/de_FMspZL-bksPiCNqCBE5s58GPfYZXVmSifIybrnXGWnU.js":1,"misc\/jquery.form.js":1,"misc\/progress.js":1,"sites\/all\/modules\/custom\/sw_avonis_phone\/js\/intlTelInput.js":1,"sites\/all\/modules\/custom\/sw_avonis_phone\/js\/sw_avonis_phone.js":1,"sites\/all\/modules\/contrib\/field_group\/field_group.js":1,"sites\/all\/themes\/stellenwerk\/js\/jquery.li-scroller.1.0.js":1,"sites\/all\/themes\/stellenwerk\/js\/jquery.bxslider.min.js":1,"sites\/all\/themes\/stellenwerk\/js\/jquery-ui.min.js":1,"sites\/all\/themes\/stellenwerk\/js\/hoverIntent.js":1,"sites\/all\/themes\/stellenwerk\/js\/superfish.js":1,"sites\/all\/themes\/stellenwerk\/js\/bootstrap-collapse.js":1,"sites\/all\/themes\/stellenwerk\/js\/stellenwerk.js":1,"sites\/all\/themes\/stellenwerk\/js\/css_browser_selector.js":1},"css":{"sites\/all\/themes\/omega\/omega\/omega\/css\/modules\/system\/system.base.css":1,"sites\/all\/themes\/omega\/omega\/omega\/css\/modules\/system\/system.menus.theme.css":1,"sites\/all\/themes\/omega\/omega\/omega\/css\/modules\/system\/system.messages.theme.css":1,"sites\/all\/themes\/omega\/omega\/omega\/css\/modules\/system\/system.theme.css":1,"sites\/all\/modules\/patched\/date\/date_api\/date.css":1,"sites\/all\/modules\/patched\/date\/date_popup\/themes\/datepicker.1.7.css":1,"sites\/all\/themes\/omega\/omega\/omega\/css\/modules\/comment\/comment.theme.css":1,"sites\/all\/modules\/contrib\/domain\/domain_nav\/domain_nav.css":1,"modules\/node\/node.css":1,"sites\/all\/themes\/omega\/omega\/omega\/css\/modules\/field\/field.theme.css":1,"sites\/all\/modules\/contrib\/workflow\/workflow_admin_ui\/workflow_admin_ui.css":1,"sites\/all\/themes\/omega\/omega\/omega\/css\/modules\/search\/search.theme.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/themes\/omega\/omega\/omega\/css\/modules\/user\/user.base.css":1,"sites\/all\/themes\/omega\/omega\/omega\/css\/modules\/user\/user.theme.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/contrib\/print\/print_ui\/css\/print_ui.theme.css":1,"sites\/all\/themes\/stellenwerk\/ds_layouts\/listing\/listing.css":1,"sites\/all\/modules\/contrib\/addressfield\/addressfield.css":1,"all:0":1,"sites\/all\/themes\/stellenwerk\/css\/stellenwerk.normalize.css":1,"sites\/all\/themes\/stellenwerk\/css\/stellenwerk.hacks.css":1,"sites\/all\/themes\/stellenwerk\/css\/stellenwerk-safari.hacks.css":1,"sites\/all\/themes\/stellenwerk\/css\/styles\/stellenwerk-darmstadt.styles.css":1,"all:1":1,"sites\/all\/themes\/stellenwerk\/css\/no-query\/stellenwerk-darmstadt.no-query.css":1}},"field_group":{"table":"full","html-element":"full","div":"full"},"better_exposed_filters":{"views":{"frontend_stellenwerk_detail_page_company_block":{"displays":{"block":{"filters":[]}}},"frontend_stellenwerk_detail_page_jobs_block":{"displays":{"suggested_jobs":{"filters":[]}}}}}});</script>
+</head>
+<body class="html not-front not-logged-in page-node page-node- page-node-116464 node-type-job-b2b domain-darmstadt section-jobboerse">
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-TV6QQF" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script type="text/javascript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0];var j=d.createElement(s);var dl=l!='dataLayer'?'&l='+l:'';j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;j.type='text/javascript';j.async=true;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TV6QQF');</script>
+<!-- End Google Tag Manager -->
+  <a href="#main-content" class="element-invisible element-focusable">Direkt zum Inhalt</a>
+    <div class="l-page detail-page">
+
+    <header class="l-header" role="banner">
+
+                    <div class="l-topbar">
+                <div class="container">
+                      <div class="l-region l-region--topbar">
+    <div id="block-ad-manager-darmstadt-b2c-superbanner-728-90" class="block block--ad-manager block--ad-manager-darmstadt-b2c-superbanner-728-90">
+        <div class="block__content">
+    <div id="ad-manager-ad-darmstadt-b2c-superbanner-728-90-0" class="ad-manager-ad superbanner varifast"><!-- BEGIN ADITIONSSLTAG Website-Tag --><script type="text/javascript" src="https://ad1.adfarm1.adition.com/js?wp_id=121145 "></script><!-- END ADITIONSSLTAG--></div>  </div>
+</div>
+  </div>
+                </div>
+            </div>
+        
+        <div class="l-headermenu">
+            <div class="container">
+                  <div class="l-region l-region--header">
+    <nav id="block-system-user-menu" role="navigation" class="block block--system block--menu block--system-user-menu">
+      
+  <ul class="menu"><li class="first last leaf"><a href="/user/login" title="">Kunden-Login</a></li>
+</ul></nav>
+  </div>
+            </div>
+        </div>
+
+        <div class="l-branding">
+            <div class="container">
+                <div class="l-branding-content">
+                       <a href="/" title="Startseite" rel="home" class="site-branding__logo"><img src="https://www.stellenwerk-darmstadt.de/sites/all/themes/stellenwerk/images/logo_darmstadt.png" alt="Startseite" /></a>
+
+    <div class="l-logos">
+      <a href="http://www.tu-darmstadt.de/" title="Startseite" rel="home"><img src="/sites/all/themes/stellenwerk/images_mails/logos/logo_academy_one/darmstadt.png" alt="Startseite" /></a>
+              <a href="http://www.studentenwerkdarmstadt.de/" title="Startseite" rel="home"><img src="/sites/all/themes/stellenwerk/images_mails/logos/logo_academy_second/darmstadt.png" alt="Startseite" /></a>
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="l-navigation">
+            <div class="container">
+                  <div class="l-region l-region--navigation">
+    <nav id="block-menu-block-2" role="navigation" class="block block--menu-block block--menu-block-2">
+      
+  <div class="menu-block-wrapper menu-block-2 menu-name-main-menu parent-mlid-0 menu-level-1">
+  <ul class="menu"><li class="first expanded menu-mlid-1447"><a href="/jobboerse" title="">Jobbörse</a><ul class="menu"><li class="first leaf menu-mlid-2216"><a href="/jobboerse/unternehmen/studentenjobs" title="">Studentenjobs</a></li>
+<li class="leaf menu-mlid-2217"><a href="/jobboerse/unternehmen/praktika" title="">Praktika</a></li>
+<li class="leaf menu-mlid-2219"><a href="/jobboerse/unternehmen/absolventenjobs" title="">Absolventenjobs</a></li>
+<li class="leaf menu-mlid-2220"><a href="/jobboerse/privat" title="">Private Nebenjobs</a></li>
+<li class="last leaf menu-mlid-2228"><a href="/jobboerse/technische-universitaet-darmstadt" title="">TU Darmstadt</a></li>
+</ul></li>
+<li class="leaf menu-mlid-860"><a href="/firmenprofile">Firmenprofile</a></li>
+<li class="leaf menu-mlid-2261"><a href="/career-service">Career Service</a></li>
+<li class="leaf menu-mlid-2262"><a href="/alumni">Alumni</a></li>
+<li class="expanded menu-mlid-47499"><a href="/fuer-arbeitgeber">Für Arbeitgeber</a><ul class="menu"><li class="first leaf menu-mlid-2198"><a href="/fuer-arbeitgeber/stellenanzeigen" title="">Stellenanzeigen</a></li>
+<li class="leaf menu-mlid-19046"><a href="/firmenprofil-anlegen" title="">Firmenprofil anlegen</a></li>
+<li class="leaf menu-mlid-6457"><a href="/fuer-arbeitgeber/recruiting-events" title="">Recruiting Events</a></li>
+<li class="last leaf menu-mlid-47503"><a href="/fuer-arbeitgeber/employer-branding" title="">Employer Branding</a></li>
+</ul></li>
+<li class="expanded menu-mlid-858"><a href="/info-kontakt">Info und Kontakt</a><ul class="menu"><li class="first leaf menu-mlid-7961"><a href="/info-kontakt/faq">FAQ</a></li>
+<li class="leaf menu-mlid-859"><a href="/info-kontakt/agb">AGB</a></li>
+<li class="leaf menu-mlid-884"><a href="/info-kontakt/impressum">Impressum</a></li>
+<li class="last leaf menu-mlid-5902"><a href="/info-kontakt/datenschutz">Datenschutz</a></li>
+</ul></li>
+<li class="last leaf menu-mlid-886"><a href="/personalsuche" title="">Job anbieten</a></li>
+</ul></div>
+</nav>
+  </div>
+            </div>
+        </div>
+
+        
+    </header>
+
+    <div class="l-wrapper">
+        <div class="container">
+            <div class="l-left">
+
+                <div class="l-main" role="main">
+                                            <div class="l-breadcrumb">
+                            <ul class="breadcrumb"><li><a href="/">Startseite</a></li><li><a href="/jobboerse">Jobbörse</a></li><li><a href="/jobboerse?type=1">Unternehmen</a></li><li><a href="/jobboerse?type=1&amp;tid=98">Studentenjobs</a></li><li>Aushilfen (m/w) für das Ferienprogramm Luftikusse - Lufthansa Group</li></ul>                        </div>
+                    
+                    <a id="main-content"></a>
+
+                    
+                    
+                    
+                    
+                    <div class="l-content-wrapper">
+                        <div id="content" class="l-content">
+                            <div  about="/jobboerse/studentenjobs-aushilfen-mw-fuer-das-ferienprogramm-luftikusse-lufthansa-group-moerfelden-walldorf-da-2017-05-05-116464" typeof="sioc:Item foaf:Document" class="ds-1col node node--job-b2b view-mode-full node--full node--job-b2b--full clearfix">
+
+  
+  <div class="group-top field-group-fieldset"><div class="field field--name-ds-field-company-profile-name field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even"><div class="field field--name-field-job-company-name field--type-text field--label-hidden"><div class="field-items"><div class="field-item even">medical airport service GmbH</div></div></div></div></div></div><div class="field field--name-title-field field--type-text field--label-hidden"><div class="field-items"><div class="field-item even"><h1>Aushilfen (m/w) für das Ferienprogramm Luftikusse - Lufthansa Group</h1>
+</div></div></div></div><div class="group-middle field-group-fieldset"><div id="" class="field-group-table group_tabelle group-tabelle field-group-table group-table-header">
+<table class="field-group-format group_tabelle">
+<tbody>
+ <tr class=""><th class="field-label">Online seit</th><td class="field-content"><div class="field field--name-field-job-date-published field--type-datestamp field--label-hidden"><div class="field-items"><div class="field-item even"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2017-05-08T09:16:05+02:00">08.05.2017 - 09:16</span></div></div></div></td> </tr>
+ <tr class=""><th class="field-label">Job-ID</th><td class="field-content"><div class="field field--name-field-job-id field--type-text field--label-hidden"><div class="field-items"><div class="field-item even">DA-2017-05-05-116464</div></div></div></td> </tr>
+ <tr class=""><th class="field-label">Jobtyp</th><td class="field-content"><div class="field field--name-field-job-taxonomie-categories field--type-taxonomy-term-reference field--label-hidden"><div class="field-items"><div class="field-item even">Studentenjobs</div></div></div></td> </tr>
+</tbody>
+</table>
+
+</div><!--
+THIS FILE IS NOT USED AND IS HERE AS A STARTING POINT FOR CUSTOMIZATION ONLY.
+See http://api.drupal.org/api/function/theme_field/7 for details.
+After copying this file to your theme's folder and customizing it, remove this
+HTML comment.
+-->
+<div class="field field--name-field-job-description field--type-text-long field--label-above">
+            <div class="field-label">
+            <h2>Job-Beschreibung</h2>
+        </div>
+        <div class="field-items">
+                    <div
+                class="field-item even"><p>Sie sind auf der Suche nach einer innovativen und abwechslungsreichen Nebentätigkeit? Dann haben wir, die medical airport service GmbH, die passende Tätigkeit in unserem FLUGGI-Land für Sie! Diese neuartige und zukunftsorientierte Art der Kinderbetreuung wurde am 01. September 2002 ins Leben gerufen. Seitdem betreuen wir an drei Standorten im Rhein-Main-Gebiet Kinder im Alter von 8 Wochen bis zum 12. Lebensjahr täglich von 06:00- 22:00 Uhr in Notfallsituationen. Solche Notsituationen entstehen, wenn beispielsweise die herkömmliche Einrichtung geschlossen, oder die Tagesmutter ausgefallen ist. Durch dieses kurzfristige und kurzzeitige Betreuungsangebot ist es den Familien dann möglich, Familie und Beruf zu vereinen. Von unserem erfolgreichen Konzept und umfangreichen Angebot profitieren bereits zahlreiche namhafte Unternehmen wie beispielsweise die Fraport AG, Lufthansa Group, oder die TU-Darmstadt. Und die Nachfrage und der Bedarf wachsen ständig weiter. Aus diesem Grund suchen wir Persönlichkeiten, die mit uns zusammen für die Kinder und deren Eltern "aus der Not ein Abenteuer" machen.</p>
+<p>Wir suchen ab 01.07.2017 für die Gestaltung eines Ferienprogramms: Aushilfen (m/w) in der Kinderbetreuung</p>
+<p>Ihre Aufgaben:</p>
+<ul>
+<li>Betreuung und Belustigung von Kindern im Alter von 6 bis 15 Jahren</li>
+<li>Mindestens 2 bis maximal 3 Wochen Mitarbeit bei der Durchführung des Ferienprogramms</li>
+<li>Im Zeitraum: 03.07.-13.08.2017 (Wir suchen vor allem noch Unterstützung im Zeitraum vom 03. bis 21.07.2017)</li>
+<li>Montag bis Freitag; 08.00- 18.00 Uhr</li>
+<li>Blick hinter die Kulissen der Lufthansa AG</li>
+<li>Abwechslungsreiches Programm und Freiraum zum Mitgestalten</li>
+</ul>
+</div>
+            </div>
+</div><!--
+THIS FILE IS NOT USED AND IS HERE AS A STARTING POINT FOR CUSTOMIZATION ONLY.
+See http://api.drupal.org/api/function/theme_field/7 for details.
+After copying this file to your theme's folder and customizing it, remove this
+HTML comment.
+-->
+<div class="field field--name-field-job-requirements field--type-text-long field--label-above">
+            <div class="field-label">
+            <h2>Anforderungsprofil</h2>
+        </div>
+        <div class="field-items">
+                    <div
+                class="field-item even"><ul>
+<li>Spaß und Interesse an der Arbeit mit Kindern</li>
+<li>Pädagogischer Bildungshintergrund wünschenswert (z.B. Vereinstätigkeit)</li>
+<li>Engagement und Belastbarkeit, hohes Maß an Einfühlsamkeit und sozialer Kompetenz</li>
+<li>Selbständiges und sicheres Arbeiten</li>
+<li>Flexibilität und Führerschein vorhanden</li>
+</ul>
+<p>Darüber hinaus suchen wir ganzjährige Unterstützung in der Kinderbetreuung an unseren Standorten Frankfurt-Sindlingen, Wiesbaden und Darmstadt. Weitere Informationen finden Sie unter <a href="http://www.medical-airport-service.de/" rel="nofollow"><u>www.medical-airport-service.de</u></a>.</p>
+<p>Wenn Sie Interesse an einer abwechslungsreichen Tätigkeit in einem motivierten, dynamischen Team haben, dann freuen wir uns auf Ihre vollständigen Bewerbungsunterlagen, bevorzugt per E-Mail an: <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#98;&#101;&#119;&#101;&#114;&#98;&#117;&#110;&#103;&#64;&#109;&#101;&#100;&#105;&#99;&#97;&#108;&#45;&#103;&#109;&#98;&#104;&#46;&#100;&#101;" rel="nofollow"><u>&#98;&#101;&#119;&#101;&#114;&#98;&#117;&#110;&#103;&#64;&#109;&#101;&#100;&#105;&#99;&#97;&#108;&#45;&#103;&#109;&#98;&#104;&#46;&#100;&#101;</u></a> oder per Post.</p>
+</div>
+            </div>
+</div><!--
+THIS FILE IS NOT USED AND IS HERE AS A STARTING POINT FOR CUSTOMIZATION ONLY.
+See http://api.drupal.org/api/function/theme_field/7 for details.
+After copying this file to your theme's folder and customizing it, remove this
+HTML comment.
+-->
+<div class="field field--name-field-job-employment-type field--type-list-text field--label-above">
+            <div class="field-label">
+            <h2>Art der Beschäftigung</h2>
+        </div>
+        <div class="field-items">
+                    <div
+                class="field-item even">Werkstudent(in)</div>
+            </div>
+</div><div class="group-firmen-und-kontaktdaten-t field-group-html-element"><h2><span>Firmen- und Kontaktdaten</span></h2><div id="" class="field-group-table group_firmen_und_kontaktdaten group-firmen-und-kontaktdaten field-group-table">
+<table class="field-group-format group_firmen_und_kontaktdaten">
+<tbody>
+ <tr class=""><th class="field-label">Firmenname</th><td class="field-content"><div class="field field--name-ds-field-company-profile-name-du field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even"><div class="field field--name-field-job-company-name field--type-text field--label-hidden"><div class="field-items"><div class="field-item even">medical airport service GmbH</div></div></div></div></div></div></td> </tr>
+ <tr class=""><th class="field-label">Ansprechpartner</th><td class="field-content"><div class="field field--name-ds-field-ansprechpartner field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even">Frau Linda Böhnke</div></div></div></td> </tr>
+ <tr class=""><th class="field-label">Einsatzort</th><td class="field-content"><div class="field field--name-field-job-location field--type-addressfield field--label-hidden"><div class="field-items"><div class="field-item even"><div class="addressfield-container-inline locality-block country-DE"><span class="postal-code">64546</span> <span class="locality">Mörfelden-Walldorf</span></div><span class="country">Deutschland</span></div></div></div></td> </tr>
+ <tr class=""><th class="field-label">Telefon</th><td class="field-content"><div class="field field--name-field-job-contact-phone field--type-sw-avonis-phone field--label-hidden"><div class="field-items"><div class="field-item even">+49 6105 3413210</div></div></div></td> </tr>
+ <tr class=""><th class="field-label">E-Mail</th><td class="field-content"><div class="field field--name-field-job-contact-mail field--type-email field--label-hidden"><div class="field-items"><div class="field-item even">  <span id="7fcabfe4911afec8b5b8fd80ef54fc7b1cfad1d3"></span>
+<script type="text/javascript"> <!--
+  document.getElementById('7fcabfe4911afec8b5b8fd80ef54fc7b1cfad1d3').innerHTML = '<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#98;&#101;&#119;&#101;&#114;&#98;&#117;&#110;&#103;&#64;&#109;&#101;&#100;&#105;&#99;&#97;&#108;&#45;&#103;&#109;&#98;&#104;&#46;&#100;&#101;">&#98;&#101;&#119;&#101;&#114;&#98;&#117;&#110;&#103;&#64;&#109;&#101;&#100;&#105;&#99;&#97;&#108;&#45;&#103;&#109;&#98;&#104;&#46;&#100;&#101;</a>';
+// --> </script></div></div></div></td> </tr>
+ <tr class=""><th class="field-label">Webseite</th><td class="field-content"><div class="field field--name-field-job-contact-website field--type-link-field field--label-hidden"><div class="field-items"><div class="field-item even"><a href="http://www.medical-airport-service.de" target="_blank" rel="nofollow">http://www.medical-airport-service.de</a></div></div></div></td> </tr>
+</tbody>
+</table>
+
+</div></div><div class="group-weitere-informaionen-t field-group-html-element"><h2><span>Weitere Informationen</span></h2><div id="" class="field-group-table group_weitere_informaionen group-weitere-informaionen field-group-fieldset">
+<table class="field-group-format group_weitere_informaionen">
+<tbody>
+ <tr class=""><th class="field-label">Zeitraum der Beschäftigung</th><td class="field-content"><div class="field field--name-zeitraum-der-besch-ftigung field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even">Wir suchen vor allem noch Unterstützung im Zeitraum vom 03. bis 21.07.2017</div></div></div></td> </tr>
+</tbody>
+</table>
+
+</div></div></div><div class="field field--name-ds-field-search-link field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even"><a href="/jobboerse"><i class="fa fa-chevron-circle-left"></i> zur Suche</a></div></div></div></div>
+
+                        </div>
+
+                                                    <!-- Sidebar Right Section -->
+                            <div class="l-sidebar-right">
+                                  <aside class="l-region l-region--sidebar-right">
+    <div id="block-views-6131b98ea19f5366b711ab1b7b9e07fb" class="block block--views block--views-6131b98ea19f5366b711ab1b7b9e07fb block-company-detail-page">
+        <div class="block__content">
+    <div class="view view-frontend-stellenwerk-detail-page-company-block view-id-frontend_stellenwerk_detail_page_company_block view-display-id-block view-dom-id-fa666e07932bf31124700c843d7d34b5">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+    <div  about="/jobboerse/studentenjobs-aushilfen-mw-fuer-das-ferienprogramm-luftikusse-lufthansa-group-moerfelden-walldorf-da-2017-05-05-116464" typeof="sioc:Item foaf:Document" class="ds-1col node node--job-b2b view-mode-short node--short node--job-b2b--short clearfix">
+
+  
+  <div class="field field--name-ds-field-company-profile-logo-sh field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even"><!--
+THIS FILE IS NOT USED AND IS HERE AS A STARTING POINT FOR CUSTOMIZATION ONLY.
+See http://api.drupal.org/api/function/theme_field/7 for details.
+After copying this file to your theme's folder and customizing it, remove this
+HTML comment.
+-->
+<div class="field field--name-field-company-logo field--type-imagefield-crop field--label-hidden">
+        <div class="field-items">
+                                    <div
+                    class="field-item even"><img typeof="foaf:Image" src="https://www.stellenwerk-darmstadt.de/sites/default/files/styles/detail_page_company_logo/public/default_images/default-listing-logo_1.jpg?itok=r-ve6V7l" width="168" height="70" alt="" /></div>
+                        </div>
+</div></div></div></div><div class="field field--name-ds-field-company-profile-name field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even"><div class="field field--name-field-job-company-name field--type-text field--label-hidden"><div class="field-items"><div class="field-item even">medical airport service GmbH</div></div></div></div></div></div><div id="" class="field-group-table group_tabelle group-tabelle field-group-table">
+<table class="field-group-format group_tabelle">
+<tbody>
+ <tr class=""><th class="field-label">Ansprechpartner</th><td class="field-content"><div class="field field--name-ds-field-ansprechpartner field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even">Frau Linda Böhnke</div></div></div></td> </tr>
+ <tr class=""><th class="field-label">Einsatzort</th><td class="field-content"><div class="field field--name-field-job-location field--type-addressfield field--label-hidden"><div class="field-items"><div class="field-item even"><div class="addressfield-container-inline locality-block country-DE"><span class="postal-code">64546</span> <span class="locality">Mörfelden-Walldorf</span></div><span class="country">Deutschland</span></div></div></div></td> </tr>
+ <tr class=""><th class="field-label">Telefon</th><td class="field-content"><div class="field field--name-field-job-contact-phone field--type-sw-avonis-phone field--label-hidden"><div class="field-items"><div class="field-item even">+49 6105 3413210</div></div></div></td> </tr>
+ <tr class=""><th class="field-label">E-Mail</th><td class="field-content"><div class="field field--name-field-job-contact-mail field--type-email field--label-hidden"><div class="field-items"><div class="field-item even">  <span id="aa1bff0c71c5371ab7f3715a6ccef62a761e97d8"></span>
+<script type="text/javascript"> <!--
+  document.getElementById('aa1bff0c71c5371ab7f3715a6ccef62a761e97d8').innerHTML = '<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#98;&#101;&#119;&#101;&#114;&#98;&#117;&#110;&#103;&#64;&#109;&#101;&#100;&#105;&#99;&#97;&#108;&#45;&#103;&#109;&#98;&#104;&#46;&#100;&#101;">&#98;&#101;&#119;&#101;&#114;&#98;&#117;&#110;&#103;&#64;&#109;&#101;&#100;&#105;&#99;&#97;&#108;&#45;&#103;&#109;&#98;&#104;&#46;&#100;&#101;</a>';
+// --> </script></div></div></div></td> </tr>
+ <tr class=""><th class="field-label">Webseite</th><td class="field-content"><div class="field field--name-field-job-contact-website field--type-link-field field--label-hidden"><div class="field-items"><div class="field-item even"><a href="http://www.medical-airport-service.de" target="_blank" rel="nofollow">http://www.medical-airport-service.de</a></div></div></div></td> </tr>
+</tbody>
+</table>
+
+</div></div>
+
+  </div>
+    </div>
+  
+  
+  
+  
+      <div class="view-footer">
+      <hr><a href="mailto:?subject=Stellenwerk Jobempfehlung: Aushilfen (m/w) für das Ferienprogramm Luftikusse - Lufthansa Group&body=Hallo,%0D%0Aich habe ein spannendes Stellenangebot auf Stellenwerk Darmstadt gefunden und an dich weitergeleitet.%0D%0A%0D%0AAushilfen (m/w) für das Ferienprogramm Luftikusse - Lufthansa Group%0D%0Ahttps://www.stellenwerk-darmstadt.de/jobboerse/studentenjobs-aushilfen-mw-fuer-das-ferienprogramm-luftikusse-lufthansa-group-moerfelden-walldorf-da-2017-05-05-116464%0D%0A%0D%0ADu willst lieber selbst nach Jobs suchen? Dann starte gleich auf https://www.stellenwerk-darmstadt.de/.%0D%0ADort findest du täglich neue Studentenjobs, Trainee- und Einsteigerpositionen und eine Vielzahl an Praktika-Stellen.%0D%0A%0D%0AViel Erfolg bei der Jobsuche wünscht dir dein Stellenwerk Darmstadt-Team">Weiterleiten</a><a id="printpdf" href="/pdf/116464" target="_blank" >PDF Download</a><hr>    </div>
+  
+  
+</div>  </div>
+</div>
+  </aside>
+                            </div>
+                            <!-- END Sidebar Right Section -->
+                                            </div>
+                    <div class="clear"></div>
+                                            <!-- Content Footer Section -->
+                        <div class="l-content-footer">
+                              <div class="l-region l-region--content-footer">
+    <div id="block-views-16bff1150690d062bc5926835b1c8be3" class="block block--views block--views-16bff1150690d062bc5926835b1c8be3">
+        <h2 class="block__title">Diese Angebote könnten Sie auch interessieren</h2>
+      <div class="block__content">
+    <div class="view view-frontend-stellenwerk-detail-page-jobs-block view-id-frontend_stellenwerk_detail_page_jobs_block view-display-id-suggested_jobs view-dom-id-84b92b8b5eacce09da47bc338d2ceba2">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first">
+    <div  about="/jobboerse/studentenjobs-uebungsleiter-mw-fuer-schwimmschule-pfungstadt-da-2017-05-15-117946" typeof="sioc:Item foaf:Document" class="ds-3col-listing node node--job-b2b view-mode-listing node--listing node--job-b2b--listing clearfix">
+
+  
+  <div class="group-left">
+    <div class="field field--name-ds-field-company-profile-logo-li field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even"><!--
+THIS FILE IS NOT USED AND IS HERE AS A STARTING POINT FOR CUSTOMIZATION ONLY.
+See http://api.drupal.org/api/function/theme_field/7 for details.
+After copying this file to your theme's folder and customizing it, remove this
+HTML comment.
+-->
+<div class="field field--name-field-company-logo field--type-imagefield-crop field--label-hidden">
+        <div class="field-items">
+                                    <div
+                    class="field-item even"><img typeof="foaf:Image" src="https://www.stellenwerk-darmstadt.de/sites/default/files/styles/listing_logo/public/default_images/default-listing-logo_1.jpg?itok=civnOgrn" width="168" height="70" alt="" /></div>
+                        </div>
+</div></div></div></div>  </div>
+
+  <div class="group-middle">
+    <div class="field field--name-title-field field--type-text field--label-hidden"><div class="field-items"><div class="field-item even"><a href="/jobboerse/studentenjobs-uebungsleiter-mw-fuer-schwimmschule-pfungstadt-da-2017-05-15-117946">Übungsleiter (m/w) für Schwimmschule </a></div></div></div><div class="field field--name-ds-field-company-profile-name field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even"><div class="field field--name-field-job-company-name field--type-text field--label-hidden"><div class="field-items"><div class="field-item even">Schwimmschule Swim Active</div></div></div></div></div></div>  </div>
+
+  <div class="group-right">
+    <div class="field field--name-ds-field-online-since field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even">online seit: heute</div></div></div>  </div>
+
+</div>
+
+  </div>
+  <div class="views-row views-row-2 views-row-even">
+    <div  about="/jobboerse/studentenjobs-probanden-mit-akne-gesucht-darmstadt-da-2017-05-15-117951" typeof="sioc:Item foaf:Document" class="ds-3col-listing node node--job-b2b view-mode-listing node--listing node--job-b2b--listing clearfix">
+
+  
+  <div class="group-left">
+    <div class="field field--name-ds-field-company-profile-logo-li field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even"><!--
+THIS FILE IS NOT USED AND IS HERE AS A STARTING POINT FOR CUSTOMIZATION ONLY.
+See http://api.drupal.org/api/function/theme_field/7 for details.
+After copying this file to your theme's folder and customizing it, remove this
+HTML comment.
+-->
+<div class="field field--name-field-company-logo field--type-imagefield-crop field--label-hidden">
+        <div class="field-items">
+                                    <div
+                    class="field-item even"><img typeof="foaf:Image" src="https://www.stellenwerk-darmstadt.de/sites/default/files/styles/listing_logo/public/default_images/default-listing-logo_1.jpg?itok=civnOgrn" width="168" height="70" alt="" /></div>
+                        </div>
+</div></div></div></div>  </div>
+
+  <div class="group-middle">
+    <div class="field field--name-title-field field--type-text field--label-hidden"><div class="field-items"><div class="field-item even"><a href="/jobboerse/studentenjobs-probanden-mit-akne-gesucht-darmstadt-da-2017-05-15-117951">Probanden mit Akne gesucht</a></div></div></div><div class="field field--name-ds-field-company-profile-name field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even"><div class="field field--name-field-job-company-name field--type-text field--label-hidden"><div class="field-items"><div class="field-item even">Rosenpark Research</div></div></div></div></div></div>  </div>
+
+  <div class="group-right">
+    <div class="field field--name-ds-field-online-since field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even">online seit: heute</div></div></div>  </div>
+
+</div>
+
+  </div>
+  <div class="views-row views-row-3 views-row-odd">
+    <div  about="/jobboerse/studentenjobs-digital-analyst-studentische-aushilfe-mw-frankfurt-sw-2017-05-15-117857" typeof="sioc:Item foaf:Document" class="ds-3col-listing node node--job-b2b view-mode-listing node--listing node--job-b2b--listing clearfix">
+
+  
+  <div class="group-left">
+    <div class="field field--name-ds-field-company-profile-logo-li field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even"><!--
+THIS FILE IS NOT USED AND IS HERE AS A STARTING POINT FOR CUSTOMIZATION ONLY.
+See http://api.drupal.org/api/function/theme_field/7 for details.
+After copying this file to your theme's folder and customizing it, remove this
+HTML comment.
+-->
+<div class="field field--name-field-company-logo field--type-imagefield-crop field--label-hidden">
+        <div class="field-items">
+                                    <div
+                    class="field-item even"><img typeof="foaf:Image" src="https://www.stellenwerk-darmstadt.de/sites/default/files/styles/listing_logo/public/default_images/default-listing-logo_1.jpg?itok=civnOgrn" width="168" height="70" alt="" /></div>
+                        </div>
+</div></div></div></div>  </div>
+
+  <div class="group-middle">
+    <div class="field field--name-title-field field--type-text field--label-hidden"><div class="field-items"><div class="field-item even"><a href="/jobboerse/studentenjobs-digital-analyst-studentische-aushilfe-mw-frankfurt-sw-2017-05-15-117857">Digital Analyst (Studentische Aushilfe m/w)</a></div></div></div><div class="field field--name-ds-field-company-profile-name field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even"><div class="field field--name-field-job-company-name field--type-text field--label-hidden"><div class="field-items"><div class="field-item even">Mediabrands Digital GmbH</div></div></div></div></div></div>  </div>
+
+  <div class="group-right">
+    <div class="field field--name-ds-field-online-since field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even">online seit: heute</div></div></div>  </div>
+
+</div>
+
+  </div>
+  <div class="views-row views-row-4 views-row-even views-row-last">
+    <div  about="/jobboerse/studentenjobs-event-kellner-mw-fuer-bundesliga-l-motorsport-l-konzerte-l-tv-sendungen-frankfurt-mz-2017-05-13-117780" typeof="sioc:Item foaf:Document" class="ds-3col-listing node node--job-b2b view-mode-listing node--listing node--job-b2b--listing colored-bg clearfix">
+
+  
+  <div class="group-left">
+    <div class="field field--name-ds-field-company-profile-logo-li field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even"><!--
+THIS FILE IS NOT USED AND IS HERE AS A STARTING POINT FOR CUSTOMIZATION ONLY.
+See http://api.drupal.org/api/function/theme_field/7 for details.
+After copying this file to your theme's folder and customizing it, remove this
+HTML comment.
+-->
+<div class="field field--name-field-company-logo field--type-imagefield-crop field--label-hidden">
+        <div class="field-items">
+                                    <div
+                    class="field-item even"><img typeof="foaf:Image" src="https://www.stellenwerk-darmstadt.de/sites/default/files/styles/listing_logo/public/company/logo/chamaeleo-logo_1.jpg?itok=8D6QrL7d" width="70" height="70" alt="" /></div>
+                        </div>
+</div></div></div></div>  </div>
+
+  <div class="group-middle">
+    <div class="field field--name-title-field field--type-text field--label-hidden"><div class="field-items"><div class="field-item even"><a href="/jobboerse/studentenjobs-event-kellner-mw-fuer-bundesliga-l-motorsport-l-konzerte-l-tv-sendungen-frankfurt-mz-2017-05-13-117780">Event-Kellner (m/w) für: Bundesliga l Motorsport l Konzerte l TV-Sendungen</a></div></div></div><div class="field field--name-ds-field-company-profile-name field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even"><div class="field field--name-title-field field--type-text field--label-hidden"><div class="field-items"><div class="field-item even">Chamaeleo EventSupport</div></div></div></div></div></div>  </div>
+
+  <div class="group-right">
+    <div class="field field--name-ds-field-online-since field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even">online seit: heute</div></div></div>  </div>
+
+</div>
+
+  </div>
+    </div>
+  
+  
+  
+  
+      <div class="view-footer">
+      <a href="/jobboerse?type=All&tid=98&field_job_employment_type_value=All&combine=">Alle Studentenjobs</a>
+    </div>
+  
+  
+</div>  </div>
+</div>
+<div id="block-ad-manager-darmstadt-b2c-superbanner-content-728-90" class="block block--ad-manager block--ad-manager-darmstadt-b2c-superbanner-content-728-90">
+        <div class="block__content">
+    <div id="ad-manager-ad-darmstadt-b2c-superbanner-content-728-90-15" class="ad-manager-ad content varifast"><!-- BEGIN ADITIONSSLTAG Website-Tag --><script type="text/javascript" src="https://ad1.adfarm1.adition.com/js?wp_id=3375639 "></script><!-- END ADITIONSSLTAG--></div>  </div>
+</div>
+  </div>
+                        </div>
+                        <!-- END Content Footer Section -->
+                    
+                </div>
+            </div>
+            <div class="l-right">
+                                    <div class="l-skyscraper">
+                          <div class="l-region l-region--skyscraper">
+    <div id="block-ad-manager-darmstadt-b2c-skyscraper-160-600" class="block block--ad-manager block--ad-manager-darmstadt-b2c-skyscraper-160-600">
+        <div class="block__content">
+    <div id="ad-manager-ad-darmstadt-b2c-skyscraper-160-600-4" class="ad-manager-ad skyscraper varifast"><!-- BEGIN ADITIONSSLTAG Website-Tag --><script type="text/javascript" src="https://ad1.adfarm1.adition.com/js?wp_id=135087 "></script><!-- END ADITIONSSLTAG--></div>  </div>
+</div>
+  </div>
+                    </div>
+                            </div>
+        </div>
+
+        <footer class="l-footer" role="contentinfo">
+
+            <div class="l-prefooter">
+                <div class="container">
+                      <div class="l-region l-region--prefooter-left">
+    <div id="block-domain-nav-default" class="block block--domain-nav block--domain-nav-default" id="block-domain-nav-default" class="block block--domain-nav block--domain-nav-default">
+
+    <div class="block__title footer-header">Alle Portale:</div>
+  
+  <div class="content" class="block__content">
+    <ul><li><a href="https://www.stellenwerk.de/" class="domain-id-1 ">Stellenwerk Portal</a></li>
+<li><a href="https://www.stellenwerk-mainz.de/" class="domain-id-12 ">Stellenwerk Mainz</a></li>
+<li><a href="https://www.stellenwerk-hamburg.de/" class="domain-id-2 ">Stellenwerk Hamburg</a></li>
+<li><a href="https://www.stellenwerk-koblenz-landau.de/" class="domain-id-10 ">Stellenwerk Koblenz-Landau</a></li>
+<li><a href="https://www.stellenwerk-luebeck.de/" class="domain-id-11 ">Stellenwerk Lübeck</a></li>
+<li><a href="https://www.stellenwerk-koeln.de/" class="domain-id-3 ">Stellenwerk Köln</a></li>
+<li><a href="https://www.stellenwerk-berlin.de/" class="domain-id-4 ">Stellenwerk Berlin</a></li>
+<li><a href="https://www.stellenwerk-duesseldorf.de/" class="domain-id-8 ">Stellenwerk Düsseldorf</a></li>
+<li><a href="https://www.stellenwerk-erlangen-nuernberg.de/" class="domain-id-9 ">Stellenwerk Erlangen-Nürnberg</a></li>
+<li><a href="https://www.stellenwerk-bochum.de/" class="domain-id-5 ">Stellenwerk Bochum</a></li>
+<li><a href="https://www.stellenwerk-stuttgart.de/" class="domain-id-13 ">Stellenwerk Stuttgart</a></li>
+<li><a href="https://www.stellenwerk-dortmund.de/" class="domain-id-7 ">Stellenwerk Dortmund</a></li>
+<li><a href="https://www.stellenwerk-darmstadt.de/" class="domain-id-6 active">Stellenwerk Darmstadt</a></li>
+<li><a href="https://www.stellenwerk-goettingen.de/" class="domain-id-14 ">Stellenwerk Göttingen</a></li>
+</ul>  </div>
+</div>  </div>
+
+                      <div class="l-region l-region--prefooter-middle">
+    <div id="block-menu-menu-pre-footermen-" class="block block--menu block--menu-menu-pre-footermen-" id="block-menu-menu-pre-footermen-" role="navigation" class="block block--menu block--menu-menu-pre-footermen-">
+
+    <div class="block__title footer-header">Weitere Informationen</div>
+  
+  <div class="content" class="block__content">
+    <ul class="menu"><li class="first leaf"><a href="/info-kontakt/agb" title="">Allgemeine Geschäftsbedingungen</a></li>
+<li class="leaf"><a href="/info-kontakt/datenschutz" title="">Datenschutzerklärung</a></li>
+<li class="leaf"><a href="/info-kontakt/faq" title="">Häufig gestellte Fragen</a></li>
+<li class="last leaf"><a href="/jobboerse" title="">Jobsuche</a></li>
+</ul>  </div>
+</div>  </div>
+
+                      <div class="l-region l-region--prefooter-right">
+    <div id="block-menu-menu-footermen-b2b" class="block block--menu block--menu-menu-footermen-b2b" id="block-menu-menu-footermen-b2b" role="navigation" class="block block--menu block--menu-menu-footermen-b2b">
+
+    <div class="block__title footer-header">B2B</div>
+  
+  <div class="content" class="block__content">
+    <ul class="menu"><li class="first leaf"><a href="http://www.stellenwerk.de" title="">stellenwerk.de</a></li>
+<li class="leaf"><a href="/buchen" title="">Job anbieten</a></li>
+<li class="leaf"><a href="/fuer-arbeitgeber/preisliste" title="">Preisliste</a></li>
+<li class="last leaf"><a href="http://www.varifast.de" title="">Online-Werbung</a></li>
+</ul>  </div>
+</div><div id="block-block-5" class="block block--block block--block-5" id="block-block-5" class="block block--block block--block-5">
+
+    <div class="block__title footer-header">Kontakt:</div>
+  
+  <div class="content" class="block__content">
+    <p>E-Mail: <a href="mailto:info@stellenwerk.de">info@stellenwerk.de</a> Telefon: 0 800 21005 62</p>
+<p><a href="/info-kontakt/impressum" title="">Impressum</a></p>
+  </div>
+</div>  </div>
+                </div>
+            </div>
+
+            <div class="l-copyright">
+                <div class="container">
+                    <div class="copyright">&copy; 2017 Stellenwerk Darmstadt</div>
+                      <div class="l-region l-region--footer">
+    <nav id="block-menu-menu-footer" role="navigation" class="block block--menu block--menu-menu-footer">
+      
+  <ul class="menu"><li class="first leaf"><a href="/info-kontakt/impressum" title="">Impressum</a></li>
+<li class="last leaf"><a href="/info-kontakt" title="">Kontakt</a></li>
+</ul></nav>
+  </div>
+                </div>
+            </div>
+
+        </footer>
+    </div>
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"8a91479976","applicationID":"28907997","transactionName":"YlcBYkFRVkNQAEFZDVsdIlVHWVdeHg1aVAdqQgJRVm9OWVQU","queueTime":0,"applicationTime":3017,"atts":"ThACFAlLRU0=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+
+<meta charset="utf-8">
+<!-- 
+	This website is powered by TYPO3 - inspiring people to share!
+	TYPO3 is a free open source Content Management Framework initially created by Kasper Skaarhoj and licensed under GNU/GPL.
+	TYPO3 is copyright 1998-2017 of Kasper Skaarhoj. Extensions are copyright of their respective owners.
+	Information and contribution at http://typo3.org/
+-->
+
+<base href="https://www.ausweisapp.bund.de/">
+<link rel="shortcut icon" href="/fileadmin/user_upload/Bilder/Icons/favicon_nPA.ico" type="image/x-icon; charset=binary">
+<link rel="icon" href="/fileadmin/user_upload/Bilder/Icons/favicon_nPA.ico" type="image/x-icon; charset=binary">
+<title>AusweisApp2-Home</title>
+<meta name="generator" content="TYPO3 CMS">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=1">
+
+
+<link rel="stylesheet" type="text/css" href="typo3conf/ext/news/Resources/Public/Css/news-basic.css?1479332199" media="all">
+<link rel="stylesheet" type="text/css" href="typo3temp/stylesheet_808501b9d5.css?1487686864" media="all">
+<link rel="stylesheet" type="text/css" href="typo3conf/ext/sc_subscriber_management/Resources/Public/Stylesheets/tx_scsubscribermanagement.css?1479335406" media="all">
+<link rel="stylesheet" type="text/css" href="typo3conf/ext/fluidpages_ausweis/Resources/Public/css/edtweet.css?1486588501" media="all">
+<link rel="stylesheet" type="text/css" href="typo3conf/ext/fluidpages_ausweis/Resources/Public/css/screen.css?1489920334" media="all">
+<link rel="stylesheet" type="text/css" href="fileadmin/templates/ke_search/ke_search_pi1.css?1479334585" media="all">
+
+
+
+
+<script src="typo3temp/javascript_913f2ba401.js?1491243219" type="text/javascript"></script>
+
+
+
+    <link rel="apple-touch-icon" sizes="72x72" href="">
+    <link rel="apple-touch-icon" sizes="114x114" href="">
+    <link rel="apple-touch-icon" sizes="57x57" href="">    <script type="text/javascript">
+    <!--
+      function obscureAddMid() {
+        document.write('@');
+      }
+      function obscureAddEnd() {
+        document.write('.');
+      }
+    // -->
+    </script>
+
+<script type="text/javascript">
+	/*<![CDATA[*/
+<!--
+function openPic(url, winName, winParams) {	//
+			var theWindow = window.open(url, winName, winParams);
+			if (theWindow)	{theWindow.focus();}
+		}
+
+// -->
+	/*]]>*/
+</script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+// js for all render methods
+function searchboxFocus(searchbox) {
+	if(searchbox.value == "Suchbegriff") {
+		searchbox.value = "";
+	}
+}
+
+function searchboxBlur(searchbox) {
+	if(searchbox.value == "") {
+		searchbox.value = "Suchbegriff";
+	}
+}
+
+function resetCheckboxes(filter) {
+	allLi = document.getElementsByName("optionCheckBox" + filter);
+	allCb = new Array();
+	for(i = 0; i < allLi.length; i++) {
+		allCb[i] = allLi[i].getElementsByTagName("input");
+	}
+	for(i = 0; i < allCb.length; i++) {
+		allCb[i][0].checked = false;
+	}
+}
+
+function enableCheckboxes(filter) {
+	var lis = document.getElementsByTagName("LI");
+	//alert(lis.count());
+	var allCb = new Array();
+	var allCbChecked = true;
+	var count = 0;
+	var optionClass = new Array();
+	for(var i = 0; i < lis.length; i++) {
+		if (optionClasses = lis[i].getAttribute("class", 1)) {
+			optionClassesArray = optionClasses.split(" ");
+			//alert(optionClasses);
+			if(optionClassesArray[1] == "optionCheckBox" + filter) {
+				allCb[count] = lis[i].getElementsByTagName("input")[0];
+				count++;
+			}
+		}
+	}
+	for(i = 0; i < allCb.length; i++) {
+		if(!allCb[i].checked) {
+			allCbChecked = false;
+		}
+	}
+	if(allCbChecked) {
+		for(i = 0; i < allCb.length; i++) {
+			allCb[i].checked = false;
+		}
+	} else {
+		for(i = 0; i < allCb.length; i++) {
+			allCb[i].checked = true;
+		}
+	}
+}
+//]]>
+</script>
+
+</head>
+<body id="body-id-188" class="">
+
+
+
+<div class="wrapper layout-2">
+
+    
+
+    <!-- header:start -->
+    <header class="header">
+        <div class="header__inner">
+            <div class="row">
+                <div class="columns">
+                    <nav class="nav-meta">
+                        <ul class="nav-meta__list">
+                            <li class="nav-meta__item lang"><a href="en/ausweisapp2-home/">English</a></li><li class="nav-meta__item"><a href="ueber-uns/" title="Über uns">Über uns</a></li><li class="nav-meta__item"><a href="impressum/" title="Impressum">Impressum</a></li><li class="nav-meta__item"><a href="datenschutz/" title="Datenschutz">Datenschutz</a></li>
+                            <li class="nav-meta__item nav-meta__item--form">
+                                <div class="tx-kesearch-pi1">
+		
+<form method="get" id="xajax_form_kesearch_pi1" name="xajax_form_kesearch_pi1"  action="https://www.ausweisapp.bund.de/index.php" class="static form form--nav" >
+
+	<input type="hidden" name="id" value="177" />
+	
+
+	<div class="form__input">
+		<input type="text" name="tx_kesearch_pi1[sword]" placeholder="Suchbegriff"  value="Suchbegriff" onfocus="searchboxFocus(this);" onblur="searchboxBlur(this);"/>
+		<input type="submit" value="Finden" id="kesearch_submit" alt="Finden" class="submit" onclick="document.getElementById('pagenumber').value=1; document.getElementById('xajax_form_kesearch_pi1').submit();" />
+	</div>
+
+	<input id="pagenumber" type="hidden" name="tx_kesearch_pi1[page]" value="1" />
+	<input id="resetFilters" type="hidden" name="tx_kesearch_pi1[resetFilters]" value="0" />
+	<input id="sortByField" type="hidden" name="tx_kesearch_pi1[sortByField]" value="" />
+	<input id="sortByDir" type="hidden" name="tx_kesearch_pi1[sortByDir]" value="" />
+
+
+
+</form>
+
+	</div>
+	
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="columns">
+                    <div class="header__logo">
+                        <a title="AusweisApp2" tabindex="-1" href="ausweisapp2-home/">
+                            Home
+                        </a>
+                    </div>
+                </div>
+
+                <div class="columns">
+                    <!-- navigation:start --><label class="nav-main__toggle" for="nav-main__toggle"><i class="util-icon--before util-icon--bars"></i></label> <input class="nav-main__toggle-input" type="checkbox" id="nav-main__toggle">
+                    <nav class="nav-main" role="navigation">
+                        <ul class="nav-main__list">
+                            <li class="nav-main__item"><a href="download/" title="Download">Download</a></li><li class="nav-main__item nav-main__item--sub"><a href="ausweisapp2/" title="AusweisApp2">AusweisApp2</a><div class="nav-main__sub"><ul class="nav-main__sub-list"><li class="nav-main__sub-list-item"><a href="ausweisapp2/voraussetzungen/" title="Voraussetzungen">Voraussetzungen</a></li><li class="nav-main__sub-list-item"><a href="ausweisapp2/ausprobieren-meine-daten-einsehen/" title="Ausprobieren / Meine Daten einsehen">Ausprobieren / Meine Daten einsehen</a></li><li class="nav-main__sub-list-item"><a href="ausweisapp2/feldtest-ios/" title="Feldtest iOS">Feldtest iOS</a></li></ul></div></li><li class="nav-main__item nav-main__item--sub"><a href="diensteanbieter/" title="Diensteanbieter">Diensteanbieter</a><div class="nav-main__sub"><ul class="nav-main__sub-list"><li class="nav-main__sub-list-item"><a href="diensteanbieter/anbieterverzeichnis/" title="Anbieterverzeichnis">Anbieterverzeichnis</a></li><li class="nav-main__sub-list-item"><a href="diensteanbieter/daten-fuers-anbieterverzeichnis/" title="Daten fürs Anbieterverzeichnis">Daten fürs Anbieterverzeichnis</a></li><li class="nav-main__sub-list-item"><a href="diensteanbieter/anwenderforen/" title="Anwenderforen">Anwenderforen</a></li><li class="nav-main__sub-list-item"><a href="diensteanbieter/beta-portal/" title="Beta-Portal">Beta-Portal</a></li></ul></div></li><li class="nav-main__item nav-main__item--sub"><a href="newsroom/" title="Newsroom">Newsroom</a><div class="nav-main__sub"><ul class="nav-main__sub-list"><li class="nav-main__sub-list-item"><a href="newsroom/forum/" title="Forum">Forum</a></li></ul></div></li><li class="nav-main__item nav-main__item--sub"><a href="fragen-und-antworten/" title="Fragen und Antworten">Fragen und Antworten</a><div class="nav-main__sub"><ul class="nav-main__sub-list"><li class="nav-main__sub-list-item"><a href="fragen-und-antworten/online-ausweisfunktion/" title="Online-Ausweisfunktion">Online-Ausweisfunktion</a></li><li class="nav-main__sub-list-item"><a href="fragen-und-antworten/haeufig-gestellte-fragen/" title="Häufig gestellte Fragen">Häufig gestellte Fragen</a></li><li class="nav-main__sub-list-item"><a href="fragen-und-antworten/support/" title="Support">Support</a></li><li class="nav-main__sub-list-item"><a href="fragen-und-antworten/melden-sie-einen-fehler/" title="Melden Sie einen Fehler">Melden Sie einen Fehler</a></li><li class="nav-main__sub-list-item"><a href="fragen-und-antworten/stellen-sie-hier-ihre-frage/" title="Stellen Sie hier Ihre Frage">Stellen Sie hier Ihre Frage</a></li><li class="nav-main__sub-list-item"><a href="fragen-und-antworten/bewerten-sie-uns/" title="Bewerten Sie uns">Bewerten Sie uns</a></li><li class="nav-main__sub-list-item"><a href="fragen-und-antworten/sie-vermissen-einen-dienst/" title="Sie vermissen einen Dienst?">Sie vermissen einen Dienst?</a></li></ul></div></li>
+                        </ul>
+                    </nav>
+                    <!-- navigation:end -->
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header:end -->
+
+
+
+    <main class="main">
+        <header class="main__header">
+            <div class="container container--stage">
+                <div class="row xs-collapse">
+                    <div class="columns">
+
+                        
+    <a id="c1055"></a>
+
+    <div class="stage-slideshow">
+        
+            <div class="stage-slideshow__item">
+                <div class="stage-slideshow__row">
+                    <figure class="stage-slideshow__figure"> <img alt="CeBIT 2017" src="fileadmin/_processed_/csm_Zertifikatsuebergabe_AusweisApp2_2af23970a4.jpg" width="834" height="554" />
+                        <figcaption>CeBIT 2017</figcaption>
+                    </figure>
+                    <div class="stage-slideshow__content">
+                        Mobile AusweisApp2 für Android erhält BSI-Zertifizierung nach TR-03124.<a data-htmlarea-external="1" title="Opens external link in new window" class="external-link-new-window" href="https://www.ausweisapp.bund.de/newsroom/newsdetail/?tx_news_pi1%5Bnews%5D=6&amp;tx_news_pi1%5Bcontroller%5D=News&amp;tx_news_pi1%5Baction%5D=detail&amp;cHash=0b14c214bffbea4b2cbf7e8375212144"><br />Hier</a> geht es zur Pressemitteilung.
+                    </div>
+                </div>
+            </div>
+        
+            <div class="stage-slideshow__item">
+                <div class="stage-slideshow__row">
+                    <figure class="stage-slideshow__figure"> <img src="fileadmin/_processed_/csm_download_icon_abstract_2f18fd6463.png" width="834" height="554" alt="Downloadicon auf grünem abstrakten Hintergrund" />
+                        <figcaption></figcaption>
+                    </figure>
+                    <div class="stage-slideshow__content">
+                        <a href="https://www.ausweisapp.bund.de/download/" title="Opens internal link in current window" data-htmlarea-external="1">Jetzt die AusweisApp2 schnell und einfach installieren<br /></a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="stage-slideshow__item">
+                <div class="stage-slideshow__row">
+                    <figure class="stage-slideshow__figure"> <img src="fileadmin/_processed_/csm_Paar_mit_Smartphone_36ccf67ea2.png" width="834" height="554" alt="" />
+                        <figcaption></figcaption>
+                    </figure>
+                    <div class="stage-slideshow__content">
+                        Aktuell wird die AusweisApp2 für iOS-Betriebssysteme weiterentwickelt. Auch wenn die Version noch im Beta-Status ist, können bereits konkrete Vorgänge durchgeführt werden. <a href="https://www.ausweisapp.bund.de/ausweisapp2/mobile-versionen-feldtest/" title="Opens internal link in current window" data-htmlarea-external="1">Jetzt testen!</a>
+                    </div>
+                </div>
+            </div>
+        
+    </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+
+            
+
+    <div class="container container--bg-grey">
+        <div class="row">
+            <div class="columns">
+                <div class="breadcrumb">
+                    <ul class="breadcrumb__list" itemscope="" itemtype="//data-vocabulary.org/Breadcrumb">
+                        <li class="breadcrumb__item">
+                            <span itemprop="title">
+                                <a title="AusweisApp2" href="ausweisapp2-home/">
+                                    <i class="util-icon--before util-icon--home"></i>
+                                </a>
+                            </span>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+        </header>
+
+        <article class="main__article">
+            <div class="main__inner">
+                <div class="row">
+                    <div class="md-8 columns">
+                        
+    
+        
+    
+
+                        
+    
+        
+                
+            
+    
+    
+
+    
+        
+            
+                
+                
+                    
+                
+                
+                        <div class="row row-noborder">
+                            <div class="columns">
+                                <a id="c1600"></a><h2>AusweisApp2 für Android: seit 27.03.2017 im Google Playstore</h2><div class="csc-textpic csc-textpic-intext-right"><div class="csc-textpic-imagewrap"><div class="csc-textpic-image csc-textpic-last"><img src="fileadmin/_processed_/csm_google-play-badge_2__3c2b75c346.png" width="300" height="117" alt="" border="0"></div></div><div class="csc-textpic-text"><p class="bodytext">Nach einem erfolgreichen Beta-Test und der Zertifizierung der mobilen App nach TR-03124 am vorangegangenen Montag auf der CeBIT, wird die AusweisApp2 für Android am 27.03.2017 offiziell im Google Playstore zur Verfügung gestellt. Hier gehts zum <a href="download/" title="Opens internal link in current window" class="internal-link">Download und weiteren Informationen</a>.</p></div></div>
+                            </div>
+                        </div>
+                    
+
+            
+                
+                
+                
+                        
+                            <div class="row row-border--green">
+                                <div class="columns">
+                                    <a id="c1606"></a><h2>Weiterentwicklungsschwerpunkte</h2><div class="csc-textpic csc-textpic-center csc-textpic-below"><div class="csc-textpic-text"><p class="bodytext">Das Jahr 2017 bringt viele Neuerungen für die AusweisApp2 mit sich. </p>
+<p class="bodytext">Der Veröffentlichung der Android-Version folgen u.a. die Open-Source-Stellung der Software unter EUPL-Lizenz auf Github. Damit einhergehend wird eine Bereitstellung für Linux und der Einsatz an Terminals möglich.</p>
+<p class="bodytext">Außerdem werden Ihnen eine Reihe an Video-Tutorials rund um die Nutzung der Online-Ausweisfunktion und der Software auf Youtube zur Verfügung gestellt.</p>
+<p class="bodytext">Mit der Android-Version wird in den meisten Fällen die Nutzung eines Kartenlesegeräts redundant, da das direkte Auslesen per NFC möglich ist. Für all diejenigen, die lieber stationär arbeiten wird es ebenfalls möglich sein auf einen Kartenleser zu verzichten, denn in Kürze kann man sein Smartphone als Kartenleser einsetzen.</p>
+<p class="bodytext">Des Weiteren wird die AusweisApp2 als Software Development Kit zu Verfügung gestellt und die Oberfläche der im Feldtest befindlichen iOS-Version überarbeitet.</p></div><div class="csc-textpic-imagewrap"><div class="csc-textpic-center-outer"><div class="csc-textpic-center-inner"><div class="csc-textpic-image csc-textpic-last"><a href="index.php?eID=tx_cms_showpic&amp;file=587&amp;md5=c5263eac7a0b87a9d5b7d29bb20368e6d90d4597&amp;parameters%5B0%5D=YTo0OntzOjU6IndpZHRoIjtzOjM6IjgwMCI7czo2OiJoZWlnaHQiO3M6NDoiNjAw&amp;parameters%5B1%5D=bSI7czo3OiJib2R5VGFnIjtzOjQxOiI8Ym9keSBzdHlsZT0ibWFyZ2luOjA7IGJh&amp;parameters%5B2%5D=Y2tncm91bmQ6I2ZmZjsiPiI7czo0OiJ3cmFwIjtzOjM3OiI8YSBocmVmPSJqYXZh&amp;parameters%5B3%5D=c2NyaXB0OmNsb3NlKCk7Ij4gfCA8L2E%2BIjt9" onclick="openPic('https://www.ausweisapp.bund.de/index.php?eID=tx_cms_showpic&amp;file=587&amp;md5=c5263eac7a0b87a9d5b7d29bb20368e6d90d4597&amp;parameters%5B0%5D=YTo0OntzOjU6IndpZHRoIjtzOjM6IjgwMCI7czo2OiJoZWlnaHQiO3M6NDoiNjAw&amp;parameters%5B1%5D=bSI7czo3OiJib2R5VGFnIjtzOjQxOiI8Ym9keSBzdHlsZT0ibWFyZ2luOjA7IGJh&amp;parameters%5B2%5D=Y2tncm91bmQ6I2ZmZjsiPiI7czo0OiJ3cmFwIjtzOjM3OiI8YSBocmVmPSJqYXZh&amp;parameters%5B3%5D=c2NyaXB0OmNsb3NlKCk7Ij4gfCA8L2E%2BIjt9','thePicture','width=800,height=450,status=0,menubar=0'); return false;" target="thePicture"><img src="fileadmin/_processed_/csm_SK_MP_FachkongressIT-PLR_AusweisApp2_April2017_494e0ec766.jpg" width="600" height="338" alt="Weiterentwicklungsplan AusweisApp2 2017" border="0"></a></div></div></div></div></div>
+                                </div>
+                            </div>
+                        
+                        
+                    
+
+            
+                
+                
+                
+                        
+                            <div class="row row-border--green">
+                                <div class="columns">
+                                    <a id="c1058"></a><h2>Wie kann ich mich online Ausweisen?</h2><div class="csc-textpic csc-textpic-intext-right"><div class="csc-textpic-imagewrap"><div class="csc-textpic-image csc-textpic-last"><img src="fileadmin/_processed_/csm_start_nPA_eAT_37dda4b3ec.png" width="300" height="172" alt="" border="0"></div></div><div class="csc-textpic-text"><h3>Kurz erklärt...</h3>
+<p class="bodytext">Um die Online-Ausweisfunktion zu nutzen, müssen Sie folgende Voraussetzungen schaffen:</p><ul><li>Online-Ausweisfunktion aktivieren</li><li>Kartenlesegerät bestellen (mobil ggf. per NFC-Verbindung möglich)</li><li>Transport-PIN in persönliche PIN ändern</li><li>AusweisApp2 installieren</li></ul><p class="bodytext">Achtung: zum Online-Ausweisen benötigen Sie immer eine Internetverbindung. <br />Die Details können Sie <a href="fragen-und-antworten/online-ausweisfunktion/#c1326" title="Opens internal link in current window" class="internal-link">hier </a>nachlesen.</p></div></div>
+                                </div>
+                            </div>
+                        
+                        
+                    
+
+            
+        
+    
+
+                        
+                    </div>
+                    <div class="md-4 columns">
+
+                        
+    <a id="c1061"></a><h2 class="h1">News</h3>
+<a id="c1062"></a>
+
+
+	
+
+
+<div class="news">
+	
+	<!--TYPO3SEARCH_end-->
+	
+			<div class="news-list-view">
+				
+						
+
+
+	
+	
+
+
+
+
+							
+								<!--
+	=====================
+		Partials/List/Item.html
+-->
+<div class="news-item article articletype-0" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+    <!-- date -->
+    <div class="news-item__date">
+        21.03.2017
+    </div>
+
+    
+
+    <h3 class="news-item__title">
+        CeBIT 2017: Mobile AusweisApp2 für Android erhält BSI-Zertifizierung nach TR-03124
+    </h3>
+
+	<!-- teaser -->
+	<div class="news-item__preview">
+		
+				<span itemprop="description"><p class="bodytext"><b>Rechtzeitig zum Start der CeBIT erhielt die AusweisApp2 für mobile Endgeräte gestern die BSI-Zertifizierung und damit die Bestätigung, dass die...</b></p></span>
+			
+	</div>
+
+    <div class="news-item__more">
+        <a class="more" title="CeBIT 2017: Mobile AusweisApp2 für Android erhält BSI-Zertifizierung nach TR-03124" href="newsroom/newsdetail/?tx_news_pi1%5Bnews%5D=6&amp;tx_news_pi1%5Bcontroller%5D=News&amp;tx_news_pi1%5Baction%5D=detail&amp;cHash=0b14c214bffbea4b2cbf7e8375212144">
+            Weiterlesen
+        </a>
+    </div>
+
+</div>
+
+							
+								<!--
+	=====================
+		Partials/List/Item.html
+-->
+<div class="news-item article articletype-0 topnews" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+    <!-- date -->
+    <div class="news-item__date">
+        08.03.2017
+    </div>
+
+    
+
+    <h3 class="news-item__title">
+        Pressemitteilung: Governikus KG präsentiert Neuentwicklungen rund um die AusweisApp2 und EU-weites Identitätsmanagement auf der CeBIT 2017
+    </h3>
+
+	<!-- teaser -->
+	<div class="news-item__preview">
+		
+				<span itemprop="description"><p style="text-align:justify; text-justify:inter-ideograph; line-height:150%" class="bodytext"><b>Die Bremer IT-Security-Spezialistin Governikus GmbH &amp; Co. KG informiert anlässlich der diesjährigen CeBIT über die Weiterentwicklungen der im Auftrag...</b></p></span>
+			
+	</div>
+
+    <div class="news-item__more">
+        <a class="more" title="Pressemitteilung: Governikus KG präsentiert Neuentwicklungen rund um die AusweisApp2 und EU-weites Identitätsmanagement auf der CeBIT 2017" href="newsroom/newsdetail/?tx_news_pi1%5Bnews%5D=5&amp;tx_news_pi1%5Bcontroller%5D=News&amp;tx_news_pi1%5Baction%5D=detail&amp;cHash=f542a501ff6a5b27fa2098c293d3c1a2">
+            Weiterlesen
+        </a>
+    </div>
+
+</div>
+
+							
+								<!--
+	=====================
+		Partials/List/Item.html
+-->
+<div class="news-item article articletype-0 topnews" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+    <!-- date -->
+    <div class="news-item__date">
+        09.01.2017
+    </div>
+
+    
+
+    <h3 class="news-item__title">
+        Allianz-Kundenportal vorübergehend nicht mit Online-Ausweisfunktion nutzbar
+    </h3>
+
+	<!-- teaser -->
+	<div class="news-item__preview">
+		
+				<span itemprop="description"><p class="bodytext">...aktuell können Login/Registrierung am Kundenportal der Allianz-Versicherung nicht mit der Online-Ausweisfunktion durchgeführt werden.</p></span>
+			
+	</div>
+
+    <div class="news-item__more">
+        <a class="more" title="Allianz-Kundenportal vorübergehend nicht mit Online-Ausweisfunktion nutzbar" href="newsroom/newsdetail/?tx_news_pi1%5Bnews%5D=4&amp;tx_news_pi1%5Bcontroller%5D=News&amp;tx_news_pi1%5Baction%5D=detail&amp;cHash=976420d0e41a73ca1e9cd6e49f76c25f">
+            Weiterlesen
+        </a>
+    </div>
+
+</div>
+
+							
+						
+
+
+	
+	
+
+
+
+
+
+					
+			</div>
+		
+	<!--TYPO3SEARCH_begin-->
+
+</div>
+
+<a id="c1066"></a><div class="csc-textpic csc-textpic-center csc-textpic-above"><div class="csc-textpic-imagewrap"><div class="csc-textpic-center-outer"><div class="csc-textpic-center-inner"><div class="csc-textpic-image csc-textpic-last"><table><caption class="csc-textpic-caption">Fragen und Antworten</caption><tbody><tr><td><a href="fragen-und-antworten/haeufig-gestellte-fragen/"><img src="fileadmin/_processed_/csm_fragezeichen_gruen_a328a4b392.png" width="600" height="448" alt="grüne Fragezeichen" border="0"></a></td></tr></tbody></table></div></div></div></div></div>
+<a id="c1067"></a><div class="info-box"><h2>Kontakt</h2><p class="bodytext">E-Mail: <a href="javascript:linkTo_UnCryptMailto('kygjrm8qsnnmprYysqucgqynn,bc');" title="Opens window for sending email" class="mail">support<script type="text/javascript"> obscureAddMid() </script>ausweisapp<script type="text/javascript"> obscureAddEnd() </script>de</a></p>
+<p class="bodytext">Telefon: 01805 348 743 (*14 ct./Minute aus dem deutschen Festnetz, Mobilfunk ggf. abweichend)</p></div>
+
+
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    
+
+    <footer class="footer">
+        <div class="footer__top">
+            <div class="row">
+                <div class="columns"> <a href="javascript:window.print()" class="footer__print util-icon--before util-icon--print">Drucken</a> </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="row">
+                <div class="columns">
+                    <p><img src="typo3conf/ext/fluidpages_ausweis/Resources/Public/img/governikus-logo.png" alt="logo-governikus"></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="md-2 md-offset-1 columns"><ul class="footer-nav"><li class="footer-nav__title"><a href="download/" title="Download">Download</a></li></ul></div><div class="md-2 columns"><ul class="footer-nav"><li class="footer-nav__title"><a href="ausweisapp2/" title="AusweisApp2">AusweisApp2</a><ul class="footer-nav__sub"><li class="footer-nav__sub-item"><a href="ausweisapp2/voraussetzungen/" title="Voraussetzungen">Voraussetzungen</a></li></ul><ul class="footer-nav__sub"><li class="footer-nav__sub-item"><a href="ausweisapp2/ausprobieren-meine-daten-einsehen/" title="Ausprobieren / Meine Daten einsehen">Ausprobieren / Meine Daten einsehen</a></li></ul><ul class="footer-nav__sub"><li class="footer-nav__sub-item"><a href="ausweisapp2/feldtest-ios/" title="Feldtest iOS">Feldtest iOS</a></li></ul></li></ul></div><div class="md-2 columns"><ul class="footer-nav"><li class="footer-nav__title"><a href="diensteanbieter/" title="Diensteanbieter">Diensteanbieter</a><ul class="footer-nav__sub"><li class="footer-nav__sub-item"><a href="diensteanbieter/anbieterverzeichnis/" title="Anbieterverzeichnis">Anbieterverzeichnis</a></li></ul><ul class="footer-nav__sub"><li class="footer-nav__sub-item"><a href="diensteanbieter/daten-fuers-anbieterverzeichnis/" title="Daten fürs Anbieterverzeichnis">Daten fürs Anbieterverzeichnis</a></li></ul><ul class="footer-nav__sub"><li class="footer-nav__sub-item"><a href="diensteanbieter/anwenderforen/" title="Anwenderforen">Anwenderforen</a></li></ul><ul class="footer-nav__sub"><li class="footer-nav__sub-item"><a href="diensteanbieter/beta-portal/" title="Beta-Portal">Beta-Portal</a></li></ul></li></ul></div><div class="md-2 columns"><ul class="footer-nav"><li class="footer-nav__title"><a href="newsroom/" title="Newsroom">Newsroom</a><ul class="footer-nav__sub"><li class="footer-nav__sub-item"><a href="newsroom/forum/" title="Forum">Forum</a></li></ul></li></ul></div><div class="md-2 end columns"><ul class="footer-nav"><li class="footer-nav__title"><a href="fragen-und-antworten/" title="Fragen und Antworten">Fragen und Antworten</a><ul class="footer-nav__sub"><li class="footer-nav__sub-item"><a href="fragen-und-antworten/online-ausweisfunktion/" title="Online-Ausweisfunktion">Online-Ausweisfunktion</a></li></ul><ul class="footer-nav__sub"><li class="footer-nav__sub-item"><a href="fragen-und-antworten/haeufig-gestellte-fragen/" title="Häufig gestellte Fragen">Häufig gestellte Fragen</a></li></ul><ul class="footer-nav__sub"><li class="footer-nav__sub-item"><a href="fragen-und-antworten/support/" title="Support">Support</a></li></ul><ul class="footer-nav__sub"><li class="footer-nav__sub-item"><a href="fragen-und-antworten/melden-sie-einen-fehler/" title="Melden Sie einen Fehler">Melden Sie einen Fehler</a></li></ul><ul class="footer-nav__sub"><li class="footer-nav__sub-item"><a href="fragen-und-antworten/stellen-sie-hier-ihre-frage/" title="Stellen Sie hier Ihre Frage">Stellen Sie hier Ihre Frage</a></li></ul><ul class="footer-nav__sub"><li class="footer-nav__sub-item"><a href="fragen-und-antworten/bewerten-sie-uns/" title="Bewerten Sie uns">Bewerten Sie uns</a></li></ul><ul class="footer-nav__sub"><li class="footer-nav__sub-item"><a href="fragen-und-antworten/sie-vermissen-einen-dienst/" title="Sie vermissen einen Dienst?">Sie vermissen einen Dienst?</a></li></ul></li></ul></div>
+            </div>
+            <div class="row">
+                <div class="md-11 md-offset-1 columns">
+                    <ul class="footer-nav">
+                        <li class="footer-nav__title"> <span>Weitere Informationen</span>
+                            <ul class="footer-nav__sub">
+                                
+                                    
+                                        <li class="footer-nav__sub-item"><a title="Personalausweisportal" href="personalausweisportal/">Personalausweisportal</a></li>
+                                    
+                                        <li class="footer-nav__sub-item"><a title="Bundesamt für Sicherheit in der Informationstechnik" href="bundesamt-fuer-sicherheit-in-der-informationstechnik/">Bundesamt für Sicherheit in der Informationstechnik</a></li>
+                                    
+                                
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="columns">
+                    <ul class="footer-meta">
+                        <li class="footer-meta__item"><a href="ueber-uns/" title="Über uns">Über uns</a></li><li class="footer-meta__item"><a href="impressum/" title="Impressum">Impressum</a></li><li class="footer-meta__item"><a href="datenschutz/" title="Datenschutz">Datenschutz</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+</div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type="text/javascript"></script>
+
+<script src="typo3conf/ext/cookieconsent2/Resources/Public/JavaScripts/cookieconsent.min.js?1479336051" type="text/javascript"></script>
+<script src="typo3conf/ext/powermail/Resources/Public/JavaScripts/jquery.datetimepicker.js?1437982041" type="text/javascript"></script>
+<script src="typo3conf/ext/powermail/Resources/Public/JavaScripts/parsley.min.js?1437982041" type="text/javascript"></script>
+<script src="typo3conf/ext/powermail/Resources/Public/JavaScripts/tabs.js?1437982041" type="text/javascript"></script>
+<script src="typo3conf/ext/powermail/Resources/Public/JavaScripts/form.js?1437982041" type="text/javascript"></script>
+<script src="typo3conf/ext/fluidpages_ausweis/Resources/Public/js/script.js?1489920348" type="text/javascript"></script>
+
+
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u=(("https:" == document.location.protocol) ? "https" : "http") + "://www.ausweisapp.bund.de/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
+    g.defer=true; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="https://www.ausweisapp.bund.de/piwik/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
+
+</body>
+</html>

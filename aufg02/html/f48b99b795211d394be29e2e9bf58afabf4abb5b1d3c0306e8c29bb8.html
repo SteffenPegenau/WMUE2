@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+  <!--[if IEMobile 7]><html class="no-js ie iem7" lang="de" dir="ltr"><![endif]-->
+  <!--[if lte IE 6]><html class="no-js ie lt-ie9 lt-ie8 lt-ie7" lang="de" dir="ltr"><![endif]-->
+  <!--[if (IE 7)&(!IEMobile)]><html class="no-js ie lt-ie9 lt-ie8" lang="de" dir="ltr"><![endif]-->
+  <!--[if IE 8]><html class="no-js ie lt-ie9" lang="de" dir="ltr"><![endif]-->
+  <!--[if (gte IE 9)|(gt IEMobile 7)]><html class="no-js ie" lang="de" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ og: http://ogp.me/ns# rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema#"><![endif]-->
+  <!--[if !IE]><!--><html class="no-js" lang="de" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ og: http://ogp.me/ns# rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema#"><!--<![endif]-->
+<head>
+  <meta charset="utf-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1026.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta http-equiv="cleartype" content="on" />
+<link rel="apple-touch-icon" href="https://www.stellenwerk-darmstadt.de/sites/all/themes/stellenwerk/apple-touch-icon-72x72.png" sizes="72x72" />
+<link rel="apple-touch-icon" href="https://www.stellenwerk-darmstadt.de/sites/all/themes/stellenwerk/apple-touch-icon-144x144.png" sizes="144x144" />
+<link rel="apple-touch-icon" href="https://www.stellenwerk-darmstadt.de/sites/all/themes/stellenwerk/apple-touch-icon-114x114.png" sizes="114x114" />
+<link rel="apple-touch-icon" href="https://www.stellenwerk-darmstadt.de/sites/all/themes/stellenwerk/apple-touch-icon.png" />
+<link rel="profile" href="http://www.w3.org/1999/xhtml/vocab" />
+<link href="/sites/all/themes/stellenwerk/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144" />
+<link rel="shortcut icon" href="https://www.stellenwerk-darmstadt.de/sites/all/themes/stellenwerk/favicon.ico" type="image/vnd.microsoft.icon" />
+<link href="/sites/all/themes/stellenwerk/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" />
+<link href="/sites/all/themes/stellenwerk/apple-touch-icon.png" rel="apple-touch-icon" />
+<link href="/sites/all/themes/stellenwerk/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" />
+<meta name="generator" content="Drupal 7 (http://drupal.org)" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="canonical" href="https://www.stellenwerk-darmstadt.de/jobboerse/all/absolventenjobs" />
+<link rel="shortlink" href="https://www.stellenwerk-darmstadt.de/jobboerse/all/absolventenjobs" />
+  <title>Jobs finden | Stellenwerk Darmstadt</title>
+  <link type="text/css" rel="stylesheet" href="https://www.stellenwerk-darmstadt.de/sites/default/files/css/css_ZEkN218Tu2-AYiwbyubPRxmb7sEE-3KJkfWLOukXNOI.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.stellenwerk-darmstadt.de/sites/default/files/css/css_4LZU6Cl1GvJQVO-GMCHxB0ZfRmaj1-GBA86KEQCHPA8.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.stellenwerk-darmstadt.de/sites/default/files/css/css_GPAkKZf56Tp57KWsaj4Pm4gVXGFu8oTeEMqoo-xEADQ.css" media="all" />
+
+<!--[if lte IE 8]>
+<link type="text/css" rel="stylesheet" href="https://www.stellenwerk-darmstadt.de/sites/default/files/css/css_FxTyuKcJ7kUCkSIUYl1TA_bHHVlxMOe7HnPbrZ04N_M.css" media="all" />
+<![endif]-->
+  <script src="https://www.stellenwerk-darmstadt.de/sites/default/files/js/js_jUGMAWXyVvwzUHrnLYAOC20Z5Zo2RFUW2xbLBM2kqrc.js"></script>
+<script src="https://www.stellenwerk-darmstadt.de/sites/default/files/js/js_Xk8TsyNfILciPNmQPp9sl88cjH71DQWyeHE0MB62KO4.js"></script>
+<script src="https://www.stellenwerk-darmstadt.de/sites/default/files/js/js_C69OrUD_m1kwWBar84H2GARLnQNV5bwRCnEeMNBrzdw.js"></script>
+<script src="https://www.stellenwerk-darmstadt.de/sites/default/files/js/js_-NN2lxw87YjMg7GvXNS5AMfc2rPa5-c9_ehw_w3VIbw.js"></script>
+<script src="https://www.stellenwerk-darmstadt.de/sites/default/files/js/js_i_yDiwy5rn0VW5gLmtfyN44mCyfxuh741l_GoU-XuNE.js"></script>
+<script src="https://www.stellenwerk-darmstadt.de/sites/default/files/js/js_SqpL1-MJqgXQtcrq1ZdUCmJN4Xna3RMXHdCgjLRFzCs.js"></script>
+<script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"stellenwerk","theme_token":"6e896IOrdHbGGCP-sWNHlxtB7oce_sjI2rLv6qthNUI","jquery_version":"1.10","js":{"sites\/all\/modules\/custom\/sw_utils\/js\/sw_utils.js":1,"sites\/all\/modules\/custom\/sw_utils\/js\/autouploadfile.js":1,"sites\/all\/modules\/custom\/sw_avonis_jobboerse\/js\/sw_avonis_jobboerse.js":1,"sites\/all\/modules\/custom\/sw_utils\/js\/field_consitions.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/jquery\/1.10\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/themes\/omega\/omega\/omega\/js\/no-js.js":1,"misc\/ajax.js":1,"sites\/all\/modules\/contrib\/jquery_update\/js\/jquery_update.js":1,"sites\/all\/modules\/custom\/sw_varifast\/varifast.js":1,"public:\/\/languages\/de_FMspZL-bksPiCNqCBE5s58GPfYZXVmSifIybrnXGWnU.js":1,"misc\/jquery.form.js":1,"misc\/progress.js":1,"sites\/all\/modules\/contrib\/better_exposed_filters\/better_exposed_filters.js":1,"sites\/all\/modules\/contrib\/ctools\/js\/dependent.js":1,"sites\/all\/themes\/stellenwerk\/js\/jquery.li-scroller.1.0.js":1,"sites\/all\/themes\/stellenwerk\/js\/jquery.bxslider.min.js":1,"sites\/all\/themes\/stellenwerk\/js\/jquery-ui.min.js":1,"sites\/all\/themes\/stellenwerk\/js\/hoverIntent.js":1,"sites\/all\/themes\/stellenwerk\/js\/superfish.js":1,"sites\/all\/themes\/stellenwerk\/js\/bootstrap-collapse.js":1,"sites\/all\/themes\/stellenwerk\/js\/stellenwerk.js":1,"sites\/all\/themes\/stellenwerk\/js\/css_browser_selector.js":1},"css":{"sites\/all\/themes\/omega\/omega\/omega\/css\/modules\/system\/system.base.css":1,"sites\/all\/themes\/omega\/omega\/omega\/css\/modules\/system\/system.menus.theme.css":1,"sites\/all\/themes\/omega\/omega\/omega\/css\/modules\/system\/system.messages.theme.css":1,"sites\/all\/themes\/omega\/omega\/omega\/css\/modules\/system\/system.theme.css":1,"sites\/all\/modules\/patched\/date\/date_api\/date.css":1,"sites\/all\/modules\/patched\/date\/date_popup\/themes\/datepicker.1.7.css":1,"sites\/all\/themes\/omega\/omega\/omega\/css\/modules\/comment\/comment.theme.css":1,"sites\/all\/modules\/contrib\/domain\/domain_nav\/domain_nav.css":1,"modules\/node\/node.css":1,"sites\/all\/themes\/omega\/omega\/omega\/css\/modules\/field\/field.theme.css":1,"sites\/all\/modules\/contrib\/workflow\/workflow_admin_ui\/workflow_admin_ui.css":1,"sites\/all\/themes\/omega\/omega\/omega\/css\/modules\/search\/search.theme.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/themes\/omega\/omega\/omega\/css\/modules\/user\/user.base.css":1,"sites\/all\/themes\/omega\/omega\/omega\/css\/modules\/user\/user.theme.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/themes\/stellenwerk\/ds_layouts\/listing\/listing.css":1,"sites\/all\/modules\/contrib\/pagerer\/pagerer.css":1,"all:0":1,"sites\/all\/themes\/stellenwerk\/css\/stellenwerk.normalize.css":1,"sites\/all\/themes\/stellenwerk\/css\/stellenwerk.hacks.css":1,"sites\/all\/themes\/stellenwerk\/css\/stellenwerk-safari.hacks.css":1,"sites\/all\/themes\/stellenwerk\/css\/styles\/stellenwerk-darmstadt.styles.css":1,"all:1":1,"sites\/all\/themes\/stellenwerk\/css\/no-query\/stellenwerk-darmstadt.no-query.css":1}},"better_exposed_filters":{"datepicker":false,"slider":false,"settings":[],"autosubmit":false,"views":{"jobs_finden":{"displays":{"page":{"filters":{"combine":{"required":false},"type":{"required":false},"tid":{"required":false},"field_job_employment_type_value":{"required":false}}}}}}},"sw_avonis_jobboerse":{"All":{"118":"Absolventenjobs","214":"Praktika","117":"Sonstige","98":"Studentenjobs","90":"Praktika","84":"Umzugshilfen","93":"Putzhilfen","77":"Kinderbetreuung","81":"Nachhilfeunterricht","70":"Assistenz","100":"Sonstige Angebote","97":"Professuren","91":"Wissenschaftl. Stellen","95":"Nicht\u2013Wissenschaftl. Stellen","92":"Auszubildende","99":"Studentische Hilfskr\u00e4fte"},"1":{"118":"Absolventenjobs","98":"Studentenjobs","90":"Praktika"},"3":{"214":"Praktika","117":"Sonstige","97":"Professuren","91":"Wissenschaftl. Stellen","95":"Nicht\u2013Wissenschaftl. Stellen","92":"Auszubildende","99":"Studentische Hilfskr\u00e4fte"},"2":{"84":"Umzugshilfen","93":"Putzhilfen","77":"Kinderbetreuung","81":"Nachhilfeunterricht","70":"Assistenz","100":"Sonstige Angebote"}},"CTools":{"dependent":{"edit-combine":{"values":{"edit-combine-op--2":["=","!=","contains","word","allwords","starts","not_starts","ends","not_ends","not","shorterthan","longerthan","regular_expression"]},"num":1,"type":"hide"}}},"urlIsAjaxTrusted":{"\/jobboerse\/all\/absolventenjobs":true}});</script>
+</head>
+<body class="html not-front not-logged-in page-jobboerse page-jobboerse-all page-jobboerse-all-absolventenjobs domain-darmstadt section-jobboerse">
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-TV6QQF" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script type="text/javascript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0];var j=d.createElement(s);var dl=l!='dataLayer'?'&l='+l:'';j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;j.type='text/javascript';j.async=true;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TV6QQF');</script>
+<!-- End Google Tag Manager -->
+  <a href="#main-content" class="element-invisible element-focusable">Direkt zum Inhalt</a>
+    <div class="l-page overview-page">
+
+    <header class="l-header" role="banner">
+
+                    <div class="l-topbar">
+                <div class="container">
+                      <div class="l-region l-region--topbar">
+    <div id="block-ad-manager-darmstadt-b2c-superbanner-728-90" class="block block--ad-manager block--ad-manager-darmstadt-b2c-superbanner-728-90">
+        <div class="block__content">
+    <div id="ad-manager-ad-darmstadt-b2c-superbanner-728-90-0" class="ad-manager-ad superbanner varifast"><!-- BEGIN ADITIONSSLTAG Website-Tag --><script type="text/javascript" src="https://ad1.adfarm1.adition.com/js?wp_id=121145 "></script><!-- END ADITIONSSLTAG--></div>  </div>
+</div>
+  </div>
+                </div>
+            </div>
+        
+        <div class="l-headermenu">
+            <div class="container">
+                  <div class="l-region l-region--header">
+    <nav id="block-system-user-menu" role="navigation" class="block block--system block--menu block--system-user-menu">
+      
+  <ul class="menu"><li class="first last leaf"><a href="/user/login" title="">Kunden-Login</a></li>
+</ul></nav>
+  </div>
+            </div>
+        </div>
+
+        <div class="l-branding">
+            <div class="container">
+                <div class="l-branding-content">
+                       <a href="/" title="Startseite" rel="home" class="site-branding__logo"><img src="https://www.stellenwerk-darmstadt.de/sites/all/themes/stellenwerk/images/logo_darmstadt.png" alt="Startseite" /></a>
+
+    <div class="l-logos">
+      <a href="http://www.tu-darmstadt.de/" title="Startseite" rel="home"><img src="/sites/all/themes/stellenwerk/images_mails/logos/logo_academy_one/darmstadt.png" alt="Startseite" /></a>
+              <a href="http://www.studentenwerkdarmstadt.de/" title="Startseite" rel="home"><img src="/sites/all/themes/stellenwerk/images_mails/logos/logo_academy_second/darmstadt.png" alt="Startseite" /></a>
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="l-navigation">
+            <div class="container">
+                  <div class="l-region l-region--navigation">
+    <nav id="block-menu-block-2" role="navigation" class="block block--menu-block block--menu-block-2">
+      
+  <div class="menu-block-wrapper menu-block-2 menu-name-main-menu parent-mlid-0 menu-level-1">
+  <ul class="menu"><li class="first expanded active-trail menu-mlid-1447"><a href="/jobboerse" title="" class="active-trail active">Jobbörse</a><ul class="menu"><li class="first leaf menu-mlid-2216"><a href="/jobboerse/unternehmen/studentenjobs" title="">Studentenjobs</a></li>
+<li class="leaf menu-mlid-2217"><a href="/jobboerse/unternehmen/praktika" title="">Praktika</a></li>
+<li class="leaf menu-mlid-2219"><a href="/jobboerse/unternehmen/absolventenjobs" title="">Absolventenjobs</a></li>
+<li class="leaf menu-mlid-2220"><a href="/jobboerse/privat" title="">Private Nebenjobs</a></li>
+<li class="last leaf menu-mlid-2228"><a href="/jobboerse/technische-universitaet-darmstadt" title="">TU Darmstadt</a></li>
+</ul></li>
+<li class="leaf menu-mlid-860"><a href="/firmenprofile">Firmenprofile</a></li>
+<li class="leaf menu-mlid-2261"><a href="/career-service">Career Service</a></li>
+<li class="leaf menu-mlid-2262"><a href="/alumni">Alumni</a></li>
+<li class="expanded menu-mlid-47499"><a href="/fuer-arbeitgeber">Für Arbeitgeber</a><ul class="menu"><li class="first leaf menu-mlid-2198"><a href="/fuer-arbeitgeber/stellenanzeigen" title="">Stellenanzeigen</a></li>
+<li class="leaf menu-mlid-19046"><a href="/firmenprofil-anlegen" title="">Firmenprofil anlegen</a></li>
+<li class="leaf menu-mlid-6457"><a href="/fuer-arbeitgeber/recruiting-events" title="">Recruiting Events</a></li>
+<li class="last leaf menu-mlid-47503"><a href="/fuer-arbeitgeber/employer-branding" title="">Employer Branding</a></li>
+</ul></li>
+<li class="expanded menu-mlid-858"><a href="/info-kontakt">Info und Kontakt</a><ul class="menu"><li class="first leaf menu-mlid-7961"><a href="/info-kontakt/faq">FAQ</a></li>
+<li class="leaf menu-mlid-859"><a href="/info-kontakt/agb">AGB</a></li>
+<li class="leaf menu-mlid-884"><a href="/info-kontakt/impressum">Impressum</a></li>
+<li class="last leaf menu-mlid-5902"><a href="/info-kontakt/datenschutz">Datenschutz</a></li>
+</ul></li>
+<li class="last leaf menu-mlid-886"><a href="/personalsuche" title="">Job anbieten</a></li>
+</ul></div>
+</nav>
+  </div>
+            </div>
+        </div>
+
+        
+    </header>
+
+    <div class="l-wrapper">
+        <div class="container">
+            <div class="l-left">
+
+                <div class="l-main" role="main">
+                                            <div class="l-breadcrumb">
+                            <ul class="breadcrumb"><li><a href="/">Startseite</a></li><li><a href="/jobboerse">Jobbörse</a></li><li><a href="/jobboerse/all">All</a>
+</li><li>Absolventenjobs</li></ul>                        </div>
+                    
+                    <a id="main-content"></a>
+
+                    
+                      <div class="l-region l-region--help">
+    <div id="block-bean-jobboerseabsolventenjobsslider" class="block block--bean block--bean-jobboerseabsolventenjobsslider sw_block_3_3_with_text_bgimage">
+        <div class="block__content">
+    <div class="entity entity-bean bean-sw-block-3-3-with-text-bgimage clearfix" about="/block/jobboerseabsolventenjobsslider" typeof="" class="entity entity-bean bean-sw-block-3-3-with-text-bgimage" style="background:url(https://www.stellenwerk-darmstadt.de/sites/default/files/320_uni_hh_1170x250_header_john.jpg)">
+
+  <div class="content">
+    <div class="field field--name-title-field field--type-text field--label-hidden"><div class="field-items"><div class="field-item even"><h1>Absolventenjobs in Darmstadt</h1></div></div></div><div class="field field--name-field-bean-body field--type-text-long field--label-hidden field--rte"><div class="field-items"><div class="field-item even"><p>In der Kategorie Absolventenjobs Darmstadt finden sich Einstiegspositionen für Absolventen&nbsp;aller Fachbereiche, zum Beispiel Ingenieurwesen, Wirtschaftswissenschaften, Jura, Naturwissenschaften, Informatik oder Geisteswissenschaften. Hier werden Hochschulabsolventen und Young Professionals von Unternehmen aus Darmstadt und ganz Deutschland gesucht.</p>
+</div></div></div>  </div>
+</div>
+  </div>
+</div>
+  </div>
+
+                    
+                    <div id="content" class="l-content">
+                        <div class="view view-jobs-finden view-id-jobs_finden view-display-id-page view-dom-id-c218fcee3351333dafbd40789b6730a3">
+            
+            <div class="company-profiles-filters">
+            <form class="views-exposed-form-jobs-finden-page" action="/jobboerse/all/absolventenjobs" method="get" id="views-exposed-form-jobs-finden-page" accept-charset="UTF-8"><div><div class="views-exposed-form">
+    <div class="views-exposed-widgets clearfix">
+                    <div class="views-exposed-widget views-reset-button">
+                <button type="submit" name="op" id="edit-reset" value="Suche zurücksetzen"  class="form-submit" >Suche zurücksetzen</button>            </div>
+                            <div id="edit-combine-wrapper" class="views-exposed-widget views-widget-filter-combine">
+                                                    <div class="views-operator">
+                        <div class="form-item form-type-select form-item-combine-op">
+  <select id="edit-combine-op" name="combine_op" class="form-select"><option value="word" selected="selected">einen Begriff finden</option><option value="allwords">alle Begriffe finden</option></select>
+</div>
+                    </div>
+                                <div class="views-widget">
+                    <div class="form-item form-type-textfield form-item-combine">
+ <input placeholder="Suchbegriff eingeben" type="text" id="edit-combine" name="combine" value="" size="30" maxlength="128" class="form-text" />
+</div>
+                </div>
+                            </div>
+                    <div id="edit-type-wrapper" class="views-exposed-widget views-widget-filter-type">
+                                    <label for="edit-type">
+                        Typ                    </label>
+                                                <div class="views-widget">
+                    <div class="form-item form-type-select form-item-type">
+ <select id="edit-type" name="type" class="form-select"><option value="All" selected="selected">- Alle -</option><option value="1">Unternehmen</option><option value="2">Privat</option><option value="3">Hochschulen</option></select>
+</div>
+                </div>
+                            </div>
+                    <div id="edit-tid-wrapper" class="views-exposed-widget views-widget-filter-tid">
+                                                <div class="views-widget">
+                    <div class="form-item form-type-select form-item-tid">
+ <select id="edit-tid" name="tid" class="form-select"><option value="All">- Alle -</option><option value="118" selected="selected">Absolventenjobs</option><option value="214">Praktika</option><option value="117">Sonstige</option><option value="98">Studentenjobs</option><option value="90">Praktika</option><option value="84">Umzugshilfen</option><option value="93">Putzhilfen</option><option value="77">Kinderbetreuung</option><option value="81">Nachhilfeunterricht</option><option value="70">Assistenz</option><option value="100">Sonstige Angebote</option><option value="97">Professuren</option><option value="91">Wissenschaftl. Stellen</option><option value="95">Nicht–Wissenschaftl. Stellen</option><option value="92">Auszubildende</option><option value="99">Studentische Hilfskräfte</option></select>
+</div>
+                </div>
+                            </div>
+                    <div id="edit-field-job-employment-type-value-wrapper" class="views-exposed-widget views-widget-filter-field_job_employment_type_value">
+                                                <div class="views-widget">
+                    <div class="form-item form-type-select form-item-field-job-employment-type-value">
+ <select id="edit-field-job-employment-type-value" name="field_job_employment_type_value" class="form-select"><option value="All" selected="selected">- Alle -</option><option value="450EUR">450-Euro-Basis (geringfügige Beschäftigung)</option><option value="parttime">Teilzeit</option><option value="fulltime">Vollzeit</option><option value="feebasis">Honorarbasis</option><option value="byarrangement">nach Vereinbarung</option><option value="student">Werkstudent(in)</option></select>
+</div>
+                </div>
+                            </div>
+                                        <div class="views-exposed-widget views-submit-button">
+            <button type="submit" id="edit-submit-jobs-finden" value="Jobs finden"  class="form-submit" >Jobs finden</button>        </div>
+    </div>
+</div>
+</div></form>        </div>
+    
+            <div class="company-profiles-total-result-count">
+            Ihre Suche ergab 58 Treffer:        </div>
+    
+    <div class="selected-filters-label">
+        Suchfilter:     </div>
+
+            <table class="pagerer">
+<tbody>
+ <tr><td></td><td class="pagerer pagerer-center"><div class="pagerer-pager "><ul class="pager"><li class="pager-previous ">zurück</li>
+<li class="pager-current">1</li>
+<li class="pager-item active"><a title="Gehe zu Seite 2" href="/jobboerse/all/absolventenjobs?combine_op=word&amp;combine=&amp;type=All&amp;tid=118&amp;field_job_employment_type_value=All&amp;page_ak=0.2&amp;page=1">2</a></li>
+<li class="pager-item active"><a title="Zur letzten Seite" href="/jobboerse/all/absolventenjobs?combine_op=word&amp;combine=&amp;type=All&amp;tid=118&amp;field_job_employment_type_value=All&amp;page_ak=0.2&amp;page=2">3</a></li>
+<li class="pager-next active"><a title="Zur nächsten Seite" href="/jobboerse/all/absolventenjobs?combine_op=word&amp;combine=&amp;type=All&amp;tid=118&amp;field_job_employment_type_value=All&amp;page=1">vor</a></li>
+</ul></div></td><td></td> </tr>
+</tbody>
+</table>
+    
+    
+            <div class="view-content">
+              <div class="views-row views-row-1 views-row-odd views-row-first">
+    <div  about="/jobboerse/absolventenjobs-customer-service-advisor-german-speaking-cork-sw-2017-05-15-117878" typeof="sioc:Item foaf:Document" class="ds-3col-listing node node--job-b2b view-mode-listing node--listing node--job-b2b--listing clearfix">
+
+  
+  <div class="group-left">
+    <div class="field field--name-ds-field-company-profile-logo-li field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even"><!--
+THIS FILE IS NOT USED AND IS HERE AS A STARTING POINT FOR CUSTOMIZATION ONLY.
+See http://api.drupal.org/api/function/theme_field/7 for details.
+After copying this file to your theme's folder and customizing it, remove this
+HTML comment.
+-->
+<div class="field field--name-field-company-logo field--type-imagefield-crop field--label-hidden">
+        <div class="field-items">
+                                    <div
+                    class="field-item even"><img typeof="foaf:Image" src="https://www.stellenwerk-darmstadt.de/sites/default/files/styles/listing_logo/public/default_images/default-listing-logo_1.jpg?itok=civnOgrn" width="168" height="70" alt="" /></div>
+                        </div>
+</div></div></div></div>  </div>
+
+  <div class="group-middle">
+    <div class="field field--name-title-field field--type-text field--label-hidden"><div class="field-items"><div class="field-item even"><a href="/jobboerse/absolventenjobs-customer-service-advisor-german-speaking-cork-sw-2017-05-15-117878">Customer Service Advisor - German speaking</a></div></div></div><div class="field field--name-ds-field-company-profile-name field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even"><div class="field field--name-field-job-company-name field--type-text field--label-hidden"><div class="field-items"><div class="field-item even">Apple</div></div></div></div></div></div>  </div>
+
+  <div class="group-right">
+    <div class="field field--name-ds-field-online-since field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even">online seit: heute</div></div></div>  </div>
+
+</div>
+
+  </div>
+    <div class="views-row views-row-2 views-row-even">
+    <div  about="/jobboerse/absolventenjobs-technische-sachbearbeiterinnen-it-strategie-und-it-planung-bonn-sw-2017-04-28-115334" typeof="sioc:Item foaf:Document" class="ds-3col-listing node node--job-b2b view-mode-listing node--listing node--job-b2b--listing colored-bg clearfix">
+
+  
+  <div class="group-left">
+    <div class="field field--name-ds-field-company-profile-logo-li field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even"><!--
+THIS FILE IS NOT USED AND IS HERE AS A STARTING POINT FOR CUSTOMIZATION ONLY.
+See http://api.drupal.org/api/function/theme_field/7 for details.
+After copying this file to your theme's folder and customizing it, remove this
+HTML comment.
+-->
+<div class="field field--name-field-company-logo field--type-imagefield-crop field--label-hidden">
+        <div class="field-items">
+                                    <div
+                    class="field-item even"><img typeof="foaf:Image" src="https://www.stellenwerk-darmstadt.de/sites/default/files/styles/listing_logo/public/job_b2b/logo/bundesamt_fur_sicherheit_in_der_informationstechnik_logo_1_0_0_0_0_0.jpg?itok=jgR-szrc" width="143" height="70" alt="" /></div>
+                        </div>
+</div></div></div></div>  </div>
+
+  <div class="group-middle">
+    <div class="field field--name-title-field field--type-text field--label-hidden"><div class="field-items"><div class="field-item even"><a href="/jobboerse/absolventenjobs-technische-sachbearbeiterinnen-it-strategie-und-it-planung-bonn-sw-2017-04-28-115334">Technische Sachbearbeiter/innen  IT-Strategie und IT-Planung</a></div></div></div><div class="field field--name-ds-field-company-profile-name field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even"><div class="field field--name-title-field field--type-text field--label-hidden"><div class="field-items"><div class="field-item even">Bundesamt für Sicherheit in der Informationstechnik (BSI)</div></div></div></div></div></div>  </div>
+
+  <div class="group-right">
+    <div class="field field--name-ds-field-online-since field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even">online seit: 3 Tagen</div></div></div>  </div>
+
+</div>
+
+  </div>
+    <div class="views-row views-row-3 views-row-odd">
+    <div  about="/jobboerse/absolventenjobs-technische-sachbearbeiterinnen-it-infrastruktur-bonn-sw-2017-04-28-115329" typeof="sioc:Item foaf:Document" class="ds-3col-listing node node--job-b2b view-mode-listing node--listing node--job-b2b--listing colored-bg clearfix">
+
+  
+  <div class="group-left">
+    <div class="field field--name-ds-field-company-profile-logo-li field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even"><!--
+THIS FILE IS NOT USED AND IS HERE AS A STARTING POINT FOR CUSTOMIZATION ONLY.
+See http://api.drupal.org/api/function/theme_field/7 for details.
+After copying this file to your theme's folder and customizing it, remove this
+HTML comment.
+-->
+<div class="field field--name-field-company-logo field--type-imagefield-crop field--label-hidden">
+        <div class="field-items">
+                                    <div
+                    class="field-item even"><img typeof="foaf:Image" src="https://www.stellenwerk-darmstadt.de/sites/default/files/styles/listing_logo/public/job_b2b/logo/bundesamt_fur_sicherheit_in_der_informationstechnik_logo_1_0_0_0_0_0.jpg?itok=jgR-szrc" width="143" height="70" alt="" /></div>
+                        </div>
+</div></div></div></div>  </div>
+
+  <div class="group-middle">
+    <div class="field field--name-title-field field--type-text field--label-hidden"><div class="field-items"><div class="field-item even"><a href="/jobboerse/absolventenjobs-technische-sachbearbeiterinnen-it-infrastruktur-bonn-sw-2017-04-28-115329">Technische Sachbearbeiter/innen  IT-Infrastruktur</a></div></div></div><div class="field field--name-ds-field-company-profile-name field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even"><div class="field field--name-title-field field--type-text field--label-hidden"><div class="field-items"><div class="field-item even">Bundesamt für Sicherheit in der Informationstechnik (BSI)</div></div></div></div></div></div>  </div>
+
+  <div class="group-right">
+    <div class="field field--name-ds-field-online-since field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even">online seit: 3 Tagen</div></div></div>  </div>
+
+</div>
+
+  </div>
+    <div class="views-row views-row-4 views-row-even">
+    <div  about="/jobboerse/absolventenjobs-junior-consultant-mw-security-analysis-pentest-neu-isenburg-da-2017-05-12-117589" typeof="sioc:Item foaf:Document" class="ds-3col-listing node node--job-b2b view-mode-listing node--listing node--job-b2b--listing colored-bg clearfix">
+
+  
+  <div class="group-left">
+    <div class="field field--name-ds-field-company-profile-logo-li field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even"><!--
+THIS FILE IS NOT USED AND IS HERE AS A STARTING POINT FOR CUSTOMIZATION ONLY.
+See http://api.drupal.org/api/function/theme_field/7 for details.
+After copying this file to your theme's folder and customizing it, remove this
+HTML comment.
+-->
+<div class="field field--name-field-company-logo field--type-imagefield-crop field--label-hidden">
+        <div class="field-items">
+                                    <div
+                    class="field-item even"><img typeof="foaf:Image" src="https://www.stellenwerk-darmstadt.de/sites/default/files/styles/listing_logo/public/Firmenlogo-usd_AG_1_0_0_0_0_0_0_0_0_0_0.png?itok=_Qg1PKFP" width="138" height="70" alt="" /></div>
+                        </div>
+</div></div></div></div>  </div>
+
+  <div class="group-middle">
+    <div class="field field--name-title-field field--type-text field--label-hidden"><div class="field-items"><div class="field-item even"><a href="/jobboerse/absolventenjobs-junior-consultant-mw-security-analysis-pentest-neu-isenburg-da-2017-05-12-117589">(Junior) Consultant (m/w) Security Analysis &amp; Pentest</a></div></div></div><div class="field field--name-ds-field-company-profile-name field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even"><div class="field field--name-title-field field--type-text field--label-hidden"><div class="field-items"><div class="field-item even">usd AG</div></div></div></div></div></div>  </div>
+
+  <div class="group-right">
+    <div class="field field--name-ds-field-online-since field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even">online seit: 3 Tagen</div></div></div>  </div>
+
+</div>
+
+  </div>
+    <div class="views-row views-row-5 views-row-odd">
+    <div  about="/jobboerse/absolventenjobs-junior-consultant-mw-it-security-neu-isenburg-da-2017-05-12-117586" typeof="sioc:Item foaf:Document" class="ds-3col-listing node node--job-b2b view-mode-listing node--listing node--job-b2b--listing colored-bg clearfix">
+
+  
+  <div class="group-left">
+    <div class="field field--name-ds-field-company-profile-logo-li field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even"><!--
+THIS FILE IS NOT USED AND IS HERE AS A STARTING POINT FOR CUSTOMIZATION ONLY.
+See http://api.drupal.org/api/function/theme_field/7 for details.
+After copying this file to your theme's folder and customizing it, remove this
+HTML comment.
+-->
+<div class="field field--name-field-company-logo field--type-imagefield-crop field--label-hidden">
+        <div class="field-items">
+                                    <div
+                    class="field-item even"><img typeof="foaf:Image" src="https://www.stellenwerk-darmstadt.de/sites/default/files/styles/listing_logo/public/Firmenlogo-usd_AG_1_0_0_0_0_0_0_0_0_0_0.png?itok=_Qg1PKFP" width="138" height="70" alt="" /></div>
+                        </div>
+</div></div></div></div>  </div>
+
+  <div class="group-middle">
+    <div class="field field--name-title-field field--type-text field--label-hidden"><div class="field-items"><div class="field-item even"><a href="/jobboerse/absolventenjobs-junior-consultant-mw-it-security-neu-isenburg-da-2017-05-12-117586">(Junior) Consultant (m/w) IT-Security</a></div></div></div><div class="field field--name-ds-field-company-profile-name field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even"><div class="field field--name-title-field field--type-text field--label-hidden"><div class="field-items"><div class="field-item even">usd AG</div></div></div></div></div></div>  </div>
+
+  <div class="group-right">
+    <div class="field field--name-ds-field-online-since field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even">online seit: 3 Tagen</div></div></div>  </div>
+
+</div>
+
+  </div>
+    <div class="views-row views-row-6 views-row-even">
+    <div  about="/jobboerse/absolventenjobs-fertigungsplaner-kunststofftechnik-waiblingen-bei-stuttgart-da-2017-05-12-117573" typeof="sioc:Item foaf:Document" class="ds-3col-listing node node--job-b2b view-mode-listing node--listing node--job-b2b--listing colored-bg clearfix">
+
+  
+  <div class="group-left">
+    <div class="field field--name-ds-field-company-profile-logo-li field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even"><!--
+THIS FILE IS NOT USED AND IS HERE AS A STARTING POINT FOR CUSTOMIZATION ONLY.
+See http://api.drupal.org/api/function/theme_field/7 for details.
+After copying this file to your theme's folder and customizing it, remove this
+HTML comment.
+-->
+<div class="field field--name-field-company-logo field--type-imagefield-crop field--label-hidden">
+        <div class="field-items">
+                                    <div
+                    class="field-item even"><img typeof="foaf:Image" src="https://www.stellenwerk-darmstadt.de/sites/default/files/styles/listing_logo/public/company/logo/logo__1_0_0_0_0_0_0.jpg?itok=b4LdcdnR" width="168" height="41" alt="" /></div>
+                        </div>
+</div></div></div></div>  </div>
+
+  <div class="group-middle">
+    <div class="field field--name-title-field field--type-text field--label-hidden"><div class="field-items"><div class="field-item even"><a href="/jobboerse/absolventenjobs-fertigungsplaner-kunststofftechnik-waiblingen-bei-stuttgart-da-2017-05-12-117573">Fertigungsplaner/-in Kunststofftechnik</a></div></div></div><div class="field field--name-ds-field-company-profile-name field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even"><div class="field field--name-title-field field--type-text field--label-hidden"><div class="field-items"><div class="field-item even">ANDREAS STIHL AG &amp; Co. KG</div></div></div></div></div></div>  </div>
+
+  <div class="group-right">
+    <div class="field field--name-ds-field-online-since field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even">online seit: 3 Tagen</div></div></div>  </div>
+
+</div>
+
+  </div>
+    <div class="views-row views-row-7 views-row-odd">
+    <div  about="/jobboerse/absolventenjobs-technischer-projektleiter-mw-darmstadt-da-2017-05-11-117460" typeof="sioc:Item foaf:Document" class="ds-3col-listing node node--job-b2b view-mode-listing node--listing node--job-b2b--listing colored-bg clearfix">
+
+  
+  <div class="group-left">
+    <div class="field field--name-ds-field-company-profile-logo-li field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even"><!--
+THIS FILE IS NOT USED AND IS HERE AS A STARTING POINT FOR CUSTOMIZATION ONLY.
+See http://api.drupal.org/api/function/theme_field/7 for details.
+After copying this file to your theme's folder and customizing it, remove this
+HTML comment.
+-->
+<div class="field field--name-field-company-logo field--type-imagefield-crop field--label-hidden">
+        <div class="field-items">
+                                    <div
+                    class="field-item even"><img typeof="foaf:Image" src="https://www.stellenwerk-darmstadt.de/sites/default/files/styles/listing_logo/public/job_b2b/logo/brightsolutions_logo_cmyk_innovation_1_0_0_0.jpg?itok=l82zr3lo" width="153" height="70" alt="" /></div>
+                        </div>
+</div></div></div></div>  </div>
+
+  <div class="group-middle">
+    <div class="field field--name-title-field field--type-text field--label-hidden"><div class="field-items"><div class="field-item even"><a href="/jobboerse/absolventenjobs-technischer-projektleiter-mw-darmstadt-da-2017-05-11-117460">Technischer Projektleiter (m/w)</a></div></div></div><div class="field field--name-ds-field-company-profile-name field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even"><div class="field field--name-title-field field--type-text field--label-hidden"><div class="field-items"><div class="field-item even">Bright Solutions GmbH</div></div></div></div></div></div>  </div>
+
+  <div class="group-right">
+    <div class="field field--name-ds-field-online-since field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even">online seit: 4 Tagen</div></div></div>  </div>
+
+</div>
+
+  </div>
+      <div class="ad_wrapper ad_wrapper_darmstadt">
+      <div class="ad_item">
+        <div id="ad-manager-ad-darmstadt-b2c-superbanner-content-728-90-0" class="ad-manager-ad content varifast"><!-- BEGIN ADITIONSSLTAG Website-Tag --><script type="text/javascript" src="https://ad1.adfarm1.adition.com/js?wp_id=3375639 "></script><!-- END ADITIONSSLTAG--></div>
+      </div>
+      </div>      <div class="views-row views-row-8 views-row-even">
+    <div  about="/jobboerse/absolventenjobs-9-lichtenberg-stipendien-zur-promotion-der-wirtschaftsinformatik-goettingen-sw-2017-05-10-117283" typeof="sioc:Item foaf:Document" class="ds-3col-listing node node--job-b2b view-mode-listing node--listing node--job-b2b--listing colored-bg clearfix">
+
+  
+  <div class="group-left">
+    <div class="field field--name-ds-field-company-profile-logo-li field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even"><!--
+THIS FILE IS NOT USED AND IS HERE AS A STARTING POINT FOR CUSTOMIZATION ONLY.
+See http://api.drupal.org/api/function/theme_field/7 for details.
+After copying this file to your theme's folder and customizing it, remove this
+HTML comment.
+-->
+<div class="field field--name-field-company-logo field--type-imagefield-crop field--label-hidden">
+        <div class="field-items">
+                                    <div
+                    class="field-item even"><img typeof="foaf:Image" src="https://www.stellenwerk-darmstadt.de/sites/default/files/styles/listing_logo/public/job_b2b/logo/uni_goettingen_-_logo_4c_rgb_-_600dpi_1_0_0_0.jpg?itok=vN69tu_0" width="168" height="31" alt="" /></div>
+                        </div>
+</div></div></div></div>  </div>
+
+  <div class="group-middle">
+    <div class="field field--name-title-field field--type-text field--label-hidden"><div class="field-items"><div class="field-item even"><a href="/jobboerse/absolventenjobs-9-lichtenberg-stipendien-zur-promotion-der-wirtschaftsinformatik-goettingen-sw-2017-05-10-117283"> 9 Lichtenberg-Stipendien zur Promotion in der Wirtschaftsinformatik</a></div></div></div><div class="field field--name-ds-field-company-profile-name field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even"><div class="field field--name-title-field field--type-text field--label-hidden"><div class="field-items"><div class="field-item even">Georg-August-Universität Göttingen</div></div></div></div></div></div>  </div>
+
+  <div class="group-right">
+    <div class="field field--name-ds-field-online-since field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even">online seit: 5 Tagen</div></div></div>  </div>
+
+</div>
+
+  </div>
+    <div class="views-row views-row-9 views-row-odd">
+    <div  about="/jobboerse/absolventenjobs-softwareentwickler-c-mw-60325-frankfurt-sw-2017-05-10-117293" typeof="sioc:Item foaf:Document" class="ds-3col-listing node node--job-b2b view-mode-listing node--listing node--job-b2b--listing colored-bg clearfix">
+
+  
+  <div class="group-left">
+    <div class="field field--name-ds-field-company-profile-logo-li field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even"><!--
+THIS FILE IS NOT USED AND IS HERE AS A STARTING POINT FOR CUSTOMIZATION ONLY.
+See http://api.drupal.org/api/function/theme_field/7 for details.
+After copying this file to your theme's folder and customizing it, remove this
+HTML comment.
+-->
+<div class="field field--name-field-company-logo field--type-imagefield-crop field--label-hidden">
+        <div class="field-items">
+                                    <div
+                    class="field-item even"><img typeof="foaf:Image" src="https://www.stellenwerk-darmstadt.de/sites/default/files/styles/listing_logo/public/job_b2b/logo/logo_-_screen_800px_rgb_1_0_0_0_0_0_0_0.png?itok=eo7yjau4" width="141" height="70" alt="" /></div>
+                        </div>
+</div></div></div></div>  </div>
+
+  <div class="group-middle">
+    <div class="field field--name-title-field field--type-text field--label-hidden"><div class="field-items"><div class="field-item even"><a href="/jobboerse/absolventenjobs-softwareentwickler-c-mw-60325-frankfurt-sw-2017-05-10-117293">Softwareentwickler C++ (m/w)</a></div></div></div><div class="field field--name-ds-field-company-profile-name field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even"><div class="field field--name-title-field field--type-text field--label-hidden"><div class="field-items"><div class="field-item even">Yatta Solutions GmbH</div></div></div></div></div></div>  </div>
+
+  <div class="group-right">
+    <div class="field field--name-ds-field-online-since field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even">online seit: 5 Tagen</div></div></div>  </div>
+
+</div>
+
+  </div>
+    <div class="views-row views-row-10 views-row-even">
+    <div  about="/jobboerse/absolventenjobs-referentin-informatik-und-sachbearbeiterin-informatik-wiesbaden-sw-2017-05-10-117287" typeof="sioc:Item foaf:Document" class="ds-3col-listing node node--job-b2b view-mode-listing node--listing node--job-b2b--listing colored-bg clearfix">
+
+  
+  <div class="group-left">
+    <div class="field field--name-ds-field-company-profile-logo-li field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even"><!--
+THIS FILE IS NOT USED AND IS HERE AS A STARTING POINT FOR CUSTOMIZATION ONLY.
+See http://api.drupal.org/api/function/theme_field/7 for details.
+After copying this file to your theme's folder and customizing it, remove this
+HTML comment.
+-->
+<div class="field field--name-field-company-logo field--type-imagefield-crop field--label-hidden">
+        <div class="field-items">
+                                    <div
+                    class="field-item even"><img typeof="foaf:Image" src="https://www.stellenwerk-darmstadt.de/sites/default/files/styles/listing_logo/public/job_b2b/logo/hessischerloewe_1_0_0.png?itok=3Zc3W1n0" width="77" height="70" alt="" /></div>
+                        </div>
+</div></div></div></div>  </div>
+
+  <div class="group-middle">
+    <div class="field field--name-title-field field--type-text field--label-hidden"><div class="field-items"><div class="field-item even"><a href="/jobboerse/absolventenjobs-referentin-informatik-und-sachbearbeiterin-informatik-wiesbaden-sw-2017-05-10-117287">Referent/in Informatik und Sachbearbeiter/in Informatik</a></div></div></div><div class="field field--name-ds-field-company-profile-name field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even"><div class="field field--name-title-field field--type-text field--label-hidden"><div class="field-items"><div class="field-item even">Der Hessische Datenschutzbeauftragte</div></div></div></div></div></div>  </div>
+
+  <div class="group-right">
+    <div class="field field--name-ds-field-online-since field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even">online seit: 5 Tagen</div></div></div>  </div>
+
+</div>
+
+  </div>
+    <div class="views-row views-row-11 views-row-odd">
+    <div  about="/jobboerse/absolventenjobs-software-entwickler-mw-ingelheim-kold-2017-04-26-114883" typeof="sioc:Item foaf:Document" class="ds-3col-listing node node--job-b2b view-mode-listing node--listing node--job-b2b--listing colored-bg clearfix">
+
+  
+  <div class="group-left">
+    <div class="field field--name-ds-field-company-profile-logo-li field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even"><!--
+THIS FILE IS NOT USED AND IS HERE AS A STARTING POINT FOR CUSTOMIZATION ONLY.
+See http://api.drupal.org/api/function/theme_field/7 for details.
+After copying this file to your theme's folder and customizing it, remove this
+HTML comment.
+-->
+<div class="field field--name-field-company-logo field--type-imagefield-crop field--label-hidden">
+        <div class="field-items">
+                                    <div
+                    class="field-item even"><img typeof="foaf:Image" src="https://www.stellenwerk-darmstadt.de/sites/default/files/styles/listing_logo/public/company/logo/gdv_logo_stellenwerk_1_0_0_0_0_1_0_0.png?itok=ppy6kSbq" width="110" height="70" alt="" /></div>
+                        </div>
+</div></div></div></div>  </div>
+
+  <div class="group-middle">
+    <div class="field field--name-title-field field--type-text field--label-hidden"><div class="field-items"><div class="field-item even"><a href="/jobboerse/absolventenjobs-software-entwickler-mw-ingelheim-kold-2017-04-26-114883">Software-Entwickler (m/w)</a></div></div></div><div class="field field--name-ds-field-company-profile-name field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even"><div class="field field--name-title-field field--type-text field--label-hidden"><div class="field-items"><div class="field-item even">GDV Gesellschaft für geografische Datenverarbeitung mbH</div></div></div></div></div></div>  </div>
+
+  <div class="group-right">
+    <div class="field field--name-ds-field-online-since field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even">online seit: 5 Tagen</div></div></div>  </div>
+
+</div>
+
+  </div>
+    <div class="views-row views-row-12 views-row-even">
+    <div  about="/jobboerse/absolventenjobs-web-entwicklerin-darmstadt-da-2017-05-10-117167" typeof="sioc:Item foaf:Document" class="ds-3col-listing node node--job-b2b view-mode-listing node--listing node--job-b2b--listing clearfix">
+
+  
+  <div class="group-left">
+    <div class="field field--name-ds-field-company-profile-logo-li field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even"><!--
+THIS FILE IS NOT USED AND IS HERE AS A STARTING POINT FOR CUSTOMIZATION ONLY.
+See http://api.drupal.org/api/function/theme_field/7 for details.
+After copying this file to your theme's folder and customizing it, remove this
+HTML comment.
+-->
+<div class="field field--name-field-company-logo field--type-imagefield-crop field--label-hidden">
+        <div class="field-items">
+                                    <div
+                    class="field-item even"><img typeof="foaf:Image" src="https://www.stellenwerk-darmstadt.de/sites/default/files/styles/listing_logo/public/default_images/default-listing-logo_1.jpg?itok=civnOgrn" width="168" height="70" alt="" /></div>
+                        </div>
+</div></div></div></div>  </div>
+
+  <div class="group-middle">
+    <div class="field field--name-title-field field--type-text field--label-hidden"><div class="field-items"><div class="field-item even"><a href="/jobboerse/absolventenjobs-web-entwicklerin-darmstadt-da-2017-05-10-117167">Web Entwickler/in</a></div></div></div><div class="field field--name-ds-field-company-profile-name field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even"><div class="field field--name-field-job-company-name field--type-text field--label-hidden"><div class="field-items"><div class="field-item even">Bohm Nonnen Urhahn Büro für interaktive Medien</div></div></div></div></div></div>  </div>
+
+  <div class="group-right">
+    <div class="field field--name-ds-field-online-since field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even">online seit: 5 Tagen</div></div></div>  </div>
+
+</div>
+
+  </div>
+    <div class="views-row views-row-13 views-row-odd">
+    <div  about="/jobboerse/absolventenjobs-softwareentwickler-vakuumtechnik-mw-reutlingen-sw-2017-05-10-117082" typeof="sioc:Item foaf:Document" class="ds-3col-listing node node--job-b2b view-mode-listing node--listing node--job-b2b--listing colored-bg clearfix">
+
+  
+  <div class="group-left">
+    <div class="field field--name-ds-field-company-profile-logo-li field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even"><!--
+THIS FILE IS NOT USED AND IS HERE AS A STARTING POINT FOR CUSTOMIZATION ONLY.
+See http://api.drupal.org/api/function/theme_field/7 for details.
+After copying this file to your theme's folder and customizing it, remove this
+HTML comment.
+-->
+<div class="field field--name-field-company-logo field--type-imagefield-crop field--label-hidden">
+        <div class="field-items">
+                                    <div
+                    class="field-item even"><img typeof="foaf:Image" src="https://www.stellenwerk-darmstadt.de/sites/default/files/styles/listing_logo/public/job_b2b/logo/manz_logo_final_cmyk_1_0_0.jpg?itok=4HEH-bMd" width="155" height="70" alt="" /></div>
+                        </div>
+</div></div></div></div>  </div>
+
+  <div class="group-middle">
+    <div class="field field--name-title-field field--type-text field--label-hidden"><div class="field-items"><div class="field-item even"><a href="/jobboerse/absolventenjobs-softwareentwickler-vakuumtechnik-mw-reutlingen-sw-2017-05-10-117082">Softwareentwickler Vakuumtechnik (m/w)</a></div></div></div><div class="field field--name-ds-field-company-profile-name field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even"><div class="field field--name-title-field field--type-text field--label-hidden"><div class="field-items"><div class="field-item even">Manz AG</div></div></div></div></div></div>  </div>
+
+  <div class="group-right">
+    <div class="field field--name-ds-field-online-since field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even">online seit: 5 Tagen</div></div></div>  </div>
+
+</div>
+
+  </div>
+    <div class="views-row views-row-14 views-row-even">
+    <div  about="/jobboerse/absolventenjobs-konstrukteur-mechanik-vakuumtechnik-mw-reutlingen-sw-2017-05-10-117078" typeof="sioc:Item foaf:Document" class="ds-3col-listing node node--job-b2b view-mode-listing node--listing node--job-b2b--listing colored-bg clearfix">
+
+  
+  <div class="group-left">
+    <div class="field field--name-ds-field-company-profile-logo-li field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even"><!--
+THIS FILE IS NOT USED AND IS HERE AS A STARTING POINT FOR CUSTOMIZATION ONLY.
+See http://api.drupal.org/api/function/theme_field/7 for details.
+After copying this file to your theme's folder and customizing it, remove this
+HTML comment.
+-->
+<div class="field field--name-field-company-logo field--type-imagefield-crop field--label-hidden">
+        <div class="field-items">
+                                    <div
+                    class="field-item even"><img typeof="foaf:Image" src="https://www.stellenwerk-darmstadt.de/sites/default/files/styles/listing_logo/public/job_b2b/logo/manz_logo_final_cmyk_1_0_0.jpg?itok=4HEH-bMd" width="155" height="70" alt="" /></div>
+                        </div>
+</div></div></div></div>  </div>
+
+  <div class="group-middle">
+    <div class="field field--name-title-field field--type-text field--label-hidden"><div class="field-items"><div class="field-item even"><a href="/jobboerse/absolventenjobs-konstrukteur-mechanik-vakuumtechnik-mw-reutlingen-sw-2017-05-10-117078">Konstrukteur Mechanik Vakuumtechnik (m/w)</a></div></div></div><div class="field field--name-ds-field-company-profile-name field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even"><div class="field field--name-title-field field--type-text field--label-hidden"><div class="field-items"><div class="field-item even">Manz AG</div></div></div></div></div></div>  </div>
+
+  <div class="group-right">
+    <div class="field field--name-ds-field-online-since field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even">online seit: 5 Tagen</div></div></div>  </div>
+
+</div>
+
+  </div>
+    <div class="views-row views-row-15 views-row-odd">
+    <div  about="/jobboerse/absolventenjobs-entwicklungsingenieur-fuer-piezokeramische-bauelemente-wm-deutschlandsberg-da-2017-05-09-117006" typeof="sioc:Item foaf:Document" class="ds-3col-listing node node--job-b2b view-mode-listing node--listing node--job-b2b--listing colored-bg clearfix">
+
+  
+  <div class="group-left">
+    <div class="field field--name-ds-field-company-profile-logo-li field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even"><!--
+THIS FILE IS NOT USED AND IS HERE AS A STARTING POINT FOR CUSTOMIZATION ONLY.
+See http://api.drupal.org/api/function/theme_field/7 for details.
+After copying this file to your theme's folder and customizing it, remove this
+HTML comment.
+-->
+<div class="field field--name-field-company-logo field--type-imagefield-crop field--label-hidden">
+        <div class="field-items">
+                                    <div
+                    class="field-item even"><img typeof="foaf:Image" src="https://www.stellenwerk-darmstadt.de/sites/default/files/styles/listing_logo/public/Firmenlogo-EPCOS_OHG_-_A_TDK_Group_Company_01_1.jpg?itok=g1B8VVsb" width="168" height="39" alt="" /></div>
+                        </div>
+</div></div></div></div>  </div>
+
+  <div class="group-middle">
+    <div class="field field--name-title-field field--type-text field--label-hidden"><div class="field-items"><div class="field-item even"><a href="/jobboerse/absolventenjobs-entwicklungsingenieur-fuer-piezokeramische-bauelemente-wm-deutschlandsberg-da-2017-05-09-117006">Entwicklungsingenieur für Piezokeramische Bauelemente (w/m)</a></div></div></div><div class="field field--name-ds-field-company-profile-name field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even"><div class="field field--name-title-field field--type-text field--label-hidden"><div class="field-items"><div class="field-item even">EPCOS OHG - A TDK Group Company</div></div></div></div></div></div>  </div>
+
+  <div class="group-right">
+    <div class="field field--name-ds-field-online-since field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even">online seit: 6 Tagen</div></div></div>  </div>
+
+</div>
+
+  </div>
+    <div class="views-row views-row-16 views-row-even">
+    <div  about="/jobboerse/absolventenjobs-graduate-assistant-darmstadt-sw-2017-04-25-114696" typeof="sioc:Item foaf:Document" class="ds-3col-listing node node--job-b2b view-mode-listing node--listing node--job-b2b--listing colored-bg clearfix">
+
+  
+  <div class="group-left">
+    <div class="field field--name-ds-field-company-profile-logo-li field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even"><!--
+THIS FILE IS NOT USED AND IS HERE AS A STARTING POINT FOR CUSTOMIZATION ONLY.
+See http://api.drupal.org/api/function/theme_field/7 for details.
+After copying this file to your theme's folder and customizing it, remove this
+HTML comment.
+-->
+<div class="field field--name-field-company-logo field--type-imagefield-crop field--label-hidden">
+        <div class="field-items">
+                                    <div
+                    class="field-item even"><img typeof="foaf:Image" src="https://www.stellenwerk-darmstadt.de/sites/default/files/styles/listing_logo/public/job_b2b/logo/intersystems_logo_1_0_0.jpg?itok=Iv0hbQvu" width="168" height="48" alt="" /></div>
+                        </div>
+</div></div></div></div>  </div>
+
+  <div class="group-middle">
+    <div class="field field--name-title-field field--type-text field--label-hidden"><div class="field-items"><div class="field-item even"><a href="/jobboerse/absolventenjobs-graduate-assistant-darmstadt-sw-2017-04-25-114696">Graduate Assistant</a></div></div></div><div class="field field--name-ds-field-company-profile-name field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even"><div class="field field--name-title-field field--type-text field--label-hidden"><div class="field-items"><div class="field-item even">InterSystems GmbH</div></div></div></div></div></div>  </div>
+
+  <div class="group-right">
+    <div class="field field--name-ds-field-online-since field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even">online seit: 6 Tagen</div></div></div>  </div>
+
+</div>
+
+  </div>
+    <div class="views-row views-row-17 views-row-odd">
+    <div  about="/jobboerse/absolventenjobs-bachelor-im-bereich-geoinformationssysteme-langen-da-2017-05-09-116963" typeof="sioc:Item foaf:Document" class="ds-3col-listing node node--job-b2b view-mode-listing node--listing node--job-b2b--listing colored-bg clearfix">
+
+  
+  <div class="group-left">
+    <div class="field field--name-ds-field-company-profile-logo-li field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even"><!--
+THIS FILE IS NOT USED AND IS HERE AS A STARTING POINT FOR CUSTOMIZATION ONLY.
+See http://api.drupal.org/api/function/theme_field/7 for details.
+After copying this file to your theme's folder and customizing it, remove this
+HTML comment.
+-->
+<div class="field field--name-field-company-logo field--type-imagefield-crop field--label-hidden">
+        <div class="field-items">
+                                    <div
+                    class="field-item even"><img typeof="foaf:Image" src="https://www.stellenwerk-darmstadt.de/sites/default/files/styles/listing_logo/public/job_b2b/logo/swl_logo2012_a_4c_1_0_0.jpg?itok=OsQEO88M" width="168" height="62" alt="" /></div>
+                        </div>
+</div></div></div></div>  </div>
+
+  <div class="group-middle">
+    <div class="field field--name-title-field field--type-text field--label-hidden"><div class="field-items"><div class="field-item even"><a href="/jobboerse/absolventenjobs-bachelor-im-bereich-geoinformationssysteme-langen-da-2017-05-09-116963">Bachelor im Bereich Geoinformationssysteme</a></div></div></div><div class="field field--name-ds-field-company-profile-name field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even"><div class="field field--name-title-field field--type-text field--label-hidden"><div class="field-items"><div class="field-item even">Stadtwerke Langen GmbH</div></div></div></div></div></div>  </div>
+
+  <div class="group-right">
+    <div class="field field--name-ds-field-online-since field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even">online seit: 6 Tagen</div></div></div>  </div>
+
+</div>
+
+  </div>
+    <div class="views-row views-row-18 views-row-even">
+    <div  about="/jobboerse/absolventenjobs-vertriebsingenieur-messtechnik-mw-darmstadt-da-2017-04-25-114625" typeof="sioc:Item foaf:Document" class="ds-3col-listing node node--job-b2b view-mode-listing node--listing node--job-b2b--listing colored-bg clearfix">
+
+  
+  <div class="group-left">
+    <div class="field field--name-ds-field-company-profile-logo-li field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even"><!--
+THIS FILE IS NOT USED AND IS HERE AS A STARTING POINT FOR CUSTOMIZATION ONLY.
+See http://api.drupal.org/api/function/theme_field/7 for details.
+After copying this file to your theme's folder and customizing it, remove this
+HTML comment.
+-->
+<div class="field field--name-field-company-logo field--type-imagefield-crop field--label-hidden">
+        <div class="field-items">
+                                    <div
+                    class="field-item even"><img typeof="foaf:Image" src="https://www.stellenwerk-darmstadt.de/sites/default/files/styles/listing_logo/public/job_b2b/logo/logo_optomet_1_0_0.png?itok=aCl5N3q4" width="168" height="40" alt="" /></div>
+                        </div>
+</div></div></div></div>  </div>
+
+  <div class="group-middle">
+    <div class="field field--name-title-field field--type-text field--label-hidden"><div class="field-items"><div class="field-item even"><a href="/jobboerse/absolventenjobs-vertriebsingenieur-messtechnik-mw-darmstadt-da-2017-04-25-114625">Vertriebsingenieur Messtechnik (m/w)</a></div></div></div><div class="field field--name-ds-field-company-profile-name field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even"><div class="field field--name-title-field field--type-text field--label-hidden"><div class="field-items"><div class="field-item even">OptoMET GmbH</div></div></div></div></div></div>  </div>
+
+  <div class="group-right">
+    <div class="field field--name-ds-field-online-since field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even">online seit: 6 Tagen</div></div></div>  </div>
+
+</div>
+
+  </div>
+    <div class="views-row views-row-19 views-row-odd">
+    <div  about="/jobboerse/absolventenjobs-trainee-wm-startup-cross-konzern-it-software-development-center-wolfsburg-sw-2017-05-08-116752" typeof="sioc:Item foaf:Document" class="ds-3col-listing node node--job-b2b view-mode-listing node--listing node--job-b2b--listing clearfix">
+
+  
+  <div class="group-left">
+    <div class="field field--name-ds-field-company-profile-logo-li field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even"><!--
+THIS FILE IS NOT USED AND IS HERE AS A STARTING POINT FOR CUSTOMIZATION ONLY.
+See http://api.drupal.org/api/function/theme_field/7 for details.
+After copying this file to your theme's folder and customizing it, remove this
+HTML comment.
+-->
+<div class="field field--name-field-company-logo field--type-imagefield-crop field--label-hidden">
+        <div class="field-items">
+                                    <div
+                    class="field-item even"><img typeof="foaf:Image" src="https://www.stellenwerk-darmstadt.de/sites/default/files/styles/listing_logo/public/default_images/default-listing-logo_1.jpg?itok=civnOgrn" width="168" height="70" alt="" /></div>
+                        </div>
+</div></div></div></div>  </div>
+
+  <div class="group-middle">
+    <div class="field field--name-title-field field--type-text field--label-hidden"><div class="field-items"><div class="field-item even"><a href="/jobboerse/absolventenjobs-trainee-wm-startup-cross-konzern-it-software-development-center-wolfsburg-sw-2017-05-08-116752">Trainee (w/m) StartUp Cross - Konzern IT, Software Development Center</a></div></div></div><div class="field field--name-ds-field-company-profile-name field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even"><div class="field field--name-field-job-company-name field--type-text field--label-hidden"><div class="field-items"><div class="field-item even">Volkswagen</div></div></div></div></div></div>  </div>
+
+  <div class="group-right">
+    <div class="field field--name-ds-field-online-since field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even">online seit: 7 Tagen</div></div></div>  </div>
+
+</div>
+
+  </div>
+    <div class="views-row views-row-20 views-row-even views-row-last">
+    <div  about="/jobboerse/absolventenjobs-junior-java-software-developer-mf-darmstadt-hh-2017-04-24-114468" typeof="sioc:Item foaf:Document" class="ds-3col-listing node node--job-b2b view-mode-listing node--listing node--job-b2b--listing colored-bg clearfix">
+
+  
+  <div class="group-left">
+    <div class="field field--name-ds-field-company-profile-logo-li field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even"><!--
+THIS FILE IS NOT USED AND IS HERE AS A STARTING POINT FOR CUSTOMIZATION ONLY.
+See http://api.drupal.org/api/function/theme_field/7 for details.
+After copying this file to your theme's folder and customizing it, remove this
+HTML comment.
+-->
+<div class="field field--name-field-company-logo field--type-imagefield-crop field--label-hidden">
+        <div class="field-items">
+                                    <div
+                    class="field-item even"><img typeof="foaf:Image" src="https://www.stellenwerk-darmstadt.de/sites/default/files/styles/listing_logo/public/Firmenlogo-CGI__Germany__GmbH___Co.KG_1_1_16_0_0_0.jpg?itok=ahnaMb7a" width="113" height="70" alt="" /></div>
+                        </div>
+</div></div></div></div>  </div>
+
+  <div class="group-middle">
+    <div class="field field--name-title-field field--type-text field--label-hidden"><div class="field-items"><div class="field-item even"><a href="/jobboerse/absolventenjobs-junior-java-software-developer-mf-darmstadt-hh-2017-04-24-114468">Junior Java Software Developer (m/f)</a></div></div></div><div class="field field--name-ds-field-company-profile-name field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even"><div class="field field--name-title-field field--type-text field--label-hidden"><div class="field-items"><div class="field-item even">CGI Deutschland Ltd &amp; Co. KG</div></div></div></div></div></div>  </div>
+
+  <div class="group-right">
+    <div class="field field--name-ds-field-online-since field--type-ds field--label-hidden"><div class="field-items"><div class="field-item even">online seit: 7 Tagen</div></div></div>  </div>
+
+</div>
+
+  </div>
+          </div>
+    
+            <table class="pagerer">
+<tbody>
+ <tr><td></td><td class="pagerer pagerer-center"><div class="pagerer-pager "><ul class="pager"><li class="pager-previous ">zurück</li>
+<li class="pager-current">1</li>
+<li class="pager-item active"><a title="Gehe zu Seite 2" href="/jobboerse/all/absolventenjobs?combine_op=word&amp;combine=&amp;type=All&amp;tid=118&amp;field_job_employment_type_value=All&amp;page_ak=0.2&amp;page=1">2</a></li>
+<li class="pager-item active"><a title="Zur letzten Seite" href="/jobboerse/all/absolventenjobs?combine_op=word&amp;combine=&amp;type=All&amp;tid=118&amp;field_job_employment_type_value=All&amp;page_ak=0.2&amp;page=2">3</a></li>
+<li class="pager-next active"><a title="Zur nächsten Seite" href="/jobboerse/all/absolventenjobs?combine_op=word&amp;combine=&amp;type=All&amp;tid=118&amp;field_job_employment_type_value=All&amp;page=1">vor</a></li>
+</ul></div></td><td></td> </tr>
+</tbody>
+</table>
+    
+    
+    
+    
+    
+</div>                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="l-right">
+                            <div class="l-skyscraper">
+                      <div class="l-region l-region--skyscraper">
+    <div id="block-ad-manager-darmstadt-b2c-skyscraper-160-600" class="block block--ad-manager block--ad-manager-darmstadt-b2c-skyscraper-160-600">
+        <div class="block__content">
+    <div id="ad-manager-ad-darmstadt-b2c-skyscraper-160-600-4" class="ad-manager-ad skyscraper varifast"><!-- BEGIN ADITIONSSLTAG Website-Tag --><script type="text/javascript" src="https://ad1.adfarm1.adition.com/js?wp_id=135087 "></script><!-- END ADITIONSSLTAG--></div>  </div>
+</div>
+  </div>
+                </div>
+                    </div>
+    </div>
+
+    <footer class="l-footer" role="contentinfo">
+
+        <div class="l-prefooter">
+            <div class="container">
+                  <div class="l-region l-region--prefooter-left">
+    <div id="block-domain-nav-default" class="block block--domain-nav block--domain-nav-default" id="block-domain-nav-default" class="block block--domain-nav block--domain-nav-default">
+
+    <div class="block__title footer-header">Alle Portale:</div>
+  
+  <div class="content" class="block__content">
+    <ul><li><a href="https://www.stellenwerk.de/" class="domain-id-1 ">Stellenwerk Portal</a></li>
+<li><a href="https://www.stellenwerk-mainz.de/" class="domain-id-12 ">Stellenwerk Mainz</a></li>
+<li><a href="https://www.stellenwerk-hamburg.de/" class="domain-id-2 ">Stellenwerk Hamburg</a></li>
+<li><a href="https://www.stellenwerk-koblenz-landau.de/" class="domain-id-10 ">Stellenwerk Koblenz-Landau</a></li>
+<li><a href="https://www.stellenwerk-luebeck.de/" class="domain-id-11 ">Stellenwerk Lübeck</a></li>
+<li><a href="https://www.stellenwerk-koeln.de/" class="domain-id-3 ">Stellenwerk Köln</a></li>
+<li><a href="https://www.stellenwerk-berlin.de/" class="domain-id-4 ">Stellenwerk Berlin</a></li>
+<li><a href="https://www.stellenwerk-duesseldorf.de/" class="domain-id-8 ">Stellenwerk Düsseldorf</a></li>
+<li><a href="https://www.stellenwerk-erlangen-nuernberg.de/" class="domain-id-9 ">Stellenwerk Erlangen-Nürnberg</a></li>
+<li><a href="https://www.stellenwerk-bochum.de/" class="domain-id-5 ">Stellenwerk Bochum</a></li>
+<li><a href="https://www.stellenwerk-stuttgart.de/" class="domain-id-13 ">Stellenwerk Stuttgart</a></li>
+<li><a href="https://www.stellenwerk-dortmund.de/" class="domain-id-7 ">Stellenwerk Dortmund</a></li>
+<li><a href="https://www.stellenwerk-darmstadt.de/" class="domain-id-6 active">Stellenwerk Darmstadt</a></li>
+<li><a href="https://www.stellenwerk-goettingen.de/" class="domain-id-14 ">Stellenwerk Göttingen</a></li>
+</ul>  </div>
+</div>  </div>
+
+                  <div class="l-region l-region--prefooter-middle">
+    <div id="block-menu-menu-pre-footermen-" class="block block--menu block--menu-menu-pre-footermen-" id="block-menu-menu-pre-footermen-" role="navigation" class="block block--menu block--menu-menu-pre-footermen-">
+
+    <div class="block__title footer-header">Weitere Informationen</div>
+  
+  <div class="content" class="block__content">
+    <ul class="menu"><li class="first leaf"><a href="/info-kontakt/agb" title="">Allgemeine Geschäftsbedingungen</a></li>
+<li class="leaf"><a href="/info-kontakt/datenschutz" title="">Datenschutzerklärung</a></li>
+<li class="leaf"><a href="/info-kontakt/faq" title="">Häufig gestellte Fragen</a></li>
+<li class="last leaf active-trail"><a href="/jobboerse" title="" class="active-trail active">Jobsuche</a></li>
+</ul>  </div>
+</div>  </div>
+
+                  <div class="l-region l-region--prefooter-right">
+    <div id="block-menu-menu-footermen-b2b" class="block block--menu block--menu-menu-footermen-b2b" id="block-menu-menu-footermen-b2b" role="navigation" class="block block--menu block--menu-menu-footermen-b2b">
+
+    <div class="block__title footer-header">B2B</div>
+  
+  <div class="content" class="block__content">
+    <ul class="menu"><li class="first leaf"><a href="http://www.stellenwerk.de" title="">stellenwerk.de</a></li>
+<li class="leaf"><a href="/buchen" title="">Job anbieten</a></li>
+<li class="leaf"><a href="/fuer-arbeitgeber/preisliste" title="">Preisliste</a></li>
+<li class="last leaf"><a href="http://www.varifast.de" title="">Online-Werbung</a></li>
+</ul>  </div>
+</div><div id="block-block-5" class="block block--block block--block-5" id="block-block-5" class="block block--block block--block-5">
+
+    <div class="block__title footer-header">Kontakt:</div>
+  
+  <div class="content" class="block__content">
+    <p>E-Mail: <a href="mailto:info@stellenwerk.de">info@stellenwerk.de</a> Telefon: 0 800 21005 62</p>
+<p><a href="/info-kontakt/impressum" title="">Impressum</a></p>
+  </div>
+</div>  </div>
+            </div>
+        </div>
+
+        <div class="l-copyright">
+            <div class="container">
+                <div class="copyright">&copy; 2017 Stellenwerk Darmstadt</div>
+                  <div class="l-region l-region--footer">
+    <nav id="block-menu-menu-footer" role="navigation" class="block block--menu block--menu-menu-footer">
+      
+  <ul class="menu"><li class="first leaf"><a href="/info-kontakt/impressum" title="">Impressum</a></li>
+<li class="last leaf"><a href="/info-kontakt" title="">Kontakt</a></li>
+</ul></nav>
+  </div>
+            </div>
+        </div>
+
+    </footer>
+</div>
+  <script src="https://www.stellenwerk-darmstadt.de/sites/default/files/js/js_ohjohnVFJ_dvIAhsUePTYd29wOMn9-nrup8cSF9rae4.js"></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"8a91479976","applicationID":"28907997","transactionName":"YlcBYkFRVkNQAEFZDVsdIlVHWVdeHhVcVRVGbRNXVFU=","queueTime":0,"applicationTime":2311,"atts":"ThACFAlLRU0=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
