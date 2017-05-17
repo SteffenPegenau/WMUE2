@@ -11,14 +11,6 @@ def charpairs(fileurl):
     #get text from file, transform to lowercase
     text = open(fileurl, 'r').read().lower()
 
-##    print(fileurl)
-##    file = open(fileurl, "r")
-##    print(type(file))
-##
-##    text = file.read()
-##    print(text)
-##    print(type(text))
-
     # split text at spaces
     charlist = text.split()
     charnumber = len(charlist)

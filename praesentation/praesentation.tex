@@ -144,6 +144,40 @@ it's
 	\tableofcontents
   \end{frame}
   
+  \begin{frame}
+	\frametitle{Aufgabe 1: Spracherkennung\\
+	Theorie}
+	\begin{itemize}
+		\item Zwei Listen: Liste mit ermittelten Buchstaben/-paaren und Referenzliste(n)
+		\item Vergleiche Position der Buchstaben(-paare) mit denen der Referenzlisten
+		\item Ermittlung eines Scores für jede Referenzsprache:
+			\begin{itemize}
+				\item Ermittle Differenz d der beiden Positionen
+				\item addiere $$\frac{1}{1 + d}$$ zum Score
+				\item Höchster Score hat die größte (?) Übereinstimmung von Buchstaben/-paaren
+			\end{itemize}
+	\end{itemize}
+  \end{frame}  
+  
+  \begin{frame}
+	\frametitle{Aufgabe 1: Spracherkennung\\
+	Praxis}
+	\texttt{1 german\\
+	2 english\\
+	3 english\\
+	4 spanish\\
+	5 german\\
+	6 spanish\\
+	7 spanish\\
+	8 english\\
+	9 german\\
+	10 german\\}
+	\vspace{\fill}
+	Referenzlisten für Monogramme: {\small https://de.wikipedia.org/wiki/Buchstabenhäufigkeit}\\
+	Referenzlisten für Bigramme: {\small http://practicalcryptography.com/cryptanalysis/letter-frequencies-various-languages/}
+	
+  \end{frame}
+  
   \begin{frame}[t]
   	\frametitle{Aufgabe 2: Entwicklung eines Crawlers\\
   	%\hline \\
