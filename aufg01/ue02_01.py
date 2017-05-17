@@ -60,6 +60,9 @@ def charpairs(fileurl):
 ##        temp.append(temp[1]/charnumber)
 ##        endlist.append(temp)
 
+    #append data filename at last position
+    result.append(fileurl)
+##    print(result)
     return result
 
 def calculateScore(chardict):
@@ -67,20 +70,18 @@ def calculateScore(chardict):
         in den verschiedenen Sprachen und berechnet einen Score. Der höchste
         Score gewinnt. """
 
-##    print(chardict)
-##    print(chardict[0][0])
-##    print(type(chardict[0]))
-##    print(len(chardict[0][0]))
+    #pop last element (fileurl) from list
+    filename = chardict.pop(-1)
+##    print(filename)
+
     #check if single chars or charpairs
     if len(chardict[0][0]) == 1:
         #single chars, get single char distribution for reference
         filelist = glob.glob("language/uni/*.txt")
-        print("unigram")
 
     elif len(chardict[0][0]) == 2:
-        #charpairs, get charpair ditribution for reference
+        #charpairs, get charpair distribution for reference
         filelist = glob.glob("language/bi/*.txt")
-        print("bigram")
 
     else:
         #three or more characters, not supported
@@ -131,29 +132,29 @@ def calculateScore(chardict):
         resultlist.append((reftupel[0], score))
         i = i + 1
 
-    print(resultlist)
-        
+    #append filename at last position
+    resultlist.append(filename)
+    #print(resultlist)
+    return resultlist
 
-##def makeTable(url1):
-##    """Counts charpairs in a given text."""
-##    list1 = charpairs(url1)
-##
-##
-##    print("-------------------------------------------------------")
-##    print(url1) 
-##    print("Total: " + countChars(url1)) 
-##    print("-------------------------------------------------------")
-##    print("Char\tAbs.\tPerc.")
-##    print("-------------------------------------------------------")      
-##
-##    i = 0
-##    while i<len(list1): 
-##        print(list1[i][0]+"\t" + str(list1[i][1])+"\t" + str(round(list1[i][2], 5)))
-##        
-##        i = i+1
-##
-##    print("-------------------------------------------------------")
+def getMaxToString(scorelist):
+    """gets a list of tupels with (language, score) and returns a string with
+       with the language that has the highest score"""
+    
+    #extract number 1-10 from filename
+    filename = scorelist.pop(-1)
+    number = filename.split('\\')[1].split('.')[0]
+##    print(number)
 
+    #now get the max score
+    maxi = 0.0
+    lang = ""
+    for tupel in scorelist:
+        if tupel[1] > maxi:
+            maxi = tupel[1]
+            lang = tupel[0]
+
+    return (str(number) + " " + lang + "\n")
 
 
 #--------------------------------------
@@ -164,18 +165,18 @@ import glob
 #get all txts from directory
 filelist = glob.glob('txts/*.txt')
 
+f = open('challenge.txt', 'w')
+
+#write to file
 for file in filelist:
     data = charpairs(file)
-    calculateScore(data)
+    scorelist = calculateScore(data)
+    string = getMaxToString(scorelist)
+    print(string)
+    f.write(string)
+
+f.close()
     
-
-##abc = charpairs("txts/10.bigram.txt")
-##
-##calculateScore(abc)
-
-
-
-
 
 
     
