@@ -1,0 +1,7 @@
+#!/bin/bash
+
+twitter=`cat links.txt | grep -c twitter`
+zeilenInsg=`wc -l links.txt | cut -d ' ' -f1`
+anteil=`expr $twitter / $zeilenInsg`
+
+echo $twitter " / " $zeilenInsg " = " $anteil 

@@ -211,150 +211,65 @@ CSS-Selektor: \texttt{[class*='nav']}:\begin{lstlisting}
 	...
 </div>
 	\end{lstlisting}
+	\item Speichern der HTML-Dateien als HASH(Kanonisierte URL).html
 	\end{itemize}
  \end{frame}
   
  \begin{frame}[t]
   	\frametitle{Aufgabe 2: Entwicklung eines Crawlers\\
-  	Wirksamkeit der Duplikaterkennung\\Histogramm: Es gibt $y$ Links, die 
-$x$-mal auftraten}
-  \end{frame}
+  	Wirksamkeit der Duplikaterkennung\\Histogramm: Links, die x-mal referenziert waren, gab es y-mal}
+
  
-	\begin{comment}
+	%\begin{comment}
 	\resizebox {\columnwidth} {180pt} {
 	\begin{tikzpicture}
-	\begin{axis}[xmin=-0.5,xmax=9]
-	\addplot table [x=timesOfLinkReference, 
-y=countOfTheseLinks,col sep=semicolon, only marks]
-	{../aufg02/unfilteredLinks.csv};
-	
-	\addplot table 
-	[x=timesOfLinkReference, y=countOfTheseLinks,col sep=semicolon, only 
-marks] {../aufg02/filteredLinks.csv};
+	\begin{axis}[samples=20,
+	xmin=-1,
+	xmax=30,
+  xlabel={Links zu einem Ziel, die x mal plaziert waren...},
+  ylabel={...gab es y-Mal},
+  xlabel style={below},
+  ylabel style={above left},
+  axis x line=center,
+  axis y line=center,]%[xmin=-0.5,xmax=9,samples=10,restrict y to domain =-20:100]%
+	\addplot table [x=timesOfLinkReference, y=countOfTheseLinks,col sep=semicolon, only marks,xmax=9,samples=20] {../aufg02/unfilteredLinks.csv};
+	\addplot table [x=timesOfLinkReference, y=countOfTheseLinks,col sep=semicolon, only marks,xmax=9,samples=20] {../aufg02/filteredLinks.csv};
 	\end{axis}
 	\end{tikzpicture}
 	}
-	\end{comment}
+	%\end{comment}
+	  \end{frame}
 	
   \begin{frame}[t]
   	\frametitle{Aufgabe 2: Entwicklung eines Crawlers\\
-  	Wie oft wurden Hosts besucht?}
+  	Wie oft wurden Hosts (Subdomains subsumiert) besucht?}
   	
-  	\csvreader[
-	tabular=|l|l|,
-	head to column names,
-	table head=\hline Host & Visits \\ \hline,
-	late after line=\\\hline,
-	separator=semicolon]{../aufg02/hosts.csv}{
-			host=\host,
-			visits=\visits,
-		}
-		{
-			\host &
-			\visits
-		}
-  \end{frame}	
+  	\includegraphics[width=\columnwidth, height=180pt]{../aufg02/wordcloud}	
 	
-	
-  \begin{comment}
+  \end{frame}
+  
+  \begin{frame}
+  	\frametitle{Verteilung gefundener Sprachen}
+  	tbd
+  \end{frame}
+  
+  \begin{frame}
+  	\frametitle{Erfahrungen \& Probleme}
+  	\begin{itemize}
+		\item Suchstrategie funktioniert; die besuchten Hosts streuen
+		\item Darstellung der Verlinkungen zwischen den Hosts wäre spannend ("`Wie vernetzt sind Hochschulen?"')
+		\item Extrem häufig verlinkte Social Media Seiten erschweren solche Analysen. Bsp.: Anteil Twitter in offenen Links zu einem fortgeschrittenen Zeitpunkt: 
+			$$\frac{8736}{24877}  \approx  35\%$$
+  		\item Technische Lösung skaliert erwartungsgemäß nicht. Datenverwaltung nimmt mehr Zeit in Anspruch als das eigentliche Crawlen
+			\begin{itemize}
+				\item Zu besuchende Links und Statistiken in Textdateien
+				\item Speichern eines jeden Datums direkt nach Erhebung (Persistenz)
+			\end{itemize}
 
-  % Afrika und die Tropen 1
-  \begin{frame}
-    \frametitle{Die Tropen und Afrika (I)}
-    \includegraphics[width=\textwidth]{pix/poverty}\\
-    \begin{tiny}
-Quelle: World Malaria Report 2014, World Health Organization, Markierungen der Breiten ergänzt
-    \end{tiny}
-  \end{frame}
-  
-  % Afrika und die Tropen 2
-  \begin{frame}
-    \frametitle{Die Tropen und Afrika (II)}
-    
-    \includegraphics[height=0.95\textheight,width=0.5\textwidth]{pix/gdp_per_capita}
-    \includegraphics[width=0.5\textwidth]{pix/poverty_africa_europe}\\
-    \begin{tiny}
-Quelle: Bloom, Sachs, u.a., Geography, Demography, and Economic Growth in Africa, S. 217, Zahlen von 1995
-    \end{tiny}
-  \end{frame}
-  
-  % Landwirtschaft
-  \begin{frame}
-    \frametitle{Klima \& Landwirtschaft}
-    \includegraphics[height=\textheight]{pix/africa_satellite}
-    %\includegraphics[width=0.95\textwidth]{pix/pop_density}\\
-    \begin{tiny}
-Quelle: NASA, http://visibleearth.nasa.gov/view.php?id=57752 18.04.2016
-%Quelle: Bloom, Sachs, u.a., Geography, Demography, and Economic Growth in Africa, S. 217
-  \end{tiny}
-  \end{frame}
-  
-  \begin{frame}
-    \frametitle{Malaria}
-    \includegraphics[width=\textwidth]{pix/malaria}\\
-    \begin{tiny}
-     
-Quelle: World Malaria Report 2014, World Health Organization
-    \end{tiny}
-  \end{frame}
-  
-  %\begin{frame}
-  %  \frametitle{AIDS}
-  %\end{frame}
-  
-  \begin{frame}
-    \frametitle{Hürden für Transport und Handel}
-    
-    \includegraphics[height=\textheight]{pix/africa_topo}
-    \begin{tiny}
-    http://photojournal.jpl.nasa.gov/jpegMod/PIA04965\_modest.jpg, 18.04.2016
-    \end{tiny}
-  \end{frame}
-  
-  \begin{frame}
-   \frametitle{Zusammenfassung}
-   \begin{itemize}
-    \item Armut in den Tropen und Afrika
-    \item Klima und Landwirtschaft
-    \item Krankheiten
-    \item Hürden für Transport und Handel
-   \end{itemize}
+  	\end{itemize}
 
   \end{frame}
-  
-  \begin{frame}
-    \frametitle{Demographische Entwicklung}
-    \includegraphics[width=0.9\textwidth,height=0.9\textheight]{pix/africas_share_of_world_income_and_population}\\
-    \begin{tiny}
-Quelle: Bloom, Sachs, u.a., Geography, Demography, and Economic Growth in Africa, S. 241
-    \end{tiny}
-  \end{frame}
-  
-  \begin{frame}
-    \frametitle{Bevölkerungsverteilung \& Bevölkerungsdichte}
-    \includegraphics[width=0.9\textwidth,height=0.9\textheight]{pix/pop_density}\\
-    \begin{tiny}
-Quelle: Bloom, Sachs, u.a., Geography, Demography, and Economic Growth in Africa, S. 217
-    \end{tiny}
-  \end{frame}
-  
-  \begin{frame}
-    \frametitle{HIV Infektionen}
-    \includegraphics[width=0.9\textwidth,height=0.9\textheight]{pix/HIV_all_2013}\\
-    \begin{tiny}
-Quelle: Global health sector response to HIV, 2000-2015, WHO
-    \end{tiny}
-  \end{frame}
-  
-  \begin{frame}
-    \frametitle{Tote durch HIV}
-    \includegraphics[width=0.9\textwidth,height=0.9\textheight]{pix/aids_tote_global_health_sector_response_to_hiv}\\
-    \begin{tiny}
-Quelle: Global health sector response to HIV, 2000-2015, WHO
-    \end{tiny}
-  \end{frame}
 
-  \end{comment}
   
   %\begin{frame}
    % \frametitle{Quellen}

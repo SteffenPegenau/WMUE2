@@ -14,4 +14,5 @@ CSS-Selektor: \texttt{[class*='nav']}:\begin{lstlisting}
 	...
 </div>
 	\end{lstlisting}
+	\item Speichern der HTML-Dateien als HASH(Kanonisierte URL).html
 	\end{itemize}
