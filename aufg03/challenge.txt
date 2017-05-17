@@ -1,10 +1,1 @@
-1 german
-10 german
-2 english
-3 english
-4 spanish
-5 german
-6 spanish
-7 spanish
-8 english
-9 german
+germangermanenglishenglishspanishgermanspanishspanishenglishgerman

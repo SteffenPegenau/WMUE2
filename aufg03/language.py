@@ -1,6 +1,58 @@
 
 # FUNCTIONS
 
+def paircounter(text):
+    """returns the numbers of charpairs in a text from a given string."""
+
+
+    #get text from file, transform to lowercase
+##    text = open(fileurl, 'r').read().lower()
+
+    # split string into list of chars
+    wordlist = text.lower().split()
+##    charlist = list(text)
+##    charnumber = len(charlist)
+    
+
+
+    #count occurrences in dictionary
+    #remember lastchar for finding charpairs
+    lastchar = ""
+    chardict = {}
+
+    for word in wordlist:
+        charlist = list(word)
+                
+        for char in charlist:
+            #if pair is not already in dictionary, add it
+            if (chardict.get(lastchar+char, -1)) > 0:
+                chardict.update({lastchar+char: (chardict.get(lastchar+char)+1)})
+            else:
+                chardict.setdefault(lastchar+char, 1)
+            #else:
+                #no charpair. Do nothing and continue through list
+
+            #update lastchar
+            lastchar = char
+                    
+                    
+            
+            
+    # create a sorted list from elements in dictionary
+    result = sorted(chardict.items(), key=lambda x: x[1], reverse=True)
+##    print("Listenlänge: " + str(len(result)))
+    
+##    print(result)
+
+    #remove occurences from list, only charpairs, ordered by occurrence
+    endlist = []
+    for tupel in result:
+        endlist.append(tupel[0])
+
+##    print(endlist)
+    return endlist   
+    
+
 def charpairs(fileurl):
     """returns the numbers of chars in a text from a given file url."""
 
@@ -42,12 +94,6 @@ def charpairs(fileurl):
     
     #print(result[:30])
 
-    # add percantage to char list
-##    endlist = list()
-##    for char in result[:30]:
-##        temp = list(char)
-##        temp.append(temp[1]/charnumber)
-##        endlist.append(temp)
 
     #append data filename at last position
     result.append(fileurl)
@@ -129,11 +175,9 @@ def calculateScore(chardict):
 def getMaxToString(scorelist):
     """gets a list of tupels with (language, score) and returns a string with
        with the language that has the highest score"""
-    
-    #extract number 1-10 from filename
-    filename = scorelist.pop(-1)
-    number = filename.split('\\')[1].split('.')[0]
-##    print(number)
+
+    print(scorelist)
+    scorelist.pop(-1)
 
     #now get the max score
     maxi = 0.0
@@ -143,41 +187,34 @@ def getMaxToString(scorelist):
             maxi = tupel[1]
             lang = tupel[0]
 
-    return (str(number) + " " + lang + "\n")
+    return (lang)
 
 
 #--------------------------------------
 #MAIN BODY
 
 import glob
-import html2text
+from bs4 import BeautifulSoup
 
-#get all txts from directory
-filelist = glob.glob('txts/*.txt')
+def getLanguage(url):
 
-print(html2text.html2text(open('foo.html', 'r').read()))
-
-print(html2text.html2text("<p>Hello</p>"))
-
-f = open('challenge.txt', 'w')
-
-#write to file
-for file in filelist:
-    data = charpairs(file)
-    scorelist = calculateScore(data)
-    string = getMaxToString(scorelist)
-    print(string)
-    f.write(string)
-
-f.close()
     
 
+    #get all txts from directory
+    filelist = glob.glob('txts/*.txt')
+
+    with open(url) as fp:
+        soup = BeautifulSoup(fp, "html.parser")
+
+    pairs = paircounter(soup.get_text())
+    scorel = calculateScore(pairs)
+    res = getMaxToString(scorel)
+    print(res)
+    return res
 
     
 
 
+getLanguage("foo.html")
 
 
-
-#Wait for user input to stop program
-input("Press <ENTER> to continue")
