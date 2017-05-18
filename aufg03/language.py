@@ -5,37 +5,52 @@ def paircounter(text):
     """returns the numbers of charpairs in a text from a given string."""
 
 
-    #get text from file, transform to lowercase
-##    text = open(fileurl, 'r').read().lower()
 
-    # split string into list of chars
-    wordlist = text.lower().split()
-##    charlist = list(text)
-##    charnumber = len(charlist)
+
+##--------------------------------------------------------
+##  SINGLE CHARACTERS
     
+    #split string into single chars
+    charlist = list(text.lower())
 
 
-    #count occurrences in dictionary
-    #remember lastchar for finding charpairs
-    lastchar = ""
+    
     chardict = {}
+    for char in charlist:
+        if(chardict.get(char, -1)) > 0:
+            chardict.update({char: (chardict.get(char) + 1)})
+        else:
+            chardict.setdefault(char, 1)
 
-    for word in wordlist:
-        charlist = list(word)
-                
-        for char in charlist:
-            #if pair is not already in dictionary, add it
-            if (chardict.get(lastchar+char, -1)) > 0:
-                chardict.update({lastchar+char: (chardict.get(lastchar+char)+1)})
-            else:
-                chardict.setdefault(lastchar+char, 1)
-            #else:
-                #no charpair. Do nothing and continue through list
 
-            #update lastchar
-            lastchar = char
+##--------------------------------------------------------
+##    DOUBLE CHARACTERS
+
+##    # split string into list of chars
+##    wordlist = text.lower().split()
+##
+##
+##    #count occurrences in dictionary
+##    #remember lastchar for finding charpairs
+##    lastchar = ""
+##    chardict = {}
+##
+##    for word in wordlist:
+##        charlist = list(word)
+##                
+##        for char in charlist:
+##            #if pair is not already in dictionary, add it
+##            if (chardict.get(lastchar+char, -1)) > 0:
+##                chardict.update({lastchar+char: (chardict.get(lastchar+char)+1)})
+##            else:
+##                chardict.setdefault(lastchar+char, 1)
+##            #else:
+##                #no charpair. Do nothing and continue through list
+##
+##            #update lastchar
+##            lastchar = char
                     
-                    
+##--------------------------------------------------------                    
             
             
     # create a sorted list from elements in dictionary
@@ -49,56 +64,33 @@ def paircounter(text):
     for tupel in result:
         endlist.append(tupel[0])
 
-##    print(endlist)
+    #print("endlist: " + str(endlist))
+
+
+    #remove all chars not in [a-z] from list
+    p = re.compile('[a-z]')     #regular expression
+    i = 0                       #counter variable
+    iSmallerListlength = True
+
+    while iSmallerListlength:
+        char = endlist[i]
+
+        if p.match(char) == None:
+            #remove non-matching char from list
+            endlist.pop(i)
+        else:
+            #char matches RE
+            i = i + 1
+
+        if i >= len(endlist):
+            #end reached, break while loop
+            iSmallerListlength = False
+            
+
+            
     return endlist   
     
 
-def charpairs(fileurl):
-    """returns the numbers of chars in a text from a given file url."""
-
-
-    #get text from file, transform to lowercase
-    text = open(fileurl, 'r').read().lower()
-
-    # split text at spaces
-    charlist = text.split()
-    charnumber = len(charlist)
-
-##    print((type(charlist)))
-
-
-    #count occurrences in dictionary
-    #remember lastchar for finding charpairs
-    #lastchar = ""
-    chardict = {}
-    for char in charlist:
-        
-        #transform returns to "\n"
-        if char == "\n":
-            char = r"\n"
-
-        #go through charpairs and save them to dictionary
-        if(chardict.get(char, -1)) > 0:
-            chardict.update({char: (chardict.get(char)+1)})
-        else:
-            chardict.setdefault(char, 1)
-
-        #update lastchar
-        #lastchar = char
-
-     
-    # create a sorted list from elements in dictionary
-    result = sorted(chardict.items(), key=lambda x: x[1], reverse=True)
-    #print("Listenlänge: " + str(len(result)))
-    
-    
-    #print(result[:30])
-
-
-    #append data filename at last position
-    result.append(fileurl)
-##    print(result)
-    return result
 
 def calculateScore(chardict):
     """Vergleicht das dictionary mit den Häufigkeiten der Buchstaben/-paare
@@ -137,7 +129,7 @@ def calculateScore(chardict):
     #now compare position of data with reference position and calculate score
     resultlist = []
 
-    i = 0
+
 
     # go through languages
     for reftupel in reference:
@@ -165,7 +157,7 @@ def calculateScore(chardict):
             
             j = j + 1
         resultlist.append((reftupel[0], score))
-        i = i + 1
+
 
     #append filename at last position
     resultlist.append(filename)
@@ -176,7 +168,7 @@ def getMaxToString(scorelist):
     """gets a list of tupels with (language, score) and returns a string with
        with the language that has the highest score"""
 
-    print(scorelist)
+    #print(scorelist)
     scorelist.pop(-1)
 
     #now get the max score
@@ -190,14 +182,8 @@ def getMaxToString(scorelist):
     return (lang)
 
 
-#--------------------------------------
-#MAIN BODY
-
-import glob
-from bs4 import BeautifulSoup
-
 def getLanguage(url):
-
+    """return a string containing the language of the given website"""
     
 
     #get all txts from directory
@@ -206,15 +192,58 @@ def getLanguage(url):
     with open(url) as fp:
         soup = BeautifulSoup(fp, "html.parser")
 
+    # kill all script and style elements
+    for script in soup(["script", "style"]):
+        script.extract()    # rip it out
+
+
     pairs = paircounter(soup.get_text())
     scorel = calculateScore(pairs)
     res = getMaxToString(scorel)
-    print(res)
+    #print(res)
     return res
 
+
+#--------------------------------------
+#MAIN BODY
+
+import glob
+from bs4 import BeautifulSoup
+import re
+
+filelist = glob.glob('html/*.html' )
+
+
+soup = BeautifulSoup(open("html/29.html"), "html.parser")
+
+# kill all script and style elements
+for script in soup(["script", "style"]):
+        script.extract()    # rip it out
+
+f = open("html.txt", "w")
+f.write(soup.get_text())
+f.close()
+
+#text = "44 a a a a a a a a v v v v v v v vvvv v v555 v v v v        vrtui,mnb5vc34"
+#text = "44 a"
+#print(text)
+#print(list(text))
+#print(paircounter(text))
+
+
+
+
+for file in filelist:
+    try:
+        string = getLanguage(file)
+        
+    except Exception as e:
+        string = "failed"
+
+    print(file + ": " + string)
     
 
 
-getLanguage("foo.html")
+
 
 
