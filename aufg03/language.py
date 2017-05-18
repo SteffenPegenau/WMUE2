@@ -214,25 +214,6 @@ import re
 filelist = glob.glob('html/*.html' )
 
 
-soup = BeautifulSoup(open("html/29.html"), "html.parser")
-
-# kill all script and style elements
-for script in soup(["script", "style"]):
-        script.extract()    # rip it out
-
-f = open("html.txt", "w")
-f.write(soup.get_text())
-f.close()
-
-#text = "44 a a a a a a a a v v v v v v v vvvv v v555 v v v v        vrtui,mnb5vc34"
-#text = "44 a"
-#print(text)
-#print(list(text))
-#print(paircounter(text))
-
-
-
-
 for file in filelist:
     try:
         string = getLanguage(file)
