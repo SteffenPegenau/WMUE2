@@ -1,4 +1,4 @@
-
+# -*- coding: utf8 -*-
 # FUNCTIONS
 
 def paircounter(text):
@@ -159,7 +159,7 @@ def getMaxToString(scorelist):
        with the language that has the highest score"""
 
     #print(scorelist)
-    scorelist.pop(-1)
+    #scorelist.pop(-1)
 
     #now get the max score
     maxi = 0.0
@@ -175,18 +175,19 @@ def getMaxToString(scorelist):
 def getLanguage(url):
     """return a string containing the language of the given html-document"""
 
-    with open(url) as fp:
+    with open(url, encoding="utf-8") as fp:
         soup = BeautifulSoup(fp, "html.parser")
 
     # kill all script and style elements
     for script in soup(["script", "style"]):
         script.extract()    # rip it out
-
+   
 
     pairs = paircounter(soup.get_text())
     scorel = calculateScore(pairs)
     res = getMaxToString(scorel)
     #print(res)
+    #print(scorel)
     return res
 
 
@@ -216,6 +217,7 @@ for file in filelist:
         
     except Exception as e:
         string = "failed"
+        print(e)
 
     if string == "german":
         german = german + 1
