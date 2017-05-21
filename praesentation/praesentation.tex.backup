@@ -303,19 +303,51 @@
   \end{frame}
   
   \begin{frame}
-  	\frametitle{Aufgabe 4: Größe des Webs}
-  	\begin{tabular}{|l|l|r|l|l|}
+  	\frametitle{Aufgabe 4: Größe des Webs \\Idee}
+  	\begin{enumerate}
+
+  	 \item Abschätzung des Index über Suchbegriff "`a"' als häufigstes Wort im Englischen in beiden Suchmaschinen
+  	 \item Suche nach "`Darmstadt ESOC"' (relativ wenige Ergebnisse)
+  	 \item Crawlen des Suchergebnisses um die gemeinsame Menge zu bestimmen
+  	 \item Ergebnisse:\\
+  	 \begin{tabular}{|l|r|r|c|}
 	  \hline
-	  \textbf{Name} & \textbf{$i$} & \textbf{$s_i$ ("`Index"')} & \textbf{$n_i$ (Ergebnisse)} & \\
+	  \textbf{Name ($i$)} & \textbf{$s_i$ ("`Index"')} & \textbf{$n_i$ (Ergebnisse)} & \textbf{$n_0$ (gem. Ergebnisse)}\\
 	  \hline
-	  Google & $g$ & 25.270.000.000 & & \\
-	  \hline
-	  Bing & $b$ & 140.000.000 & & \\
+	  Google ($g$) & 25.270.000.000 & 117.000 & \multirow{ 2}{*}{\Huge{?}}\\
+	  Bing ($b$)  & 140.000.000 & 72.800 & \\
 	  \hline
   	\end{tabular}
+  	\item Größe des Webs:
+  	$$N \approx s_g \frac{n_b}{n_0} \approx s_b \frac{n_g}{n_0}$$
+  	\end{enumerate}
+  \end{frame}
+  \newenvironment{allintypewriter}{\ttfamily}{\par}
+  \begin{frame}
+      \frametitle{Aufgabe 4: Größe des Webs \\Probleme}
+      \begin{itemize}
+       \item 
+       \begin{allintypewriter}
+       "`About this page
 
+	Our systems have detected unusual traffic from your computer network. This page checks to see if it's really you sending the requests, and not a robot. Why did this happen?"'
+       \end{allintypewriter}
+	$$\Rightarrow n_0 \text{ schätzen}$$ 
+	\begin{tabular}{|l|r|r|c|}
+	  \hline
+	  \textbf{Name ($i$)} & \textbf{$s_i$ ("`Index"')} & \textbf{$n_i$ (Ergebnisse)} & \textbf{$n_0$ (gem. Ergebnisse)}\\
+	  \hline
+	  Google ($g$) & 25.270.000.000 & 117.000 & \multirow{ 2}{*}{\large{$1 \leq n_0 \leq 72.800$}}\\
+	  Bing ($b$)  & 140.000.000 & 72.800 & \\
+	  \hline
+  	\end{tabular}
+       $$N\approx s_g \frac{n_b}{n_0} = [0,000253 \cdot 10^{15}; 1,84 \cdot 10^{15}]$$
+       
+       $$N\approx s_g \frac{n_b}{n_0} = [0,00000225 \cdot 10^{15}; 0,0164 \cdot 10^{15}]$$
+      \end{itemize}
 
   \end{frame}
+
   
   
   %\begin{frame}
