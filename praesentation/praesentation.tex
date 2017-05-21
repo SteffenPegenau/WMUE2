@@ -279,10 +279,25 @@
   	
   	\includegraphics[width=\columnwidth, height=180pt]{../aufg02/wordcloud}	
   \end{frame}
-
+  
   \begin{frame}
   	\frametitle{Verteilung gefundener Sprachen}
-  	tbd
+  	\resizebox {\columnwidth} {180pt} {
+	\begin{tikzpicture}
+    \begin{axis}
+        [
+        ,width=7cm
+        ,xlabel=Language
+        ,ylabel=Pages
+        ,xtick=data,
+       %,xtick={0,1,...,3}
+        ,xticklabels={German,English,Spanish,Failed}
+        ]
+        \addplot+[sharp plot, only marks] coordinates
+        {(0,997) (1,106) (2,0) (3,54)};
+    \end{axis}
+\end{tikzpicture}
+	}
   \end{frame}
   
   \begin{frame}
