@@ -94,17 +94,14 @@
   %numbersep=5pt,                   % how far the line-numbers are from the code
   %numberstyle=\tiny\color{mygray}, % the style that is used for the 
 %line-numbers
-  %rulecolor=\color{black},         % if not set, the frame-color may be 
-changed 
+  %rulecolor=\color{black},         % if not set, the frame-color may be changed 
 %on line-breaks within not-black text (e.g. comments (green here))
   %showspaces=false,                % show spaces everywhere adding particular 
 %underscores; it overrides 'showstringspaces'
   %showstringspaces=false,          % underline spaces within strings only
-  %showtabs=false,                  % show tabs within strings adding 
-particular 
+  %showtabs=false,                  % show tabs within strings adding particular 
 %underscores
-  %stepnumber=2,                    % the step between two line-numbers. If 
-it's 
+  %stepnumber=2,                    % the step between two line-numbers. If it's 
 %1, each line will be numbered
   %stringstyle=\color{mymauve},     % string literal style
   tabsize=4,                       % sets default tabsize to 2 spaces
@@ -129,13 +126,14 @@ it's
 \date[\today]
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\pgfplotsset{compat=1.14}
+\pgfplotsset{compat=1.12}
 
 \begin{document}
 
 
 
 
+  
   \begin{titleframe}
   \end{titleframe}
   
@@ -177,7 +175,6 @@ it's
 	Referenzlisten für Bigramme: {\small http://practicalcryptography.com/cryptanalysis/letter-frequencies-various-languages/}
 	
   \end{frame}
-  
   \begin{frame}[t]
   	\frametitle{Aufgabe 2: Entwicklung eines Crawlers\\
   	%\hline \\
@@ -215,8 +212,7 @@ it's
 	]
 	\addplot table 
 	%timesOfLinkReference;countOfTheseLinks
-	[x=timesOfLinkReference, y=countOfTheseLinks,col sep=semicolon, only 
-marks]
+	[x=timesOfLinkReference, y=countOfTheseLinks,col sep=semicolon, only marks]
 	%,col sep=semicolon
 	{../aufg02/unfilteredLinks.csv};
 	\end{axis}
@@ -228,27 +224,28 @@ marks]
 	%\end{figure}
   \end{frame}
   
-  \begin{frame}[fragile]
-  	\frametitle{Aufgabe 2: Entwicklung eines Crawlers\\
-	Erkennung wiederkehrender Links}
+\begin{frame}[t,fragile]
+  	\frametitle{Aufgabe 2: Entwicklung eines Crawlers\\Erkennung wiederkehrender Links}
 	\begin{itemize}
-		\item Entfernung aller Listen:\begin{lstlisting}
+	 \item Entfernung aller Listen:
+\begin{lstlisting}
 <ul>
-	<li><a href="start.html">Start</a></li>
-	<li><a href="news.html">News</a></li>
-	<li><a href="impressum.html">Impressum</a></li>
+  <li><a href="start.html">Start</a></li>
+  <li><a href="news.html">News</a></li>
+  <li><a href="impressum.html">Impressum</a></li>
 </ul>
-	\end{lstlisting}
-	\item Entfernung mit 
-CSS-Selektor: \texttt{[class*='nav']}:\begin{lstlisting}
+\end{lstlisting}
+\item Entfernung mit CSS-Selektor: \texttt{[class*='nav']}:
+\begin{lstlisting}
 <div class="main-navigation">
-	...
+  ...
 </div>
-	\end{lstlisting}
-	\item Speichern der HTML-Dateien als HASH(Kanonisierte URL).html
-	\end{itemize}
- \end{frame}
-  
+\end{lstlisting}
+\item Speichern der HTML-Dateien als \texttt{HASH(Kanonisierte URL).html}
+\end{itemize}
+\end{frame}
+
+     
  \begin{frame}[t]
   	\frametitle{Aufgabe 2: Entwicklung eines Crawlers\\
   	Wirksamkeit der Duplikaterkennung\\Es gibt x Links, die y mal auftraten}
@@ -266,36 +263,36 @@ CSS-Selektor: \texttt{[class*='nav']}:\begin{lstlisting}
   ylabel style={above left},
   axis x line=center,
   axis y line=center,]%[xmin=-0.5,xmax=9,samples=10,restrict y to domain =-20:100]%
-	\addplot table [x=timesOfLinkReference, y=countOfTheseLinks,col sep=semicolon, only marks,xmax=9,samples=20] {../aufg02/unfilteredLinks.csv};
-	\addplot table [x=timesOfLinkReference, y=countOfTheseLinks,col sep=semicolon, only marks,xmax=9,samples=20] {../aufg02/filteredLinks.csv};
+	\addplot table [x=timesOfLinkReference, y=countOfTheseLinks,col sep=semicolon, only marks] {../aufg02/unfilteredLinks.csv};
+	\addplot table [x=timesOfLinkReference, y=countOfTheseLinks,col sep=semicolon, only marks] {../aufg02/filteredLinks.csv};
 	\end{axis}
 	\end{tikzpicture}
 	}
 	%\end{comment}
-	  \end{frame}
+\end{frame}
 	
+
   \begin{frame}[t]
   	\frametitle{Aufgabe 2: Entwicklung eines Crawlers\\
   	Wie oft wurden Hosts besucht?\\
   	(Subdomains subsumiert, Seiten: 1.107)}
   	
   	\includegraphics[width=\columnwidth, height=180pt]{../aufg02/wordcloud}	
-	
   \end{frame}
-  
+
   \begin{frame}
   	\frametitle{Verteilung gefundener Sprachen}
   	tbd
   \end{frame}
   
   \begin{frame}
-  	\frametitle{Erfahrungen \& Probleme}
+  	\frametitle{Aufgabe 2: Entwicklung eines Crawlers\\Erfahrungen \& Probleme}
   	\begin{itemize}
 		\item Suchstrategie funktioniert; die besuchten Hosts streuen
 		\item Darstellung der Verlinkungen zwischen den Hosts wäre spannend ("`Wie vernetzt sind Hochschulen?"')
 		\item Extrem häufig verlinkte Social Media Seiten erschweren solche Analysen. Bsp.: Anteil Twitter in offenen Links zu einem fortgeschrittenen Zeitpunkt: 
 			$$\frac{8736}{24877}  \approx  35\%$$
-  		\item Technische Lösung skaliert erwartungsgemäß nicht. Datenverwaltung nimmt mehr Zeit in Anspruch als das eigentliche Crawlen
+  		\item Technische Lösung skaliert erwartungsgemäß nicht. Datenverwaltung nimmt mehr Zeit in Anspruch als Download:
 			\begin{itemize}
 				\item Zu besuchende Links und Statistiken in Textdateien
 				\item Speichern eines jeden Datums direkt nach Erhebung (Persistenz)
@@ -304,7 +301,31 @@ CSS-Selektor: \texttt{[class*='nav']}:\begin{lstlisting}
   	\end{itemize}
 
   \end{frame}
+  
+  \begin{frame}
+  	\frametitle{Aufgabe 4: Größe des Webs}
+  	\begin{itemize}
+  	 \item Abschätzung des Index über Suchbegriff "`a"' als häufigstes Wort im Englischen
+  	 \item Suche nach
+  	 \item Ergebnisse:\\
+  	 \begin{tabular}{|l|l|r|l|l|}
+	  \hline
+	  \textbf{Name ($i$)} & \textbf{$s_i$ ("`Index"')} & \textbf{$n_i$ (Ergebnisse)} & \textbf{$n_0$ (gem. Ergebnisse)}\\
+	  \hline
+	  Google ($g$) & 25.270.000.000 & & \\
+	  \hline
+	  Bing ($b$)  & 140.000.000 & & \\
+	  \hline
+  	\end{tabular}
+  	\item Größe des Webs:
+  	$$N \approx s_g \frac{n_b}{n_0} \approx s_b \frac{n_g}{n_0}$$
+  	\end{itemize}
 
+  	
+
+
+  \end{frame}
+  
   
   %\begin{frame}
    % \frametitle{Quellen}
