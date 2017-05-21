@@ -159,7 +159,7 @@ def getMaxToString(scorelist):
        with the language that has the highest score"""
 
     #print(scorelist)
-    scorelist.pop(-1)
+    #scorelist.pop(-1)
 
     #now get the max score
     maxi = 0.0
@@ -187,6 +187,7 @@ def getLanguage(url):
     scorel = calculateScore(pairs)
     res = getMaxToString(scorel)
     #print(res)
+    #print(scorel)
     return res
 
 
